@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="lhh Lpr lFf">
     <q-header class="text-center bg-transparent q-pt-md">
       <q-img src="~assets/cblogo.png" width="122px" />
     </q-header>

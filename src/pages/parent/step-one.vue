@@ -1,11 +1,28 @@
 <template>
   <q-page class="row items-center justify-center">
     <div class="col-12 form-wrapper">
+      <div>
+        <h5 class="text-primary text-weight-600 q-ma-none">
+          Form 1 - Developmental Profile
+        </h5>
+        <hr class="q-mb-md" />
+      </div>
       <q-card flat class="bg-white form-body">
         <q-form>
           <q-card-section>
-            <div class="card-header text-weight-bold text-center text-primary">
-              Add Student
+            <div class="card-header">
+              <div clas="step-info">
+                <p class="text-primary text-body1 text-weight-bold">
+                  Step 1 of 3
+                </p>
+              </div>
+              <q-banner class="bg-banner-success">
+                <p class="q-mb-none text-positive text-weight-bold">
+                  Note: Chancy and Bruce, LLC has my permission to administer a
+                  developmental profile with my child and remove them from the
+                  classroom and take them to a screening area.
+                </p>
+              </q-banner>
             </div>
           </q-card-section>
 
