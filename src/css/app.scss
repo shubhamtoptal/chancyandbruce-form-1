@@ -1,1 +1,59 @@
 // app global css in SCSS form
+// app global css in SCSS form
+@font-face {
+  font-family: rubikvariable;
+  src: url(./fonts/rubik-variable.ttf);
+}
+
+.rubik-variable {
+  font-family: 'rubikvariable';
+}
+
+body {
+  font-family: 'rubikvariable';
+  background-color: $light;
+}
+
+.app-button {
+  padding: 0.6rem 2rem;
+  border-radius: 6px;
+}
+
+.save-button {
+  width: 200px;
+  height: 50px;
+}
+
+.cancel-button {
+  width: 200px;
+  color: #606060;
+  border-color: #606060;
+  font-size: 0.875rem;
+  height: 50px;
+}
+
+.header-height {
+  height: 81px;
+}
+
+.school-list-table-header {
+  background-color: $light;
+  color: $accent;
+}
+
+.q-field--outlined .q-field__control:before {
+  border-color: $grey;
+}
+
+.q-field--outlined .q-field__control:hover:before {
+  border-color: #145e858a;
+}
+
+.q-field--outlined.q-field--highlighted .q-field__control:hover:before {
+  border-color: #145e858a;
+}
+
+.q-field__control {
+  color: #145e858a;
+  height: 50px;
+}
