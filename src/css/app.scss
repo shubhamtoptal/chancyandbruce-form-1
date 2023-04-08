@@ -32,6 +32,14 @@ body {
   height: 50px;
 }
 
+.back-btn {
+  width: 200px;
+  color: #606060 !important;
+  border: 1px solid #606060;
+  font-size: 0.875rem;
+  height: 50px;
+}
+
 .header-height {
   height: 81px;
 }
@@ -64,4 +72,8 @@ body {
 
 .text-weight-600 {
   font-weight: 600;
+}
+
+.font-size-20 {
+  font-size: 12px;
 }
