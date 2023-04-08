@@ -45,14 +45,14 @@
             <div>
               <!-- First Row Start -->
               <div class="row q-pb-sm items-center">
-                <div class="col-md-7 col-xs-6 dialog-form-section-input">
+                <div class="col-md-7 col-xs-12 dialog-form-section-input">
                   <label
                     class="text-primary text-body-1 text-weight-light items-center"
                   >
                     Shows curiosity and interest in his/her surroundings
                   </label>
                 </div>
-                <div class="col-md-5 col-xs-6 dialog-form-section-input">
+                <div class="col-md-5 col-xs-12">
                   <q-option-group
                     inline
                     :options="options"
@@ -66,14 +66,14 @@
               <!-- First Row End -->
               <!-- Second Row Start -->
               <div class="row q-pb-sm items-center">
-                <div class="col-md-7 col-xs-6 dialog-form-section-input">
+                <div class="col-md-7 col-xs-12 dialog-form-section-input">
                   <label
                     class="text-primary text-body-1 text-weight-light items-center"
                   >
                     Initiates own play activities
                   </label>
                 </div>
-                <div class="col-md-5 col-xs-6 dialog-form-section-input">
+                <div class="col-md-5 col-xs-12 dialog-form-section-input">
                   <q-option-group
                     inline
                     :options="options"
@@ -87,14 +87,14 @@
               <!-- Second Row End -->
               <!-- Third Row Start -->
               <div class="row q-pb-sm items-center">
-                <div class="col-md-7 col-xs-6 dialog-form-section-input">
+                <div class="col-md-7 col-xs-12 dialog-form-section-input">
                   <label
                     class="text-primary text-body-1 text-weight-light items-center"
                   >
                     Works and plays cooperatively with other children
                   </label>
                 </div>
-                <div class="col-md-5 col-xs-6 dialog-form-section-input">
+                <div class="col-md-5 col-xs-12 dialog-form-section-input">
                   <q-option-group
                     inline
                     :options="options"
@@ -108,14 +108,14 @@
               <!-- Third Row End -->
               <!-- Fourth Row Start -->
               <div class="row q-pb-sm items-center">
-                <div class="col-md-7 col-xs-6 dialog-form-section-input">
+                <div class="col-md-7 col-xs-12 dialog-form-section-input">
                   <label
                     class="text-primary text-body-1 text-weight-light items-center"
                   >
                     Talks comfortably with other children:
                   </label>
                 </div>
-                <div class="col-md-5 col-xs-6 dialog-form-section-input">
+                <div class="col-md-5 col-xs-12 dialog-form-section-input">
                   <q-option-group
                     inline
                     :options="options"
@@ -129,14 +129,14 @@
               <!-- Fourth Row End -->
               <!-- Fifth Row Start -->
               <div class="row q-pb-sm items-center">
-                <div class="col-md-7 col-xs-6 dialog-form-section-input">
+                <div class="col-md-7 col-xs-12 dialog-form-section-input">
                   <label
                     class="text-primary text-body-1 text-weight-light items-center"
                   >
                     Takes turns and shares
                   </label>
                 </div>
-                <div class="col-md-5 col-xs-6 dialog-form-section-input">
+                <div class="col-md-5 col-xs-12 dialog-form-section-input">
                   <q-option-group
                     inline
                     :options="options"
@@ -150,14 +150,14 @@
               <!-- Fifth Row End -->
               <!-- Sixth Row Start -->
               <div class="row q-pb-sm items-center">
-                <div class="col-md-7 col-xs-6 dialog-form-section-input">
+                <div class="col-md-7 col-xs-12 dialog-form-section-input">
                   <label
                     class="text-primary text-body-1 text-weight-light items-center"
                   >
                     Participates with others in large group
                   </label>
                 </div>
-                <div class="col-md-5 col-xs-6 dialog-form-section-input">
+                <div class="col-md-5 col-xs-12 dialog-form-section-input">
                   <q-option-group
                     inline
                     :options="options"
@@ -171,14 +171,14 @@
               <!-- Sixth Row End -->
               <!-- Seventh Row Start -->
               <div class="row q-pb-sm items-center">
-                <div class="col-md-7 col-xs-6 dialog-form-section-input">
+                <div class="col-md-7 col-xs-12 dialog-form-section-input">
                   <label
                     class="text-primary text-body-1 text-weight-light items-center"
                   >
                     Shows concern for others and their property
                   </label>
                 </div>
-                <div class="col-md-5 col-xs-6 dialog-form-section-input">
+                <div class="col-md-5 col-xs-12 dialog-form-section-input">
                   <q-option-group
                     inline
                     :options="options"
@@ -192,14 +192,14 @@
               <!-- Seventh Row End -->
               <!-- Eigth Row Start -->
               <div class="row q-pb-sm items-center">
-                <div class="col-md-7 col-xs-6 dialog-form-section-input">
+                <div class="col-md-7 col-xs-12 dialog-form-section-input">
                   <label
                     class="text-primary text-body-1 text-weight-light items-center"
                   >
                     Takes turns and shares
                   </label>
                 </div>
-                <div class="col-md-5 col-xs-6 dialog-form-section-input">
+                <div class="col-md-5 col-xs-12 dialog-form-section-input">
                   <q-option-group
                     inline
                     :options="options"
@@ -213,14 +213,14 @@
               <!-- Eigth Row End -->
               <!-- Nineth Row Start -->
               <div class="row q-pb-sm items-center">
-                <div class="col-md-7 col-xs-6 dialog-form-section-input">
+                <div class="col-md-7 col-xs-12 dialog-form-section-input">
                   <label
                     class="text-primary text-body-1 text-weight-light items-center"
                   >
                     Accepts responsibility
                   </label>
                 </div>
-                <div class="col-md-5 col-xs-6 dialog-form-section-input">
+                <div class="col-md-5 col-xs-12 dialog-form-section-input">
                   <q-option-group
                     inline
                     :options="options"
@@ -234,14 +234,14 @@
               <!-- Nineth Row End -->
               <!-- Tenth Row Start -->
               <div class="row q-pb-sm items-center">
-                <div class="col-md-7 col-xs-6 dialog-form-section-input">
+                <div class="col-md-7 col-xs-12 dialog-form-section-input">
                   <label
                     class="text-primary text-body-1 text-weight-light items-center"
                   >
                     Separates from parents without reluctance
                   </label>
                 </div>
-                <div class="col-md-5 col-xs-6 dialog-form-section-input">
+                <div class="col-md-5 col-xs-12 dialog-form-section-input">
                   <q-option-group
                     inline
                     :options="options"
@@ -255,14 +255,14 @@
               <!-- Tenth Row End -->
               <!-- Eleventh Row Start -->
               <div class="row q-pb-sm items-center">
-                <div class="col-md-7 col-xs-6 dialog-form-section-input">
+                <div class="col-md-7 col-xs-12 dialog-form-section-input">
                   <label
                     class="text-primary text-body-1 text-weight-light items-center"
                   >
                     Does simple tasks independently
                   </label>
                 </div>
-                <div class="col-md-5 col-xs-6 dialog-form-section-input">
+                <div class="col-md-5 col-xs-12 dialog-form-section-input">
                   <q-option-group
                     inline
                     :options="options"
@@ -276,14 +276,14 @@
               <!-- Eleventh Row End -->
               <!-- Twelve Row Start -->
               <div class="row q-pb-sm items-center">
-                <div class="col-md-7 col-xs-6 dialog-form-section-input">
+                <div class="col-md-7 col-xs-12 dialog-form-section-input">
                   <label
                     class="text-primary text-body-1 text-weight-light items-center"
                   >
                     Follows directions
                   </label>
                 </div>
-                <div class="col-md-5 col-xs-6 dialog-form-section-input">
+                <div class="col-md-5 col-xs-12 dialog-form-section-input">
                   <q-option-group
                     inline
                     :options="options"
@@ -297,14 +297,14 @@
               <!-- Twelve Row End -->
               <!-- Thirteen Row Start -->
               <div class="row q-pb-sm items-center">
-                <div class="col-md-7 col-xs-6 dialog-form-section-input">
+                <div class="col-md-7 col-xs-12 dialog-form-section-input">
                   <label
                     class="text-primary text-body-1 text-weight-light items-center"
                   >
                     Pays attention
                   </label>
                 </div>
-                <div class="col-md-5 col-xs-6 dialog-form-section-input">
+                <div class="col-md-5 col-xs-12 dialog-form-section-input">
                   <q-option-group
                     inline
                     :options="options"
@@ -318,14 +318,14 @@
               <!-- Thirteen Row End -->
               <!-- Fourteen Row Start -->
               <div class="row q-pb-sm items-center">
-                <div class="col-md-7 col-xs-6 dialog-form-section-input">
+                <div class="col-md-7 col-xs-12 dialog-form-section-input">
                   <label
                     class="text-primary text-body-1 text-weight-light items-center"
                   >
                     Consistently completes tasks
                   </label>
                 </div>
-                <div class="col-md-5 col-xs-6 dialog-form-section-input">
+                <div class="col-md-5 col-xs-12 dialog-form-section-input">
                   <q-option-group
                     inline
                     :options="options"
@@ -339,14 +339,14 @@
               <!-- Fourteen Row End -->
               <!-- Fifteen Row Start -->
               <div class="row q-pb-sm items-center">
-                <div class="col-md-7 col-xs-6 dialog-form-section-input">
+                <div class="col-md-7 col-xs-12 dialog-form-section-input">
                   <label
                     class="text-primary text-body-1 text-weight-light items-center"
                   >
                     Attends to task at least 10 minutes
                   </label>
                 </div>
-                <div class="col-md-5 col-xs-6 dialog-form-section-input">
+                <div class="col-md-5 col-xs-12 dialog-form-section-input">
                   <q-option-group
                     inline
                     :options="options"
@@ -360,14 +360,14 @@
               <!-- Fifteen Row End -->
               <!-- Sixteen Row Start -->
               <div class="row q-pb-sm items-center">
-                <div class="col-md-7 col-xs-6 dialog-form-section-input">
+                <div class="col-md-7 col-xs-12 dialog-form-section-input">
                   <label
                     class="text-primary text-body-1 text-weight-light items-center"
                   >
                     Is eager to learn new tasks
                   </label>
                 </div>
-                <div class="col-md-5 col-xs-6 dialog-form-section-input">
+                <div class="col-md-5 col-xs-12 dialog-form-section-input">
                   <q-option-group
                     inline
                     :options="options"
@@ -381,14 +381,14 @@
               <!-- Sixteen Row End -->
               <!-- Seventeenth Row Start -->
               <div class="row q-pb-sm items-center">
-                <div class="col-md-7 col-xs-6 dialog-form-section-input">
+                <div class="col-md-7 col-xs-12 dialog-form-section-input">
                   <label
                     class="text-primary text-body-1 text-weight-light items-center"
                   >
                     Able to express wants and needs
                   </label>
                 </div>
-                <div class="col-md-5 col-xs-6 dialog-form-section-input">
+                <div class="col-md-5 col-xs-12 dialog-form-section-input">
                   <q-option-group
                     inline
                     :options="options"
@@ -402,14 +402,14 @@
               <!-- Seventeenth Row End -->
               <!-- Eigteenth Row Start -->
               <div class="row q-pb-sm items-center">
-                <div class="col-md-7 col-xs-6 dialog-form-section-input">
+                <div class="col-md-7 col-xs-12 dialog-form-section-input">
                   <label
                     class="text-primary text-body-1 text-weight-light items-center"
                   >
                     Accepts limits/Follows rules
                   </label>
                 </div>
-                <div class="col-md-5 col-xs-6 dialog-form-section-input">
+                <div class="col-md-5 col-xs-12 dialog-form-section-input">
                   <q-option-group
                     inline
                     :options="options"
@@ -423,14 +423,14 @@
               <!-- Eigteenth Row End -->
               <!-- Nineteenth Row Start -->
               <div class="row q-pb-sm items-center">
-                <div class="col-md-7 col-xs-6 dialog-form-section-input">
+                <div class="col-md-7 col-xs-12 dialog-form-section-input">
                   <label
                     class="text-primary text-body-1 text-weight-light items-center"
                   >
                     Displays feelings in appropriate ways
                   </label>
                 </div>
-                <div class="col-md-5 col-xs-6 dialog-form-section-input">
+                <div class="col-md-5 col-xs-12 dialog-form-section-input">
                   <q-option-group
                     inline
                     :options="options"
@@ -444,14 +444,14 @@
               <!-- Nineteenth Row End -->
               <!-- Twenteeth Row Start -->
               <div class="row q-pb-sm items-center">
-                <div class="col-md-7 col-xs-6 dialog-form-section-input">
+                <div class="col-md-7 col-xs-12 dialog-form-section-input">
                   <label
                     class="text-primary text-body-1 text-weight-light items-center"
                   >
                     Speech understood by others
                   </label>
                 </div>
-                <div class="col-md-5 col-xs-6 dialog-form-section-input">
+                <div class="col-md-5 col-xs-12 dialog-form-section-input">
                   <q-option-group
                     inline
                     :options="options"

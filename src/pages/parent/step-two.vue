@@ -36,14 +36,14 @@
             <div>
               <!-- First Row Start -->
               <div class="row q-pb-sm items-center">
-                <div class="col-md-5 col-xs-6 dialog-form-section-input">
+                <div class="col-md-5 col-xs-12 dialog-form-section-input">
                   <label
                     class="text-primary text-body-1 text-weight-light items-center"
                   >
                     Were there pregnancy or birth complications?
                   </label>
                 </div>
-                <div class="col-md-3 col-xs-6 dialog-form-section-input">
+                <div class="col-md-3 col-xs-12">
                   <q-option-group
                     inline
                     :options="options"
@@ -53,7 +53,7 @@
                   />
                 </div>
 
-                <div class="col-md-4 col-xs-12 dialog-form-section-input">
+                <div class="col-md-4 col-xs-12">
                   <q-input
                     class="app-form-input q-mt-xs"
                     outlined
@@ -66,14 +66,14 @@
               <!-- First Row End -->
               <!-- Second Row Start -->
               <div class="row q-pb-sm items-center">
-                <div class="col-md-5 col-xs-6 dialog-form-section-input">
+                <div class="col-md-5 col-xs-12 dialog-form-section-input">
                   <label
                     class="text-primary text-body-1 text-weight-light items-center"
                   >
                     As this child premature or post term?
                   </label>
                 </div>
-                <div class="col-md-3 col-xs-6 dialog-form-section-input">
+                <div class="col-md-3 col-xs-12">
                   <q-option-group
                     inline
                     :options="options"
@@ -83,7 +83,7 @@
                   />
                 </div>
 
-                <div class="col-md-4 col-xs-12 dialog-form-section-input">
+                <div class="col-md-4 col-xs-12">
                   <q-input
                     class="app-form-input q-mt-xs"
                     outlined
@@ -96,14 +96,14 @@
               <!-- Second Row End -->
               <!-- Third Row Start -->
               <div class="row q-pb-sm items-center">
-                <div class="col-md-5 col-xs-6 dialog-form-section-input">
+                <div class="col-md-5 col-xs-12 dialog-form-section-input">
                   <label
                     class="text-primary text-body-1 text-weight-light items-center"
                   >
                     Has this child had a history of chronic illnesses?
                   </label>
                 </div>
-                <div class="col-md-3 col-xs-6 dialog-form-section-input">
+                <div class="col-md-3 col-xs-12">
                   <q-option-group
                     inline
                     :options="options"
@@ -113,7 +113,7 @@
                   />
                 </div>
 
-                <div class="col-md-4 col-xs-12 dialog-form-section-input">
+                <div class="col-md-4 col-xs-12">
                   <q-input
                     class="app-form-input q-mt-xs"
                     outlined
@@ -126,14 +126,14 @@
               <!-- Thid Row End -->
               <!-- Fourth Row Start -->
               <div class="row q-pb-sm items-center">
-                <div class="col-md-5 col-xs-6 dialog-form-section-input">
+                <div class="col-md-5 col-xs-12 dialog-form-section-input">
                   <label
                     class="text-primary text-body-1 text-weight-light items-center"
                   >
                     Does this child experience allergies?
                   </label>
                 </div>
-                <div class="col-md-3 col-xs-6 dialog-form-section-input">
+                <div class="col-md-3 col-xs-12">
                   <q-option-group
                     inline
                     :options="options"
@@ -143,7 +143,7 @@
                   />
                 </div>
 
-                <div class="col-md-4 col-xs-12 dialog-form-section-input">
+                <div class="col-md-4 col-xs-12">
                   <q-input
                     class="app-form-input q-mt-xs"
                     outlined
@@ -156,14 +156,14 @@
               <!-- Fourth Row End -->
               <!-- Fifth Row Start -->
               <div class="row q-pb-sm items-center">
-                <div class="col-md-5 col-xs-6 dialog-form-section-input">
+                <div class="col-md-5 col-xs-12 dialog-form-section-input">
                   <label
                     class="text-primary text-body-1 text-weight-light items-center"
                   >
                     Has this child had any unsettling experiences?
                   </label>
                 </div>
-                <div class="col-md-3 col-xs-6 dialog-form-section-input">
+                <div class="col-md-3 col-xs-12">
                   <q-option-group
                     inline
                     :options="options"
@@ -173,7 +173,7 @@
                   />
                 </div>
 
-                <div class="col-md-4 col-xs-12 dialog-form-section-input">
+                <div class="col-md-4 col-xs-12">
                   <q-input
                     class="app-form-input q-mt-xs"
                     outlined
@@ -186,14 +186,14 @@
               <!-- Fifth Row End -->
               <!-- Sixth Row Start -->
               <div class="row q-pb-sm items-center">
-                <div class="col-md-5 col-xs-6 dialog-form-section-input">
+                <div class="col-md-5 col-xs-12 dialog-form-section-input">
                   <label
                     class="text-primary text-body-1 text-weight-light items-center"
                   >
                     What is the primary language spoken in this child's home?
                   </label>
                 </div>
-                <div class="col-md-3 col-xs-6 dialog-form-section-input">
+                <div class="col-md-3 col-xs-12">
                   <q-option-group
                     inline
                     :options="options"
@@ -203,7 +203,7 @@
                   />
                 </div>
 
-                <div class="col-md-4 col-xs-12 dialog-form-section-input">
+                <div class="col-md-4 col-xs-12">
                   <q-input
                     class="app-form-input q-mt-xs"
                     outlined
