@@ -2,22 +2,19 @@ import { RouteRecordRaw } from 'vue-router';
 
 const routes: RouteRecordRaw[] = [
   {
-    path: '/',
-    component: () => import('layouts/MainLayout.vue'),
+    path: '/parent/',
+    component: () => import('src/layouts/ParentLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/parent/step-one.vue') },
-      { path: 'step-2', component: () => import('pages/parent/step-two.vue') },
-      {
-        path: 'step-3',
-        component: () => import('pages/parent/step-three.vue'),
-      },
-      {
-        path: 'teacher-step-1',
-        component: () => import('pages/teacher/step-one.vue'),
-      },
+      { path: 'form/:formId', component: () => import('pages/parent/parent.vue') }
     ],
   },
-
+  {
+    path: '/teacher/',
+    component: () => import('src/layouts/TeacherLayout.vue'),
+    children: [
+      { path: 'form/:formId', component: () => import('pages/teacher/teacher.vue') }
+    ],
+  },
   // Always leave this as last one,
   // but you can also remove it
   {

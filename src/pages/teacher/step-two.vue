@@ -3,7 +3,7 @@
     <div class="col-12 form-wrapper">
       <div>
         <h5 class="text-primary text-weight-600 q-ma-none">
-          Form 3 - Developmental Profile
+          Form 2 - Developmental Profile
         </h5>
         <hr class="q-mb-md" />
       </div>
@@ -12,7 +12,7 @@
           <div class="card-header">
             <div clas="step-info">
               <p class="text-primary text-body1 text-weight-bold">
-                Step 3 of 3
+                Step 2 of 2
               </p>
             </div>
             <q-banner class="bg-banner-success">
@@ -314,28 +314,13 @@
                       v-model="comments" />
                   </div>
                 </div>
-                <div class="col-md-12 col-xs-6 dialog-form-section-input">
-                  <label class="text-primary text-body-1 text-weight-regular items-center">
-                    Please list schools you would like C&B to send assessment
-                    results where you are applying:
-                  </label>
-                </div>
-                <div class="row q-pb-md q-my-md">
-                  <div class="col-md-12 col-xs-12 dialog-form-section-input">
-                    <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
-                      Schools List
-                    </label>
-                    <q-input class="app-form-input q-mt-xs" outlined placeholder="Write School Name"
-                      v-model="school_list" />
-                  </div>
-                </div>
               </div>
             </div>
           </q-card-section>
 
           <q-card-actions align="right" class="bg-white q-mb-mb text-center">
-            <q-btn @click="moveToStepTwo()" color="light back-btn app-button q-mr-md" no-caps label="Back" />
-            <q-btn @click="submitStepThree()" color="secondary save-button app-button" no-caps label="Save" />
+            <q-btn @click="moveToStepOne()" color="light back-btn app-button q-mr-md" no-caps label="Back" />
+            <q-btn @click="submitStepTwo()" color="secondary save-button app-button" no-caps label="Save" />
           </q-card-actions>
         </q-form>
       </q-card>
@@ -350,7 +335,7 @@ import { PropType, defineComponent, ref } from 'vue';
 export default defineComponent({
   name: 'StepThree',
   props: {
-    moveToStepTwo: {
+    moveToStepOne: {
       type: Function as PropType<{
         (): void;
       }>,
@@ -362,7 +347,7 @@ export default defineComponent({
       }>,
       required: true,
     },
-    stepThreeData: {
+    stepTwoData: {
       type: Object,
       required: true,
     },
@@ -398,30 +383,30 @@ export default defineComponent({
     };
   },
   mounted() {
-    this.show_curiosity = this.stepThreeData.show_curiosity;
-    this.initiate_play_activity = this.stepThreeData.initiate_play_activity;
-    this.works_play_cooperatively = this.stepThreeData.works_play_cooperatively;
-    this.talk_comfortably_other_child = this.stepThreeData.talk_comfortably_other_child;
-    this.turns_and_share = this.stepThreeData.turns_and_share;
-    this.participate_large_group = this.stepThreeData.participate_large_group;
-    this.accepts_responsibility = this.stepThreeData.accepts_responsibility;
-    this.seperate_from_parent = this.stepThreeData.seperate_from_parent;
-    this.simple_task_independent = this.stepThreeData.simple_task_independent;
-    this.follow_direction = this.stepThreeData.follow_direction;
-    this.show_concern = this.stepThreeData.show_concern;
-    this.consistent_complete_task = this.stepThreeData.consistent_complete_task;
-    this.pay_attention = this.stepThreeData.pay_attention;
-    this.eager_learn_new_task = this.stepThreeData.eager_learn_new_task;
-    this.attend_to_task_10_min = this.stepThreeData.attend_to_task_10_min;
-    this.express_want_need = this.stepThreeData.express_want_need;
-    this.accept_limit_follow_rules = this.stepThreeData.accept_limit_follow_rules;
-    this.display_feeling_appropriate = this.stepThreeData.display_feeling_appropriate;
-    this.speech_understand_others = this.stepThreeData.speech_understand_others;
-    this.comments = this.stepThreeData.comments;
-    this.school_list = this.stepThreeData.school_list;
+    this.show_curiosity = this.stepTwoData.show_curiosity;
+    this.initiate_play_activity = this.stepTwoData.initiate_play_activity;
+    this.works_play_cooperatively = this.stepTwoData.works_play_cooperatively;
+    this.talk_comfortably_other_child = this.stepTwoData.talk_comfortably_other_child;
+    this.turns_and_share = this.stepTwoData.turns_and_share;
+    this.participate_large_group = this.stepTwoData.participate_large_group;
+    this.accepts_responsibility = this.stepTwoData.accepts_responsibility;
+    this.seperate_from_parent = this.stepTwoData.seperate_from_parent;
+    this.simple_task_independent = this.stepTwoData.simple_task_independent;
+    this.follow_direction = this.stepTwoData.follow_direction;
+    this.show_concern = this.stepTwoData.show_concern;
+    this.consistent_complete_task = this.stepTwoData.consistent_complete_task;
+    this.pay_attention = this.stepTwoData.pay_attention;
+    this.eager_learn_new_task = this.stepTwoData.eager_learn_new_task;
+    this.attend_to_task_10_min = this.stepTwoData.attend_to_task_10_min;
+    this.express_want_need = this.stepTwoData.express_want_need;
+    this.accept_limit_follow_rules = this.stepTwoData.accept_limit_follow_rules;
+    this.display_feeling_appropriate = this.stepTwoData.display_feeling_appropriate;
+    this.speech_understand_others = this.stepTwoData.speech_understand_others;
+    this.comments = this.stepTwoData.comments;
+    this.school_list = this.stepTwoData.school_list;
   },
   methods: {
-    submitStepThree() {
+    submitStepTwo() {
       const data = {
         show_curiosity: this.show_curiosity,
         initiate_play_activity: this.initiate_play_activity,
