@@ -8,6 +8,26 @@
 //  augmentations (eg. adds `$q` into Vue component context)
 /// <reference types="@quasar/app-webpack" />
 
+export interface StudentData {
+  _id: string
+  studentFirstName: string
+  studentLastName: string
+  studentGender: number
+  studentHeight: string
+  studentDob: string
+  parentContact: string
+  parentEmail: string
+  parentName: string
+  teacherEmail: string
+  gradeEntry: string
+  address: string
+  city: string
+  zip: string
+  schoolName: string
+  schoolId: string
+  schoolContact: string
+}
+
 export interface StepTwoData {
   is_pregnancy_complication: boolean
   pregnancy_complication_text: string

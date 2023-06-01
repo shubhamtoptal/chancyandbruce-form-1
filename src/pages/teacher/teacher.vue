@@ -50,7 +50,8 @@ export default defineComponent({
         school_list: '',
       }),
       studentData: ref({
-        studentName: '',
+        studentFirstName: '',
+        studentLastName: '',
         studentGender: '',
         studentHeight: '',
         studentDob: '',
@@ -89,7 +90,8 @@ export default defineComponent({
             is_step_form_1_teacher_complete: stepOne.is_step_form_1_teacher_complete
           }
           this.studentData = {
-            studentName: student.student_name,
+            studentFirstName: student.student_first_name,
+            studentLastName: student.student_last_name,
             studentGender: student.student_gender,
             studentHeight: student.student_height,
             studentDob: student.student_dob,

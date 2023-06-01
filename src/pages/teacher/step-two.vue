@@ -17,11 +17,9 @@
             </div>
             <q-banner class="bg-banner-success">
               <p class="q-mb-none text-positive text-weight-bold">
-                To aid us in determining your child's social-emotional level,
-                please mark in the parent column the behaviour listed below
-                that you have observed your child performing. Your child's
-                teacher will also be marking the behaviours she has observed
-                your child performing in the classroom.
+                To aid us in determining the child's social-emotional level,
+                please mark in the input column the behaviour listed below
+                that you have observed the child performing.
               </p>
             </q-banner>
           </div>

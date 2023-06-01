@@ -1,6 +1,6 @@
 <template>
-  <q-page class="row items-center justify-center">
-    <div class="col-12 form-wrapper">
+  <q-page class="row items-center justify-evenly full-width">
+    <div class="col-md-12 form-wrapper">
       <div>
         <h5 class="text-primary text-weight-600 q-ma-none">
           Form 1 - Developmental Profile
@@ -16,13 +16,6 @@
                   Step 1 of 2
                 </p>
               </div>
-              <q-banner class="bg-banner-success">
-                <p class="q-mb-none text-positive text-weight-bold">
-                  Note: Chancy and Bruce, LLC has my permission to administer a
-                  developmental profile with my child and remove them from the
-                  classroom and take them to a screening area.
-                </p>
-              </q-banner>
             </div>
           </q-card-section>
 
@@ -32,17 +25,27 @@
               <div class="row q-pb-md">
                 <div class="col-md-4 col-xs-12 dialog-form-section-input">
                   <label class="text-primary text-weight-regular text-body-2 q-mb-sm">
-                    Child's Name
+                    Child's First Name
                   </label>
                   <div class="row">
                     <label class="text-primary text-weight-bold text-body-2 q-mb-sm">
-                      {{ studentName }}
+                      {{ studentFirstName }}
                     </label>
                   </div>
                 </div>
                 <div class="col-md-4 col-xs-12 dialog-form-section-input">
                   <label class="text-primary text-weight-regular text-body-2 q-mb-sm">
-                    Parents's Name
+                    Child's Last Name
+                  </label>
+                  <div class="row">
+                    <label class="text-primary text-weight-bold text-body-2 q-mb-sm">
+                      {{ studentLastName }}
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-4 col-xs-12 dialog-form-section-input">
+                  <label class="text-primary text-weight-regular text-body-2 q-mb-sm">
+                    Primary Parents Name
                   </label>
                   <div class="row">
                     <label class="text-primary text-weight-bold text-body-2 q-mb-sm">
@@ -77,21 +80,21 @@
                 </div>
                 <div class="col-md-4 col-xs-12 dialog-form-section-input">
                   <label class="text-primary text-weight-regular text-body-2 q-mb-sm">
-                    Height
-                  </label>
-                  <div class="row">
-                    <label class="text-primary text-weight-bold text-body-2 q-mb-sm">
-                      {{ studentHeight }}
-                    </label>
-                  </div>
-                </div>
-                <div class="col-md-4 col-xs-12 dialog-form-section-input">
-                  <label class="text-primary text-weight-regular text-body-2 q-mb-sm">
                     Gender
                   </label>
                   <div class="row">
                     <label class="text-primary text-weight-bold text-body-2 q-mb-sm">
                       {{ studentGender == "1" ? 'Boy' : 'Girl' }}
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-4 col-xs-12 dialog-form-section-input">
+                  <label class="text-primary text-weight-regular text-body-2 q-mb-sm">
+                    Grade Entry
+                  </label>
+                  <div class="row">
+                    <label class="text-primary text-weight-bold text-body-2 q-mb-sm">
+                      {{ gradeEntry }}
                     </label>
                   </div>
                 </div>
@@ -148,16 +151,6 @@
               <!-- Thid Row End -->
               <!-- Fourth Row Start -->
               <div class="row q-pt-sm q-pb-md">
-                <div class="col-md-4 col-xs-12 dialog-form-section-input">
-                  <label class="text-primary text-weight-regular text-body-2 q-mb-sm">
-                    Grade Entry
-                  </label>
-                  <div class="row">
-                    <label class="text-primary text-weight-bold text-body-2 q-mb-sm">
-                      {{ gradeEntry }}
-                    </label>
-                  </div>
-                </div>
                 <div class="col-md-8 col-xs-12 dialog-form-section-input">
                   <label class="text-primary text-weight-regular text-body-2 q-mb-sm">
                     School Name
@@ -218,7 +211,8 @@ export default defineComponent({
         { label: 'Boy', value: 1 },
         { label: 'Girl', value: 2 },
       ],
-      studentName: ref(''),
+      studentFirstName: ref(''),
+      studentLastName: ref(''),
       studentHeight: ref(''),
       studentDob: ref(''),
       studentGender: ref(''),
@@ -237,7 +231,8 @@ export default defineComponent({
   },
   watch: {
     studentData(nv) {
-      this.studentName = nv.studentName;
+      this.studentFirstName = nv.studentFirstName;
+      this.studentLastName = nv.studentLastName;
       this.studentGender = nv.studentGender;
       this.studentHeight = nv.studentHeight;
       this.studentDob = nv.studentDob;

@@ -16,7 +16,7 @@ import { defineComponent, ref } from 'vue';
 import StepOne from './step-one.vue';
 import StepTwo from './step-two.vue';
 import StepThree from './step-three.vue';
-import { StepThreeData, StepTwoData } from 'src/quasar';
+import { StepThreeData, StepTwoData, StudentData } from 'src/quasar';
 import { api } from 'src/boot/axios';
 import { Notify } from 'quasar';
 
@@ -66,9 +66,11 @@ export default defineComponent({
         comments: '',
         school_list: '',
       }),
-      studentData: ref({
-        studentName: '',
-        studentGender: '',
+      studentData: ref<StudentData>({
+        _id: '',
+        studentFirstName: '',
+        studentLastName: '',
+        studentGender: 1,
         studentHeight: '',
         studentDob: '',
         parentContact: '',
@@ -80,6 +82,8 @@ export default defineComponent({
         city: '',
         zip: '',
         schoolName: '',
+        schoolId: '',
+        schoolContact: '',
       }),
       stepOneData: ref({
         is_step_form_1_parent_complete: false,
@@ -101,12 +105,18 @@ export default defineComponent({
         method: 'GET',
       })
         .then((resp) => {
-          const { stepOne, school, student } = resp.data.data;
+          const { stepOne, school, student, isPaymentRequired, paymentUrl } = resp.data.data;
+          if (isPaymentRequired) {
+            window.location.href = paymentUrl
+            return;
+          }
           this.stepOneData = {
             is_step_form_1_parent_complete: stepOne.is_step_form_1_parent_complete
           }
           this.studentData = {
-            studentName: student.student_name,
+            _id: student._id,
+            studentFirstName: student.student_first_name,
+            studentLastName: student.student_last_name,
             studentGender: student.student_gender,
             studentHeight: student.student_height,
             studentDob: student.student_dob,
@@ -119,6 +129,8 @@ export default defineComponent({
             city: student.city,
             zip: student.zip,
             schoolName: school.school_name,
+            schoolContact: student.school_contact,
+            schoolId: student.school_id,
           }
           this.step = 1;
         })
@@ -129,7 +141,26 @@ export default defineComponent({
     moveToStepOne() {
       this.step = 1;
     },
-    moveToStepTwo() {
+    moveToStepTwo(student?: StudentData) {
+      if (student) {
+        this.studentData = {
+          ...this.studentData,
+          studentFirstName: student.studentFirstName,
+          studentLastName: student.studentLastName,
+          studentGender: student.studentGender,
+          studentHeight: student.studentHeight,
+          studentDob: student.studentDob,
+          parentContact: student.parentContact,
+          parentEmail: student.parentEmail,
+          parentName: student.parentName,
+          teacherEmail: student.teacherEmail,
+          gradeEntry: student.gradeEntry,
+          address: student.address,
+          city: student.city,
+          zip: student.zip,
+          schoolContact: student.schoolContact,
+        }
+      }
       this.step = 2;
     },
     moveToStepThree(data?: StepTwoData) {
@@ -154,6 +185,24 @@ export default defineComponent({
       console.log('data --->', data);
       this.stepThreeData = { ...data };
       const formData = {
+        student: {
+          id: this.studentData._id,
+          student_first_name: this.studentData.studentFirstName,
+          student_last_name: this.studentData.studentLastName,
+          student_dob: this.studentData.studentDob,
+          student_gender: this.studentData.studentGender,
+          student_height: this.studentData.studentHeight,
+          parent_name: this.studentData.parentName,
+          parent_email: this.studentData.parentEmail,
+          parent_contact: this.studentData.parentContact,
+          teacher_email: this.studentData.teacherEmail,
+          school_contact: this.studentData.schoolContact,
+          grade_entry: this.studentData.gradeEntry,
+          address: this.studentData.address,
+          city: this.studentData.city,
+          zip: this.studentData.zip,
+          school_id: this.studentData.schoolId
+        },
         ...this.stepTwoData,
         ...this.stepThreeData
       }
