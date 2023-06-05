@@ -8,6 +8,13 @@
 //  augmentations (eg. adds `$q` into Vue component context)
 /// <reference types="@quasar/app-webpack" />
 
+
+export interface SchoolListInterface {
+  school_name: string
+  _id: string
+  school_address: string
+}
+
 export interface StudentData {
   _id: string
   studentFirstName: string
@@ -63,5 +70,5 @@ export interface StepThreeData {
   speech_understand_others: number,
   accept_limit_follow_rules: number,
   comments: string,
-  school_list: string,
+  school_list: Array<string>,
 }

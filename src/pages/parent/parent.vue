@@ -2,12 +2,42 @@ import StepOne from './step-one.vue';
 
 <template>
   <q-page class="row items-center justify-center q-pb-md">
+    <!-- CONFIRMATION BLOCK -->
+    <div v-if="hasParentOptedScreening != 1" class="row items-start justify-center q-pb-md">
+      <div class="col-sm-12 col-md-8 form-wrapper">
+        <q-card flat class="bg-white form-body">
+          <q-card-section>
+            <p class="text-justify">
+              We are grateful that you have choosen us to help in your child's educational journey.
+              Please fill out the following information along with payment.
+              This information will be redirected to your child's teacher and used in the overall assessment of your
+              child.
+              Please complete this form as soon as possible to allow screeners to utilze the information for the
+              assessment.
+              We thank you in advance for your partnership!
+            </p>
+          </q-card-section>
+          <q-card-section>
+            <p class="text-center text-h5 text-weight-medium">
+              Do you want to screen your kid ?
+              <br />
+              Click Yes to proceed.
+            </p>
+          </q-card-section>
+          <q-card-actions class="bg-white q-mb-mb text-center justify-center">
+            <q-btn @click="dontProceed" outline color="secondary save-button app-button" no-caps label="No" />
+            <q-btn @click="proceedToNextStep" color="secondary save-button app-button" no-caps label="Yes" />
+          </q-card-actions>
+        </q-card>
+      </div>
+    </div>
+    <!-- CONFIRMATION BLOCK ENDS -->
     <StepOne v-show="step === 1" :move-to-step-two="moveToStepTwo" :step-one-data="stepOneData"
       :student-data="studentData" />
     <StepTwo v-show="step === 2" :move-to-step-one="moveToStepOne" :move-to-step-three="moveToStepThree"
       :stepTwoData="stepTwoData" />
     <StepThree v-show="step === 3" :move-to-step-two="moveToStepTwo" :stepThreeData="stepThreeData"
-      :submit-form="submitForm" />
+      :submit-form="submitForm" :school-list="schoolList" />
   </q-page>
 </template>
 
@@ -30,6 +60,8 @@ export default defineComponent({
   setup() {
     return {
       step: ref(0),
+      schoolList: ref([]),
+      hasParentOptedScreening: ref(0),
       stepTwoData: ref({
         is_pregnancy_complication: false,
         pregnancy_complication_text: '',
@@ -43,7 +75,7 @@ export default defineComponent({
         unsettling_experience_text: '',
         primary_language: '',
       }),
-      stepThreeData: ref({
+      stepThreeData: ref<StepThreeData>({
         show_curiosity: 1,
         initiate_play_activity: 1,
         works_play_cooperatively: 1,
@@ -64,7 +96,7 @@ export default defineComponent({
         speech_understand_others: 1,
         accept_limit_follow_rules: 1,
         comments: '',
-        school_list: '',
+        school_list: [],
       }),
       studentData: ref<StudentData>({
         _id: '',
@@ -98,6 +130,45 @@ export default defineComponent({
     }
   },
   methods: {
+    dontProceed() {
+      const url = `/api/parent/v1/form/step-one-parent/${this.$route.params.formId}/has-not-opted`;
+      api({
+        url,
+        method: 'PUT',
+      })
+        .then(() => {
+          window.location.href = 'https://www.chancyandbruce-ra.com/'
+        })
+        .catch((err) => {
+          console.error('getFormDetails() --->', err);
+        });
+    },
+    proceedToNextStep() {
+      const url = `/api/parent/v1/form/step-one-parent/${this.$route.params.formId}/has-opted`;
+      api({
+        url,
+        method: 'PUT',
+      })
+        .then(() => {
+          this.getFormDetails();
+        })
+        .catch((err) => {
+          console.error('getFormDetails() --->', err);
+        });
+    },
+    getSchoolList() {
+      const url = '/api/parent/v1/school/list';
+      api({
+        url,
+        method: 'GET',
+      })
+        .then((resp) => {
+          this.schoolList = resp.data.data.schools;
+        })
+        .catch((err) => {
+          console.error('getFormDetails() --->', err);
+        });
+    },
     getFormDetails() {
       const url = `/api/parent/v1/form/step-one-parent/${this.$route.params.formId}`;
       api({
@@ -105,11 +176,17 @@ export default defineComponent({
         method: 'GET',
       })
         .then((resp) => {
-          const { stepOne, school, student, isPaymentRequired, paymentUrl } = resp.data.data;
+          const { stepOne, school, student, isPaymentRequired, paymentUrl, parentOptedScreening } = resp.data.data;
+          if (parentOptedScreening != 1) {
+            this.hasParentOptedScreening = 0;
+            return;
+          }
           if (isPaymentRequired) {
             window.location.href = paymentUrl
             return;
           }
+          this.getSchoolList();
+          this.hasParentOptedScreening = 1;
           this.stepOneData = {
             is_step_form_1_parent_complete: stepOne.is_step_form_1_parent_complete
           }

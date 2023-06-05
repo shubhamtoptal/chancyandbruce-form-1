@@ -325,8 +325,18 @@
                     <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
                       Schools List
                     </label>
-                    <q-input class="app-form-input q-mt-xs" outlined placeholder="Write School Name"
-                      v-model="school_list" />
+                    <q-select :multiple="true" use-input @filter="filterFn" class="app-form-input cursor-pointer q-mt-xs"
+                      outlined placeholder="Write School Name" :options="selectSchoolList" option-value="_id"
+                      option-label="school_name" v-model="school_list" options-selected-class="text-secondary">
+                      <template v-slot:option="scope">
+                        <q-item v-bind="scope.itemProps">
+                          <q-item-section>
+                            <q-item-label>{{ scope.opt.school_name }}</q-item-label>
+                            <q-item-label caption>{{ scope.opt.school_address }}</q-item-label>
+                          </q-item-section>
+                        </q-item>
+                      </template>
+                    </q-select>
                   </div>
                 </div>
               </div>
@@ -344,7 +354,7 @@
 </template>
 
 <script lang="ts">
-import { StepThreeData } from 'src/quasar';
+import { StepThreeData, SchoolListInterface } from 'src/quasar';
 import { PropType, defineComponent, ref } from 'vue';
 
 export default defineComponent({
@@ -366,6 +376,10 @@ export default defineComponent({
       type: Object,
       required: true,
     },
+    schoolList: {
+      type: Array<SchoolListInterface>,
+      required: true
+    }
   },
   setup() {
     return {
@@ -394,8 +408,14 @@ export default defineComponent({
       display_feeling_appropriate: ref(1),
       speech_understand_others: ref(1),
       comments: ref(''),
-      school_list: ref(''),
+      school_list: ref<Array<string>>([]),
+      selectSchoolList: ref<Array<SchoolListInterface>>([]),
     };
+  },
+  watch: {
+    schoolList(nv) {
+      this.selectSchoolList = nv;
+    }
   },
   mounted() {
     this.show_curiosity = this.stepThreeData.show_curiosity;
@@ -446,6 +466,19 @@ export default defineComponent({
         school_list: this.school_list
       }
       this.submitForm(data);
+    },
+    filterFn(val: string, update: (callback: () => void) => void) {
+      if (val === '') {
+        update(() => {
+          this.selectSchoolList = this.schoolList
+        })
+        return
+      }
+
+      update(() => {
+        const needle = val.toLowerCase()
+        this.selectSchoolList = this.schoolList.filter(v => v.school_name.toLowerCase().indexOf(needle) > -1)
+      })
     }
   }
 });

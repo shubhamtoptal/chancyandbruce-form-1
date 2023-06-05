@@ -46,8 +46,7 @@ export default defineComponent({
         display_feeling_appropriate: 1,
         speech_understand_others: 1,
         accept_limit_follow_rules: 1,
-        comments: '',
-        school_list: '',
+        comments: ''
       }),
       studentData: ref({
         studentFirstName: '',

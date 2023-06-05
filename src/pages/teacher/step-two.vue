@@ -376,8 +376,7 @@ export default defineComponent({
       accept_limit_follow_rules: ref(1),
       display_feeling_appropriate: ref(1),
       speech_understand_others: ref(1),
-      comments: ref(''),
-      school_list: ref(''),
+      comments: ref('')
     };
   },
   mounted() {
@@ -401,7 +400,6 @@ export default defineComponent({
     this.display_feeling_appropriate = this.stepTwoData.display_feeling_appropriate;
     this.speech_understand_others = this.stepTwoData.speech_understand_others;
     this.comments = this.stepTwoData.comments;
-    this.school_list = this.stepTwoData.school_list;
   },
   methods: {
     submitStepTwo() {
@@ -426,7 +424,7 @@ export default defineComponent({
         display_feeling_appropriate: this.display_feeling_appropriate,
         speech_understand_others: this.speech_understand_others,
         comments: this.comments,
-        school_list: this.school_list
+        school_list: []
       }
       this.submitForm(data);
     }
