@@ -1,0 +1,42 @@
+name: Quasar App Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: Install Quasar CLI
+        run: npm install -g @quasar/cli
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Quasar app
+        run: quasar build
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-1
+
+      - name: Deploy to S3 bucket
+        run: |
+          ls
+          aws s3 sync dist/spa s3://${{ secrets.AWS_S3_BUCKET }}
+          aws configure set preview.cloudfront true
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.AWS_SECRET_CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
