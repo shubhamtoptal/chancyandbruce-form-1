@@ -753,7 +753,6 @@ export default defineComponent({
 .cnb-address-container {
   background: #145e85;
   color: #f1f9ff;
-  width: 86%;
   margin-left: 0.3rem;
   font-size: 1rem;
 }
