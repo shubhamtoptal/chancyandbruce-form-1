@@ -3,15 +3,13 @@
     class="row items-center justify-center q-pb-md q-px-lg">
 
     <q-card class="text-center full-width bg-transparent" flat>
-      <div class="row q-my-md full-width">
+      <div class="row items-center q-my-md full-width">
         <div class="col-2">
           <q-img src="~assets/cblogo.png" width="122px" />
         </div>
-        <div class="col-10">
-          <div class="cnb-address-container text-center text-weight-medium">
-            <p>1020 Calle Recodo, San Clemente, CA, 92673 / 949-326-4917</p>
-            <p>www.chancyandbruce-ra.com</p>
-          </div>
+        <div class="cnb-address-container text-center text-weight-medium col-10 q-pa-sm">
+          <p class="q-ma-none">1020 Calle Recodo, San Clemente, CA, 92673 / 949-326-4917</p>
+          <p class="q-ma-none">www.chancyandbruce-ra.com</p>
         </div>
       </div>
     </q-card>
@@ -37,7 +35,8 @@
                 <div class="col-3">
                   <span class="text-primary text-body2">Date of birth</span>
                   &emsp;
-                  <div class="text-body text-weight-medium text-color ">{{ formThreeData.studentInfo.dob }}</div>
+                  <div class="text-body text-weight-medium text-color ">{{ formThreeData.studentInfo.dob }}
+                  </div>
                 </div>
                 <div class="col-3">
                   <span class="text-primary text-body2">Place Administered</span>
@@ -62,17 +61,23 @@
               <div class="row q-px-lg">
                 <div class="col-3">
                   <span class="text-primary text-body2">Child’s Age</span>
-                  <div class="text-body2">{{ formThreeData.studentInfo.ageInMonth }}</div>
+                  <div class="text-body2">{{ getChildAge(formThreeData.studentInfo.ageInMonth) }}</div>
                 </div>
                 <div class="col-4">
                   <span class="text-primary text-body2">Child’s age Appropriate Range</span>
                   &emsp;
-                  <div class="text-body2">{{ formThreeData.studentInfo.ageAppropriateRange }}</div>
+                  <div class="text-body2">
+                    {{ getChildAge(formThreeData.studentInfo.ageInMonth - 6) }}
+                    to
+                    {{ getChildAge(formThreeData.studentInfo.ageInMonth + 6) }}
+                  </div>
                 </div>
-                <div class="col-5">
+                <div class="col-5 text-center">
                   <span class="text-primary text-body2">Recommended Grade Level Placement</span>
                   &emsp;
-                  <div class="text-body2">{{ formThreeData.studentInfo.recommendedGrade }}</div>
+                  <div class="text-body2">{{ formThreeData.summaryOfProfile.childDevelopmentAgeAppropriateText
+                    || '-' }}
+                  </div>
                 </div>
               </div>
             </div>
@@ -191,7 +196,7 @@
                     label="Child’s skill development is age appropriate for chronological age" />
                 </div>
                 <div v-if="formThreeData.summaryOfProfile.childDevelopmentAgeAppropriateText" class="col-12">
-                  <p style="padding-left: 35px; border-bottom: 1px solid #333;">
+                  <p class="comment-section-text q-ma-none">
                     {{ formThreeData.summaryOfProfile.childDevelopmentAgeAppropriateText }}
                   </p>
                 </div>
@@ -200,10 +205,10 @@
                 <div class="col-12">
                   <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
                     v-model="formThreeData.summaryOfProfile.childSocialEmotionalAgeAppropriate
-                      " label="Child’s social-emotional development is age appropriate for chronological age" />
+                    " label="Child’s social-emotional development is age appropriate for chronological age" />
                 </div>
                 <div v-if="formThreeData.summaryOfProfile.childSocialEmotionalAgeAppropriateText" class="col-12">
-                  <p style="padding-left: 35px; border-bottom: 1px solid #333;">
+                  <p class="comment-section-text q-ma-none">
                     {{ formThreeData.summaryOfProfile.childSocialEmotionalAgeAppropriateText }}
                   </p>
                 </div>
@@ -214,7 +219,7 @@
                     v-model="formThreeData.summaryOfProfile.monitorTheAreas" label="Monitor the areas of" />
                 </div>
                 <div v-if="formThreeData.summaryOfProfile.monitorTheAreasText" class="col-12">
-                  <p style="padding-left: 35px;">
+                  <p class="comment-section-text q-ma-none">
                     {{ formThreeData.summaryOfProfile.monitorTheAreasText }}
                   </p>
                 </div>
@@ -226,7 +231,7 @@
                     label="Further Diagnostic Evaluation Recommended" />
                 </div>
                 <div v-if="formThreeData.summaryOfProfile.furtherDiagnosticEvaluationText" class="col-12">
-                  <p style="padding-left: 35px;">
+                  <p class="comment-section-text q-ma-none">
                     {{ formThreeData.summaryOfProfile.furtherDiagnosticEvaluationText }}
                   </p>
                 </div>
@@ -237,7 +242,7 @@
                     v-model="formThreeData.summaryOfProfile.speechProblemObserved" label="Speech problem observed" />
                 </div>
                 <div v-if="formThreeData.summaryOfProfile.speechProblemObservedText" class="col-12">
-                  <p style="padding-left: 35px;">
+                  <p class="comment-section-text q-ma-none">
                     {{ formThreeData.summaryOfProfile.speechProblemObservedText }}
                   </p>
                 </div>
@@ -245,13 +250,13 @@
             </div>
           </div>
           <div v-if="formThreeData.summaryOfProfile.comments" class="row full-width">
-            <div class="row q-mt-md full-width">
+            <div class="row q-mt-md full-width q-px-sm">
               <div class="col-md-12 col-xs-12 dialog-form-section-input">
                 <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
                   Additional Comment
                 </label>
                 <div class="col-12 q-pt-sm">
-                  <p style="padding-left: 20px;">
+                  <p class="comment-section-text q-ma-none" style="padding-left: 20px">
                     {{ formThreeData.summaryOfProfile.comments }}
                   </p>
                 </div>
@@ -316,8 +321,8 @@
                 color="secondary" dense size="sm" keep-color label="Ready" />
             </div>
             <div class="col-3">
-              <q-radio diable v-model="formThreeData.academicAchievementForFirstGradeReadiness" :val="2" color="secondary"
-                dense size="sm" keep-color label="Borderline" />
+              <q-radio disable v-model="formThreeData.academicAchievementForFirstGradeReadiness" :val="2"
+                color="secondary" dense size="sm" keep-color label="Borderline" />
             </div>
             <div class="col-3">
               <q-radio disable v-model="formThreeData.academicAchievementForFirstGradeReadiness" :val="3"
@@ -365,10 +370,10 @@
                 <div class="col-12">
                   <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
                     v-model="formThreeData.recommendations.enterSchoolForUpcomingOrCurrentSchoolYear
-                      " label="Enter school for upcoming or current school year." />
+                    " label="Enter school for upcoming or current school year." />
                 </div>
                 <div v-if="formThreeData.recommendations.enterSchoolForUpcomingOrCurrentSchoolYearText" class="col-12">
-                  <p style="padding-left: 35px; border-bottom: 1px solid #333;">
+                  <p class="comment-section-text q-ma-none">
                     {{ formThreeData.recommendations.enterSchoolForUpcomingOrCurrentSchoolYearText }}
                   </p>
                 </div>
@@ -377,10 +382,10 @@
                 <div class="col-12">
                   <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
                     v-model="formThreeData.recommendations.delaySchoolEntranceBasedOnScreeningResult
-                      " label="Delay school entrance based on screening results." />
+                    " label="Delay school entrance based on screening results." />
                 </div>
                 <div v-if="formThreeData.recommendations.delaySchoolEntranceBasedOnScreeningResultText" class="col-12">
-                  <p style="padding-left: 35px;">
+                  <p class="comment-section-text q-ma-none">
                     {{ formThreeData.recommendations.delaySchoolEntranceBasedOnScreeningResultText }}
                   </p>
                 </div>
@@ -392,7 +397,7 @@
                     label="Frustration in school may occur. Due to" />
                 </div>
                 <div v-if="formThreeData.recommendations.frustrationInSchoolMayOccurText" class="col-12">
-                  <p style="padding-left: 35px;">
+                  <p class="comment-section-text q-ma-none">
                     {{ formThreeData.recommendations.frustrationInSchoolMayOccurText }}
                   </p>
                 </div>
@@ -403,7 +408,7 @@
                     v-model="formThreeData.recommendations.highRiskIndicator" label="High risk indicators" />
                 </div>
                 <div v-if="formThreeData.recommendations.highRiskIndicatorText" class="col-12">
-                  <p style="padding-left: 35px;">
+                  <p class="comment-section-text q-ma-none">
                     {{ formThreeData.recommendations.highRiskIndicatorText }}
                   </p>
                 </div>
@@ -412,10 +417,10 @@
                 <div class="col-12">
                   <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
                     v-model="formThreeData.recommendations.monitorSchoolProgramIfYouChooseToEnter
-                      " label="Monitor school program if you choose to enter" />
+                    " label="Monitor school program if you choose to enter" />
                 </div>
                 <div v-if="formThreeData.recommendations.monitorSchoolProgramIfYouChooseToEnterText" class="col-12">
-                  <p style="padding-left: 35px;">
+                  <p class="comment-section-text q-ma-none">
                     {{ formThreeData.recommendations.monitorSchoolProgramIfYouChooseToEnterText }}
                   </p>
                 </div>
@@ -424,10 +429,10 @@
                 <div class="col-12">
                   <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
                     v-model="formThreeData.recommendations.furtherDiagnosticEvaluationNeeded
-                      " label="Further diagnostic evaluation needed." />
+                    " label="Further diagnostic evaluation needed." />
                 </div>
                 <div v-if="formThreeData.recommendations.furtherDiagnosticEvaluationNeededText" class="col-12">
-                  <p style="padding-left: 35px;">
+                  <p class="comment-section-text q-ma-none">
                     {{ formThreeData.recommendations.furtherDiagnosticEvaluationNeededText }}
                   </p>
                 </div>
@@ -450,7 +455,7 @@
               </div>
             </div>
           </div>
-          <div class="row q-pt-md full-width">
+          <div class="row q-pt-md full-width q-px-sm">
             <div class="row q-pb-md q-my-md full-width">
               <div class="col-12 dialog-form-section-input">
                 <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
@@ -501,242 +506,28 @@ export default defineComponent({
     /**
      * Call the API over here
      */
-    this.formThreeData = {
-      'skillArea': {
-        'fine_motor': {
-          'ageInMonth': 60,
-          'ageRangeYear': 5,
-          'ageRangeMonth': 0,
-          'skill': 1
-        },
-        'visual_discrimination': {
-          'ageInMonth': 30,
-          'ageRangeYear': 2,
-          'ageRangeMonth': 6,
-          'skill': 3
-        },
-        'visual_memory': {
-          'ageInMonth': 30,
-          'ageRangeYear': 2,
-          'ageRangeMonth': 6,
-          'skill': 3
-        },
-        'auditory_discrimination': {
-          'ageInMonth': 30,
-          'ageRangeYear': 2,
-          'ageRangeMonth': 6,
-          'skill': 3
-        },
-        'auditory_memory': {
-          'ageInMonth': 60,
-          'ageRangeYear': 5,
-          'ageRangeMonth': 0,
-          'skill': 1
-        },
-        'receptive_language': {
-          'ageInMonth': 30,
-          'ageRangeYear': 2,
-          'ageRangeMonth': 6,
-          'skill': 3
-        },
-        'expressive_language': {
-          'ageInMonth': 30,
-          'ageRangeYear': 2,
-          'ageRangeMonth': 6,
-          'skill': 3
-        },
-        'comprehension': {
-          'ageInMonth': 30,
-          'ageRangeYear': 2,
-          'ageRangeMonth': 6,
-          'skill': 3
-        },
-        'gross_motor': {
-          'ageInMonth': 60,
-          'ageRangeYear': 5,
-          'ageRangeMonth': 0,
-          'skill': 1
-        },
-        'academic_k': {
-          'skill': 3
-        },
-        'academic_one': {
-          'skill': 4
-        }
-      },
-      'observations': [
-        {
-          'label': 'Worked cooperatively',
-          'slug': 'worked_cooperatively',
-          'type': 'checkbox',
-          'value': '1'
-        },
-        {
-          'label': 'At Ease/Comfortable',
-          'slug': 'at_ease_comfortable',
-          'type': 'checkbox',
-          'value': '1'
-        },
-        {
-          'label': 'Needed encouragement',
-          'slug': 'needed_encouragement',
-          'type': 'checkbox',
-          'value': '1'
-        },
-        {
-          'label': 'Hesitant',
-          'slug': 'hesitant',
-          'type': 'checkbox',
-          'value': '0'
-        },
-        {
-          'label': 'Anxious during screening',
-          'slug': 'anxious_during_screening',
-          'type': 'checkbox',
-          'value': '0'
-        },
-        {
-          'label': 'Uncooperative',
-          'slug': 'uncooperative',
-          'type': 'checkbox',
-          'value': '0'
-        },
-        {
-          'label': 'Attentive',
-          'slug': 'attentive',
-          'type': 'checkbox',
-          'value': '0'
-        },
-        {
-          'label': 'Needed propmpts to stay on task',
-          'slug': 'needed_propmpts_to_stay_on_task',
-          'type': 'checkbox',
-          'value': '0'
-        },
-        {
-          'label': 'Easily distracted',
-          'slug': 'easily_distracted',
-          'type': 'checkbox',
-          'value': '0'
-        },
-        {
-          'label': 'Short attention span',
-          'slug': 'short_attention_span',
-          'type': 'checkbox',
-          'value': '0'
-        },
-        {
-          'label': 'Impulsive',
-          'slug': 'impulsive',
-          'type': 'checkbox',
-          'value': '0'
-        },
-        {
-          'label': 'Restless',
-          'slug': 'restless',
-          'type': 'checkbox',
-          'value': '0'
-        },
-        {
-          'label': 'Confident',
-          'slug': 'confident',
-          'type': 'checkbox',
-          'value': '0'
-        },
-        {
-          'label': 'Eager',
-          'slug': 'eager',
-          'type': 'checkbox',
-          'value': '0'
-        },
-        {
-          'label': 'Cautious',
-          'slug': 'cautious',
-          'type': 'checkbox',
-          'value': '0'
-        },
-        {
-          'label': 'Quiet',
-          'slug': 'quiet',
-          'type': 'checkbox',
-          'value': '0'
-        },
-        {
-          'label': 'Shy',
-          'slug': 'shy',
-          'type': 'checkbox',
-          'value': '0'
-        },
-        {
-          'label': 'Speech',
-          'slug': 'speech',
-          'type': 'checkbox',
-          'value': '1'
-        },
-        {
-          'label': 'Speech Comment',
-          'slug': 'speechtext',
-          'type': 'text',
-          'value': '',
-          'comment': 'Test speech comment'
-        },
-        {
-          'label': 'Other',
-          'slug': 'other',
-          'type': 'text',
-          'value': '',
-          'comment': 'Test other observation comment'
-        }
-      ],
-      'socialEmotionalMaturity': 3,
-      'schoolEntranceYear': '2023/2024',
-      'schoolEntranceAgeYear': '5',
-      'schoolEntranceAgeMonth': '6',
-      'summaryOfProfile': {
-        'childDevelopmentAgeAppropriate': false,
-        'childSocialEmotionalAgeAppropriate': false,
-        'monitorTheAreas': true,
-        'furtherDiagnosticEvaluation': true,
-        'speechProblemObserved': true,
-        'childDevelopmentAgeAppropriateText': '',
-        'childSocialEmotionalAgeAppropriateText': '',
-        'monitorTheAreasText': 'Visual Discrimination, Visual Memory, Auditory Discrimination, Receptive Language, Expressive Language, Comprehension',
-        'furtherDiagnosticEvaluationText': 'Visual Discrimination, Visual Memory, Auditory Discrimination, Receptive Language, Expressive Language, Comprehension',
-        'speechProblemObservedText': 'Test speech comment',
-        'comments': 'Test other observation comment'
-      },
-      'recommendations': {
-        'enterSchoolForUpcomingOrCurrentSchoolYear': false,
-        'delaySchoolEntranceBasedOnScreeningResult': true,
-        'frustrationInSchoolMayOccur': true,
-        'highRiskIndicator': true,
-        'monitorSchoolProgramIfYouChooseToEnter': true,
-        'furtherDiagnosticEvaluationNeeded': true,
-        'enterSchoolForUpcomingOrCurrentSchoolYearText': '',
-        'delaySchoolEntranceBasedOnScreeningResultText': 'See Above',
-        'frustrationInSchoolMayOccurText': 'Skill Development, Social-Emotional Development, Social-Emotional Development, ',
-        'highRiskIndicatorText': '',
-        'monitorSchoolProgramIfYouChooseToEnterText': '',
-        'furtherDiagnosticEvaluationNeededText': 'Visual Discrimination, Visual Memory, Auditory Discrimination, Receptive Language, Expressive Language, Comprehension',
-        'itAppears': false,
-        'itAppearsText': '',
-        'comment': ''
-      },
-      'skillDevelopmentForSchoolEnterance': 3,
-      'academicAchievementForFirstGradeReadiness': 3,
-      'socialEmotionDevelopmentForSchoolEntrance': 3,
-      'formThreeFinalComment': 'Shubham Somani was very comfortable and eager to do the tasks. He was attentive and worked cooperatively. He seemed to enjoy the activities and was attentive while doing the tasks. He demonstrated good skills for his age.',
-      'studentInfo': {
-        'name': 'Shubham Somani',
-        'dob': '2020/02/06',
-        'ageInMonth': 40,
-        'placeAdministered': 'Little Friends',
-        'dateAdministered': '2023/02/07',
-        'ageAppropriateRange': '4 year 6 month to 5 year 6 month',
-        'recommendedGrade': 'Kindergarden'
-      }
-    }
+    this.getPdfData()
   },
+  methods: {
+    getChildAge(ageInMonth: number) {
+      console.log('ageInMontj --->', ageInMonth);
+      return `${Math.floor(ageInMonth / 12)} Year ${ageInMonth % 12} Month`
+    },
+    async getPdfData() {
+      const url = `/api/parent/v1/form/pdf/${this.$route.params.formId}`;
+      api({
+        url,
+        method: 'GET',
+      })
+        .then((resp) => {
+          console.log('resp.data.data', resp.data.data);
+          this.formThreeData = resp.data.data.step_3_result_data;
+        })
+        .catch((err) => {
+          console.error('getPdfData() --->', err);
+        });
+    }
+  }
 });
 </script>
 
@@ -751,9 +542,16 @@ export default defineComponent({
 }
 
 .cnb-address-container {
-  background: #145e85;
+  background: linear-gradient(90deg, rgba(21, 39, 60, 1) 0%, rgba(65, 107, 132, 1) 100%, rgba(116, 148, 166, 1) 100%, rgba(248, 253, 254, 1) 100%);
   color: #f1f9ff;
   font-size: 1rem;
+}
+
+.comment-section-text {
+  padding-left: 35px;
+  color: #636363;
+  text-decoration: underline;
+  text-underline-offset: 6px;
 }
 
 @media print {
