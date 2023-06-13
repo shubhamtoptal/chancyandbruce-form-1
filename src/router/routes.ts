@@ -15,6 +15,10 @@ const routes: RouteRecordRaw[] = [
       { path: 'form/:formId', component: () => import('pages/teacher/teacher.vue') }
     ],
   },
+  {
+    path: '/results/pdf/:formId',
+    component: () => import('pages/form_three_result/pdf.vue')
+  },
   // Always leave this as last one,
   // but you can also remove it
   {

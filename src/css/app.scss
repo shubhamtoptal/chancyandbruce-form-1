@@ -5,6 +5,15 @@
   src: url(./fonts/rubik-variable.ttf);
 }
 
+@font-face {
+  font-family: seaweed;
+  src: url(./fonts/SeaweedScript-Regular.ttf);
+}
+
+.seaweed {
+  font-family: 'seaweed' !important;
+}
+
 .rubik-variable {
   font-family: 'rubikvariable';
 }

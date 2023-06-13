@@ -146,22 +146,22 @@
                   <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
                     Teacher's Email
                   </label>
-                  <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
-                    placeholder="Teacher's Email" v-model="teacherEmail" />
+                  <q-input :readonly="true" class="app-form-input q-mt-xs" outlined placeholder="Teacher's Email"
+                    v-model="teacherEmail" />
                 </div>
                 <div class="col-md-2 col-xs-12 dialog-form-section-input" :class="$q.screen.lt.md ? 'q-pb-md' : ''">
                   <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
                     Grade Entry
                   </label>
-                  <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
-                    placeholder="Grade Entry" v-model="gradeEntry" />
+                  <q-input :readonly="true" class="app-form-input q-mt-xs" outlined placeholder="Grade Entry"
+                    v-model="gradeEntry" />
                 </div>
                 <div class="col-md-6 col-xs-12 dialog-form-section-input">
                   <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
                     School Name
                   </label>
-                  <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
-                    placeholder="School Name" v-model="schoolName" />
+                  <q-input :readonly="true" class="app-form-input q-mt-xs" outlined placeholder="School Name"
+                    v-model="schoolName" />
                 </div>
               </div>
               <!-- Fourth Row End -->
