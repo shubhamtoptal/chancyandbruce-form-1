@@ -1,31 +1,87 @@
 <template>
   <div style="print-color-adjust: exact; min-width: 1000px; max-width: 1000px; overflow-x scroll;"
     class="row items-center justify-center q-pb-md q-px-lg">
+
+    <q-card class="text-center full-width bg-transparent" flat>
+      <div class="row q-my-md full-width">
+        <div class="col-2">
+          <q-img src="~assets/cblogo.png" width="122px" />
+        </div>
+        <div class="col-10">
+          <p class="cnb-address-container text-center text-weight-medium">
+            1020 Calle Recodo, San Clemente, CA, 92673 / 949-326-4917
+            www.chancyandbruce-ra.com
+          </p>
+        </div>
+      </div>
+    </q-card>
     <!-- STEP ONE START -->
     <div class="col-12 form-wrapper">
       <q-card v-if="formThreeData" flat class="bg-white form-body">
         <!-- USER INFO SECTION START -->
-        <q-card-section class="q-pa-none dialog-form-section">
-          <div class="row q-pt-md">
+        <q-card-section class="q-pa-none q-mt-md dialog-form-section">
+          <div style="background: #f1f9ff" class="q-pa-md">
+            <p class="text-h6 q-ma-none text-accent text-weight-medium">
+              EARLY CHILDHOOD DEVELOPMENT PROFILE:
+            </p>
+          </div>
+
+          <!-- Row 1 -->
+          <div class="row q-py-lg">
             <div class="col-12">
               <div class="row q-px-lg">
-                <div class="col-6">
-                  <span class="text-primary text-body text-weight-medium">Child Name:</span>
-                  &emsp;
-                  <span class="text-body2">{{ formThreeData.studentInfo.name }}</span>
+                <div class="col-3">
+                  <span class="text-primary text-body2">Child Name</span>
+                  <div class="text-body text-weight-medium text-color ">{{ formThreeData.studentInfo.name }}</div>
                 </div>
-                <div class="col-3 text-right">
-                  <span class="text-primary text-body text-weight-medium">DOB:</span>
+                <div class="col-3">
+                  <span class="text-primary text-body2">Date of birth</span>
                   &emsp;
-                  <span class="text-body2">{{ formThreeData.studentInfo.dob }}</span>
+                  <div class="text-body text-weight-medium text-color ">{{ formThreeData.studentInfo.dob }}</div>
+                </div>
+                <div class="col-3">
+                  <span class="text-primary text-body2">Place Administered</span>
+                  &emsp;
+                  <div class="text-body text-weight-medium text-color ">{{ formThreeData.studentInfo.placeAdministered }}
+                  </div>
+                </div>
+                <div class="col-3">
+                  <span class="text-primary text-body2">Date Administered</span>
+                  &emsp;
+                  <div class="text-body text-weight-medium text-color ">{{ formThreeData.studentInfo.dateAdministered }}
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+
+
+          <!-- Row 2 -->
+          <div class="row q-py-lg">
+            <div class="col-12">
+              <div class="row q-px-lg">
+                <div class="col-3">
+                  <span class="text-primary text-body2">Child’s Age</span>
+                  <div class="text-body2">{{ formThreeData.studentInfo.ageInMonth }}</div>
+                </div>
+                <div class="col-4">
+                  <span class="text-primary text-body2">Child’s age Appropriate Range</span>
+                  &emsp;
+                  <div class="text-body2">{{ formThreeData.studentInfo.ageAppropriateRange }}</div>
+                </div>
+                <div class="col-5">
+                  <span class="text-primary text-body2">Recommended Grade Level Placement</span>
+                  &emsp;
+                  <div class="text-body2">{{ formThreeData.studentInfo.recommendedGrade }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </q-card-section>
         <!-- USER INFO SECTION END -->
         <!-- SKILL AREA SECTION START -->
-        <q-card-section class="q-pa-none dialog-form-section">
+        <q-card-section class="q-pa-none dialog-form-section q-mt-md">
           <div class="row skill-area-header q-pa-md justify-center items-center">
             <div class="col-5">
               <div class="row">
@@ -120,8 +176,8 @@
         <!-- SUCCESSFUL SCHOOL ENTRANCE END -->
 
         <!-- SUMMARY OF PROFILE START -->
-        <q-card-section class="q-pt-sm q-pa-none dialog-form-section">
-          <div style="background: #f1f9ff" class="q-pa-sm">
+        <q-card-section style="page-break-before: always;" class="q-pt-sm q-mt-lg q-pa-none dialog-form-section">
+          <div style="background: #f1f9ff" class="q-pa-md">
             <p class="text-h6 q-ma-none text-accent text-weight-medium">
               SUMMARY OF PROFILE:
             </p>
@@ -143,9 +199,8 @@
               <div class="row items-center">
                 <div class="col-12">
                   <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
-                    v-model="
-                      formThreeData.summaryOfProfile.childSocialEmotionalAgeAppropriate
-                    " label="Child’s social-emotional development is age appropriate for chronological age" />
+                    v-model="formThreeData.summaryOfProfile.childSocialEmotionalAgeAppropriate
+                      " label="Child’s social-emotional development is age appropriate for chronological age" />
                 </div>
                 <div v-if="formThreeData.summaryOfProfile.childSocialEmotionalAgeAppropriateText" class="col-12">
                   <p style="padding-left: 35px; border-bottom: 1px solid #333;">
@@ -159,7 +214,7 @@
                     v-model="formThreeData.summaryOfProfile.monitorTheAreas" label="Monitor the areas of" />
                 </div>
                 <div v-if="formThreeData.summaryOfProfile.monitorTheAreasText" class="col-12">
-                  <p style="padding-left: 35px; border-bottom: 1px solid #333;">
+                  <p style="padding-left: 35px;">
                     {{ formThreeData.summaryOfProfile.monitorTheAreasText }}
                   </p>
                 </div>
@@ -171,7 +226,7 @@
                     label="Further Diagnostic Evaluation Recommended" />
                 </div>
                 <div v-if="formThreeData.summaryOfProfile.furtherDiagnosticEvaluationText" class="col-12">
-                  <p style="padding-left: 35px; border-bottom: 1px solid #333;">
+                  <p style="padding-left: 35px;">
                     {{ formThreeData.summaryOfProfile.furtherDiagnosticEvaluationText }}
                   </p>
                 </div>
@@ -182,7 +237,7 @@
                     v-model="formThreeData.summaryOfProfile.speechProblemObserved" label="Speech problem observed" />
                 </div>
                 <div v-if="formThreeData.summaryOfProfile.speechProblemObservedText" class="col-12">
-                  <p style="padding-left: 35px; border-bottom: 1px solid #333;">
+                  <p style="padding-left: 35px;">
                     {{ formThreeData.summaryOfProfile.speechProblemObservedText }}
                   </p>
                 </div>
@@ -196,7 +251,7 @@
                   Additional Comment
                 </label>
                 <div class="col-12 q-pt-sm">
-                  <p style="padding-left: 20px; border-bottom: 1px solid #333;">
+                  <p style="padding-left: 20px;">
                     {{ formThreeData.summaryOfProfile.comments }}
                   </p>
                 </div>
@@ -207,8 +262,8 @@
         <!-- SUMMARY OF PROFILE END -->
 
         <!-- OBSERVATION START -->
-        <q-card-section style="page-break-before: always;" class="q-pt-sm q-pa-none dialog-form-section">
-          <div style="background: #f1f9ff" class="q-pa-sm">
+        <q-card-section class="q-pt-sm q-pa-none dialog-form-section q-mt-md">
+          <div style="background: #f1f9ff" class="q-pa-md">
             <p class="text-h6 q-ma-none text-accent text-weight-medium">
               OBSERVATION:
             </p>
@@ -224,7 +279,7 @@
 
         <hr />
         <!-- SKILL DEVELOPMENT FOR SCHOOL ENTRANCE START -->
-        <q-card-section class="q-pt-sm q-pa-none dialog-from-section">
+        <q-card-section class="q-py-sm q-pa-none dialog-from-section">
           <div class="q-pa-sm">
             <p class="text-body q-ma-none text-accent text-weight-medium">
               Skill Development for School Entrance
@@ -249,7 +304,7 @@
 
         <hr />
         <!-- ACADEMIC ACHIEVEMENT FOR 1st GRADE READINESS START -->
-        <q-card-section class="q-pt-sm q-pa-none dialog-from-section">
+        <q-card-section class="q-py-sm q-pa-none dialog-from-section">
           <div class="q-pa-sm">
             <p class="text-body q-ma-none text-accent text-weight-medium">
               Academic Achievement for 1st Grade Readiness
@@ -274,7 +329,7 @@
 
         <hr />
         <!-- SOCIAL-EMOTIONAL DEVELOPMENT FOR SCHOOL ENTRANCE START -->
-        <q-card-section class="q-pt-sm q-pa-none dialog-from-section">
+        <q-card-section class="q-py-sm q-pa-none dialog-from-section">
           <div class="q-pa-sm">
             <p class="text-body q-ma-none text-accent text-weight-medium">
               Social-Emotional Development for School Entrance
@@ -298,8 +353,8 @@
         <!-- ASOCIAL-EMOTIONAL DEVELOPMENT FOR SCHOOL ENTRANCE END -->
 
         <!-- RECOMMENDATIONS START -->
-        <q-card-section class="q-pt-sm q-pa-none dialog-form-section">
-          <div style="background: #f1f9ff" class="q-pa-sm">
+        <q-card-section style="page-break-before: always;" class="q-pt-sm q-mt-lg q-pa-none dialog-form-section">
+          <div style="background: #f1f9ff" class="q-pa-md">
             <p class="text-h6 q-ma-none text-accent text-weight-medium">
               RECOMMENDATIONS :
             </p>
@@ -309,9 +364,8 @@
               <div class="row items-center">
                 <div class="col-12">
                   <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
-                    v-model="
-                      formThreeData.recommendations.enterSchoolForUpcomingOrCurrentSchoolYear
-                    " label="Enter school for upcoming or current school year." />
+                    v-model="formThreeData.recommendations.enterSchoolForUpcomingOrCurrentSchoolYear
+                      " label="Enter school for upcoming or current school year." />
                 </div>
                 <div v-if="formThreeData.recommendations.enterSchoolForUpcomingOrCurrentSchoolYearText" class="col-12">
                   <p style="padding-left: 35px; border-bottom: 1px solid #333;">
@@ -322,12 +376,11 @@
               <div class="row items-center">
                 <div class="col-12">
                   <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
-                    v-model="
-                      formThreeData.recommendations.delaySchoolEntranceBasedOnScreeningResult
-                    " label="Delay school entrance based on screening results." />
+                    v-model="formThreeData.recommendations.delaySchoolEntranceBasedOnScreeningResult
+                      " label="Delay school entrance based on screening results." />
                 </div>
                 <div v-if="formThreeData.recommendations.delaySchoolEntranceBasedOnScreeningResultText" class="col-12">
-                  <p style="padding-left: 35px; border-bottom: 1px solid #333;">
+                  <p style="padding-left: 35px;">
                     {{ formThreeData.recommendations.delaySchoolEntranceBasedOnScreeningResultText }}
                   </p>
                 </div>
@@ -339,7 +392,7 @@
                     label="Frustration in school may occur. Due to" />
                 </div>
                 <div v-if="formThreeData.recommendations.frustrationInSchoolMayOccurText" class="col-12">
-                  <p style="padding-left: 35px; border-bottom: 1px solid #333;">
+                  <p style="padding-left: 35px;">
                     {{ formThreeData.recommendations.frustrationInSchoolMayOccurText }}
                   </p>
                 </div>
@@ -350,7 +403,7 @@
                     v-model="formThreeData.recommendations.highRiskIndicator" label="High risk indicators" />
                 </div>
                 <div v-if="formThreeData.recommendations.highRiskIndicatorText" class="col-12">
-                  <p style="padding-left: 35px; border-bottom: 1px solid #333;">
+                  <p style="padding-left: 35px;">
                     {{ formThreeData.recommendations.highRiskIndicatorText }}
                   </p>
                 </div>
@@ -358,12 +411,11 @@
               <div class="row items-center">
                 <div class="col-12">
                   <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
-                    v-model="
-                      formThreeData.recommendations.monitorSchoolProgramIfYouChooseToEnter
-                    " label="Monitor school program if you choose to enter" />
+                    v-model="formThreeData.recommendations.monitorSchoolProgramIfYouChooseToEnter
+                      " label="Monitor school program if you choose to enter" />
                 </div>
                 <div v-if="formThreeData.recommendations.monitorSchoolProgramIfYouChooseToEnterText" class="col-12">
-                  <p style="padding-left: 35px; border-bottom: 1px solid #333;">
+                  <p style="padding-left: 35px;">
                     {{ formThreeData.recommendations.monitorSchoolProgramIfYouChooseToEnterText }}
                   </p>
                 </div>
@@ -371,12 +423,11 @@
               <div class="row items-center">
                 <div class="col-12">
                   <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
-                    v-model="
-                      formThreeData.recommendations.furtherDiagnosticEvaluationNeeded
-                    " label="Further diagnostic evaluation needed." />
+                    v-model="formThreeData.recommendations.furtherDiagnosticEvaluationNeeded
+                      " label="Further diagnostic evaluation needed." />
                 </div>
                 <div v-if="formThreeData.recommendations.furtherDiagnosticEvaluationNeededText" class="col-12">
-                  <p style="padding-left: 35px; border-bottom: 1px solid #333;">
+                  <p style="padding-left: 35px;">
                     {{ formThreeData.recommendations.furtherDiagnosticEvaluationNeededText }}
                   </p>
                 </div>
@@ -678,7 +729,11 @@ export default defineComponent({
       'studentInfo': {
         'name': 'Shubham Somani',
         'dob': '2020/02/06',
-        'ageInMonth': 40
+        'ageInMonth': 40,
+        'placeAdministered': 'Little Friends',
+        'dateAdministered': '2023/02/07',
+        'ageAppropriateRange': '4 year 6 month to 5 year 6 month',
+        'recommendedGrade': 'Kindergarden'
       }
     }
   },
@@ -686,6 +741,23 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+.skill-area-header {
+  background: #f1f9ff;
+  font-weight: 500;
+  font-size: 0.875rem;
+  line-height: 1.063rem;
+  print-color-adjust: exact;
+  color: #145e85;
+}
+
+.cnb-address-container {
+  background: #145e85;
+  color: #f1f9ff;
+  width: 86%;
+  margin-left: 0.3rem;
+  font-size: 1rem;
+}
+
 @media print {
   @page {
     margin-left: 0;
