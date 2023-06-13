@@ -8,10 +8,10 @@
           <q-img src="~assets/cblogo.png" width="122px" />
         </div>
         <div class="col-10">
-          <p class="cnb-address-container text-center text-weight-medium">
-            1020 Calle Recodo, San Clemente, CA, 92673 / 949-326-4917
-            www.chancyandbruce-ra.com
-          </p>
+          <div class="cnb-address-container text-center text-weight-medium">
+            <p>1020 Calle Recodo, San Clemente, CA, 92673 / 949-326-4917</p>
+            <p>www.chancyandbruce-ra.com</p>
+          </div>
         </div>
       </div>
     </q-card>
