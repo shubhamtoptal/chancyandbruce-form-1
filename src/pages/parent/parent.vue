@@ -3,7 +3,7 @@ import StepOne from './step-one.vue';
 <template>
   <q-page class="row items-center justify-center q-pb-md">
     <!-- CONFIRMATION BLOCK -->
-    <div v-if="hasParentOptedScreening != 1" class="row items-start justify-center q-pb-md">
+    <div v-if="![-1, 1].includes(hasParentOptedScreening)" class="row items-start justify-center q-pb-md">
       <div class="col-sm-12 col-md-8 form-wrapper">
         <q-card flat class="bg-white form-body">
           <q-card-section>
@@ -61,7 +61,7 @@ export default defineComponent({
     return {
       step: ref(0),
       schoolList: ref([]),
-      hasParentOptedScreening: ref(0),
+      hasParentOptedScreening: ref(-1),
       stepTwoData: ref({
         is_pregnancy_complication: false,
         pregnancy_complication_text: '',

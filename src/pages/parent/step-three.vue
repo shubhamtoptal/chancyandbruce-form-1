@@ -322,17 +322,23 @@
                 </div>
                 <div class="row q-pb-md q-my-md">
                   <div class="col-md-12 col-xs-12 dialog-form-section-input">
+                    <q-checkbox keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
+                      v-model="sendFormToSchool" label="Do you want to send the test results to the schools ?" />
+                  </div>
+                </div>
+                <div v-if="sendFormToSchool" class="row q-pb-md q-my-md">
+                  <div class="col-md-12 col-xs-12 dialog-form-section-input">
                     <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
                       Schools List
                     </label>
-                    <q-select :multiple="true" use-input @filter="filterFn" class="app-form-input cursor-pointer q-mt-xs"
-                      outlined placeholder="Write School Name" :options="selectSchoolList" option-value="_id"
-                      option-label="school_name" v-model="school_list" options-selected-class="text-secondary">
+                    <q-select :multiple="true" use-input @filter="filterFn" class="cursor-pointer q-mt-xs" outlined
+                      :options="selectSchoolList" option-value="_id" option-label="school_name" v-model="school_list"
+                      options-selected-class="text-white bg-secondary">
                       <template v-slot:option="scope">
                         <q-item v-bind="scope.itemProps">
                           <q-item-section>
                             <q-item-label>{{ scope.opt.school_name }}</q-item-label>
-                            <q-item-label caption>{{ scope.opt.school_address }}</q-item-label>
+                            <q-item-label class="text-white" caption>{{ scope.opt.school_address }}</q-item-label>
                           </q-item-section>
                         </q-item>
                       </template>
@@ -409,6 +415,7 @@ export default defineComponent({
       speech_understand_others: ref(1),
       comments: ref(''),
       school_list: ref<Array<string>>([]),
+      sendFormToSchool: ref(false),
       selectSchoolList: ref<Array<SchoolListInterface>>([]),
     };
   },
