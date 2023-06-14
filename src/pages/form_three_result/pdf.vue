@@ -1,6 +1,6 @@
 <template>
   <div style="print-color-adjust: exact; min-width: 1000px; max-width: 1000px; overflow-x scroll;"
-    class="row items-center justify-center q-pb-md q-px-lg">
+    class="only-print row items-center justify-center q-pb-md q-px-lg">
 
     <q-card class="text-center full-width bg-transparent" flat>
       <div class="row items-center q-my-md full-width">
@@ -480,12 +480,12 @@
 <script lang="ts">
 import { defineComponent, ref } from 'vue';
 import { api } from 'src/boot/axios';
-import { Notify } from 'quasar';
 
 export default defineComponent({
   name: 'FinalFormPage',
   setup() {
     return {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       formThreeData: ref<any | null>(null),
       skillAreaEnum: ref<{ [key: string]: string }>({
         'fine_motor': 'Fine Motor',
@@ -520,8 +520,10 @@ export default defineComponent({
         method: 'GET',
       })
         .then((resp) => {
-          console.log('resp.data.data', resp.data.data);
           this.formThreeData = resp.data.data.step_3_result_data;
+          setTimeout(() => {
+            window.print();
+          }, 3000);
         })
         .catch((err) => {
           console.error('getPdfData() --->', err);
@@ -532,6 +534,10 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+.only-print {
+  display: none;
+}
+
 .skill-area-header {
   background: #f1f9ff;
   font-weight: 500;
@@ -560,6 +566,10 @@ export default defineComponent({
     margin-right: 0;
     margin-top: 0;
     margin-bottom: 0;
+  }
+
+  .only-print {
+    display: block;
   }
 
   .skill-area-header {
