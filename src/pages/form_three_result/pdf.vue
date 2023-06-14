@@ -1,4 +1,7 @@
 <template>
+  <div class="row q-pt-sm full-width no-print justify-center">
+    <q-btn @click="printForm" color="primary" label="SAVE RESULT"/>
+  </div>
   <div style="print-color-adjust: exact; min-width: 1000px; max-width: 1000px; overflow-x scroll;"
     class="only-print row items-center justify-center q-pb-md q-px-lg">
 
@@ -521,13 +524,13 @@ export default defineComponent({
       })
         .then((resp) => {
           this.formThreeData = resp.data.data.step_3_result_data;
-          setTimeout(() => {
-            window.print();
-          }, 3000);
         })
         .catch((err) => {
           console.error('getPdfData() --->', err);
         });
+    },
+    printForm() {
+      window.print();
     }
   }
 });
@@ -535,7 +538,7 @@ export default defineComponent({
 
 <style lang="scss">
 .only-print {
-  display: none;
+  display: block;
 }
 
 .skill-area-header {
@@ -566,6 +569,10 @@ export default defineComponent({
     margin-right: 0;
     margin-top: 0;
     margin-bottom: 0;
+  }
+
+  .no-print {
+    display: none;
   }
 
   .only-print {
