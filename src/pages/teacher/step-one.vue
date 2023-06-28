@@ -260,8 +260,8 @@ export default defineComponent({
   padding-right: 4.375rem;
 
   @media (max-width: '768px') {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
   }
 
   .form-body {

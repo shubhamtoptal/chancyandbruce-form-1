@@ -26,7 +26,7 @@
         </q-card-section>
       </q-card>
 
-      <div class="row q-mb-lg">
+      <div class="row q-mb-md">
         <p class="q-mb-none text-primary text-weight-regular text-caption col-md-8 col-xs-6 q-pl-lg">Child’s Behaviour</p>
         <p class="q-mb-none text-primary text-weight-regular text-caption col-md-4 col-xs-4">Input</p>
       </div>
@@ -308,7 +308,7 @@
                     <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
                       Comment
                     </label>
-                    <q-input class="app-form-input q-mt-xs" outlined placeholder="Write comments here"
+                    <q-input type="textarea" class="app-form-input q-mt-xs" outlined placeholder="Write comments here"
                       v-model="comments" />
                   </div>
                 </div>
@@ -439,7 +439,7 @@ export default defineComponent({
 
   .form-body {
     border-radius: 8px;
-    padding: 1rem;
+    padding: 0;
 
     .card-header {
       font-size: 1.25rem;

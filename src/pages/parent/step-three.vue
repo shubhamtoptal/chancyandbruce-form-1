@@ -310,7 +310,7 @@
                     <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
                       Comment
                     </label>
-                    <q-input class="app-form-input q-mt-xs" outlined placeholder="Write comments here"
+                    <q-input type="textarea" class="app-form-input q-mt-xs" outlined placeholder="Write comments here"
                       v-model="comments" />
                   </div>
                 </div>

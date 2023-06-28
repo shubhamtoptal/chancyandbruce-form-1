@@ -31,6 +31,10 @@ body {
 .save-button {
   width: 200px;
   height: 50px;
+  @media (max-width: '500px') {
+    width: 100%;
+    margin-left: 0 !important;
+  }
 }
 
 .cancel-button {
@@ -47,6 +51,11 @@ body {
   border: 1px solid #606060;
   font-size: 0.875rem;
   height: 50px;
+  @media (max-width: '500px') {
+    width: 100%;
+    margin-right: 0 !important;
+    margin-bottom: 10px;
+  }
 }
 
 .header-height {
