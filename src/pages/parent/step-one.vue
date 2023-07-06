@@ -50,18 +50,18 @@
                 </div>
                 <div class="col-md-4 col-xs-12 dialog-form-section-input" :class="$q.screen.lt.md ? 'q-pb-md' : ''">
                   <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
-                    Primary Parent Name
+                    Primary Parent's Name
                   </label>
                   <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
-                    placeholder="Primary Parent Name" v-model="parentName" />
+                    placeholder="Primary Parent's Name" v-model="parentName" />
                 </div>
 
                 <div class="col-md-4 col-xs-12 dialog-form-section-input">
                   <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
-                    Primary Parent Email
+                    Primary Parent's Email
                   </label>
                   <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
-                    placeholder="Primary Parent Email" v-model="parentEmail" />
+                    placeholder="Primary Parent's Email" v-model="parentEmail" />
                 </div>
               </div>
               <!-- First Row End -->
@@ -69,7 +69,7 @@
               <div class="row q-pt-sm q-pb-md">
                 <div class="col-md-4 col-xs-12 dialog-form-section-input" :class="$q.screen.lt.md ? 'q-pb-md' : ''">
                   <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
-                    Date of birth
+                    Date of Birth
                   </label>
                   <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
                     v-model="studentDob">

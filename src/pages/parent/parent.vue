@@ -8,18 +8,19 @@ import StepOne from './step-one.vue';
         <q-card flat class="bg-white form-body">
           <q-card-section>
             <p class="text-justify">
-              We are grateful that you have choosen us to help in your child's educational journey.
-              Please fill out the following information along with payment.
+              We are grateful that you have chosen us to help in your child's educational journey.
+              Please fill out the following information and provide a payment if prompted.
               This information will be redirected to your child's teacher and used in the overall assessment of your
               child.
-              Please complete this form as soon as possible to allow screeners to utilze the information for the
+              Please complete this form as soon as possible to allow screeners enough time to utilze the information for
+              the
               assessment.
               We thank you in advance for your partnership!
             </p>
           </q-card-section>
           <q-card-section>
             <p class="text-center text-h5 text-weight-medium">
-              Do you want to screen your kid ?
+              Do you want to screen your child ?
               <br />
               Click Yes to proceed.
             </p>
