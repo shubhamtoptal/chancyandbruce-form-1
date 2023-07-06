@@ -18,9 +18,9 @@
             <q-banner class="bg-banner-success">
               <p class="q-mb-none text-positive text-weight-bold">
                 To aid us in determining your child's social-emotional level,
-                please mark in the parent column the behaviour listed below
+                please mark in the parent column the Behavior listed below
                 that you have observed your child performing. Your child's
-                teacher will also be marking the behaviours she has observed
+                teacher will also be marking the Behavior she has observed
                 your child performing in the classroom.
               </p>
             </q-banner>
@@ -29,7 +29,7 @@
       </q-card>
 
       <div class="row q-mb-lg">
-        <p class="q-mb-none text-primary text-weight-regular text-caption col-md-8 col-xs-6 q-pl-lg">Child’s Behaviour</p>
+        <p class="q-mb-none text-primary text-weight-regular text-caption col-md-8 col-xs-6 q-pl-lg">Child’s Behavior</p>
         <p class="q-mb-none text-primary text-weight-regular text-caption col-md-4 col-xs-4">Input</p>
       </div>
 
@@ -82,7 +82,7 @@
               <div class="row q-pb-sm items-center">
                 <div class="col-md-7 col-xs-12 dialog-form-section-input">
                   <label class="text-primary text-body-1 text-weight-regular items-center">
-                    Talks comfortably with other children:
+                    Talks comfortably with other children
                   </label>
                 </div>
                 <div class="col-md-5 col-xs-12 dialog-form-section-input">
@@ -314,22 +314,21 @@
                       v-model="comments" />
                   </div>
                 </div>
-                <div class="col-md-12 col-xs-6 dialog-form-section-input">
-                  <label class="text-primary text-body-1 text-weight-regular items-center">
-                    Please list schools you would like C&B to send assessment
-                    results where you are applying:
-                  </label>
-                </div>
                 <div class="row q-pb-md q-my-md">
                   <div class="col-md-12 col-xs-12 dialog-form-section-input">
                     <q-checkbox keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
-                      v-model="sendFormToSchool" label="Do you want to send the test results to the schools ?" />
+                      v-model="sendFormToSchool" label="Do you want us to send the test results to a specific school?" />
                   </div>
                 </div>
                 <div v-if="sendFormToSchool" class="row q-pb-md q-my-md">
+                  <div class="col-md-12 col-xs-6 dialog-form-section-input q-pb-md">
+                    <label class="text-primary text-body-1 text-weight-regular items-center">
+                      Please list schools you would like C&B to send assessment results to:
+                    </label>
+                  </div>
                   <div class="col-md-12 col-xs-12 dialog-form-section-input">
                     <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
-                      Schools List
+                      Schools
                     </label>
                     <q-select :multiple="true" use-input @filter="filterFn" class="cursor-pointer q-mt-xs" outlined
                       :options="selectSchoolList" option-value="_id" option-label="school_name" v-model="school_list"

@@ -23,9 +23,7 @@
                 </p>
               </div>
               <div clas="step-info">
-                <p
-                  class="text-primary text-body1 font-size-20 text-weight-regular q-mb-none"
-                >
+                <p class="text-primary text-body1 font-size-20 text-weight-regular q-mb-none">
                   If yes, please explain
                 </p>
               </div>
@@ -37,37 +35,20 @@
               <!-- First Row Start -->
               <div class="row q-pb-sm items-center">
                 <div class="col-md-5 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-body-1 text-weight-regular items-center"
-                  >
+                  <label class="text-primary text-body-1 text-weight-regular items-center">
                     Were there pregnancy or birth complications?
                   </label>
                 </div>
                 <div class="col-md-3 col-xs-12">
-                  <q-option-group
-                    inline
-                    :options="options"
-                    type="radio"
-                    class="q-px-xs"
-                    @update:model-value="
-                      () => {
-                        pregnancy_complication_text = '';
-                      }
-                    "
-                    v-model="is_pregnancy_complication"
-                  />
+                  <q-option-group inline :options="options" type="radio" class="q-px-xs" @update:model-value="() => {
+                    pregnancy_complication_text = '';
+                  }
+                    " v-model="is_pregnancy_complication" />
                 </div>
 
-                <div
-                  v-if="is_pregnancy_complication"
-                  class="col-md-4 col-xs-12"
-                >
-                  <q-input
-                    class="app-form-input q-mt-xs"
-                    outlined
-                    placeholder="Please explain"
-                    v-model="pregnancy_complication_text"
-                  />
+                <div v-if="is_pregnancy_complication" class="col-md-4 col-xs-12">
+                  <q-input class="app-form-input q-mt-xs" outlined placeholder="Please explain"
+                    v-model="pregnancy_complication_text" />
                 </div>
               </div>
               <hr class="q-mb-md" />
@@ -75,34 +56,20 @@
               <!-- Second Row Start -->
               <div class="row q-pb-sm items-center">
                 <div class="col-md-5 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-body-1 text-weight-regular items-center"
-                  >
-                    As this child premature or post term?
+                  <label class="text-primary text-body-1 text-weight-regular items-center">
+                    Was this child premature or post term?
                   </label>
                 </div>
                 <div class="col-md-3 col-xs-12">
-                  <q-option-group
-                    inline
-                    :options="options"
-                    type="radio"
-                    class="q-mt-xs"
-                    @update:model-value="
-                      () => {
-                        child_premature_text = '';
-                      }
-                    "
-                    v-model="is_child_premature"
-                  />
+                  <q-option-group inline :options="options" type="radio" class="q-mt-xs" @update:model-value="() => {
+                    child_premature_text = '';
+                  }
+                    " v-model="is_child_premature" />
                 </div>
 
                 <div v-if="is_child_premature" class="col-md-4 col-xs-12">
-                  <q-input
-                    class="app-form-input q-mt-xs"
-                    outlined
-                    placeholder="Please explain"
-                    v-model="child_premature_text"
-                  />
+                  <q-input class="app-form-input q-mt-xs" outlined placeholder="Please explain"
+                    v-model="child_premature_text" />
                 </div>
               </div>
               <hr class="q-mb-md" />
@@ -110,34 +77,20 @@
               <!-- Third Row Start -->
               <div class="row q-pb-sm items-center">
                 <div class="col-md-5 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-body-1 text-weight-regular items-center"
-                  >
+                  <label class="text-primary text-body-1 text-weight-regular items-center">
                     Has this child had a history of chronic illnesses?
                   </label>
                 </div>
                 <div class="col-md-3 col-xs-12">
-                  <q-option-group
-                    inline
-                    :options="options"
-                    type="radio"
-                    class="q-mt-xs"
-                    @update:model-value="
-                      () => {
-                        chronic_illness_text = '';
-                      }
-                    "
-                    v-model="is_chronic_illness"
-                  />
+                  <q-option-group inline :options="options" type="radio" class="q-mt-xs" @update:model-value="() => {
+                    chronic_illness_text = '';
+                  }
+                    " v-model="is_chronic_illness" />
                 </div>
 
                 <div v-if="is_chronic_illness" class="col-md-4 col-xs-12">
-                  <q-input
-                    class="app-form-input q-mt-xs"
-                    outlined
-                    placeholder="Please explain"
-                    v-model="chronic_illness_text"
-                  />
+                  <q-input class="app-form-input q-mt-xs" outlined placeholder="Please explain"
+                    v-model="chronic_illness_text" />
                 </div>
               </div>
               <hr class="q-mb-md" />
@@ -145,34 +98,20 @@
               <!-- Fourth Row Start -->
               <div class="row q-pb-sm items-center">
                 <div class="col-md-5 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-body-1 text-weight-regular items-center"
-                  >
+                  <label class="text-primary text-body-1 text-weight-regular items-center">
                     Does this child experience allergies?
                   </label>
                 </div>
                 <div class="col-md-3 col-xs-12">
-                  <q-option-group
-                    inline
-                    :options="options"
-                    type="radio"
-                    class="q-mt-xs"
-                    @update:model-value="
-                      () => {
-                        allergies_text = '';
-                      }
-                    "
-                    v-model="is_allergies"
-                  />
+                  <q-option-group inline :options="options" type="radio" class="q-mt-xs" @update:model-value="() => {
+                    allergies_text = '';
+                  }
+                    " v-model="is_allergies" />
                 </div>
 
                 <div v-if="is_allergies" class="col-md-4 col-xs-12">
-                  <q-input
-                    class="app-form-input q-mt-xs"
-                    outlined
-                    placeholder="Please explain"
-                    v-model="allergies_text"
-                  />
+                  <q-input class="app-form-input q-mt-xs" outlined placeholder="Please explain"
+                    v-model="allergies_text" />
                 </div>
               </div>
               <hr class="q-mb-md" />
@@ -180,34 +119,20 @@
               <!-- Fifth Row Start -->
               <div class="row q-pb-sm items-center">
                 <div class="col-md-5 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-body-1 text-weight-regular items-center"
-                  >
+                  <label class="text-primary text-body-1 text-weight-regular items-center">
                     Has this child had any unsettling experiences?
                   </label>
                 </div>
                 <div class="col-md-3 col-xs-12">
-                  <q-option-group
-                    inline
-                    :options="options"
-                    type="radio"
-                    class="q-mt-xs"
-                    @update:model-value="
-                      () => {
-                        unsettling_experience_text = '';
-                      }
-                    "
-                    v-model="is_unsettling_experience"
-                  />
+                  <q-option-group inline :options="options" type="radio" class="q-mt-xs" @update:model-value="() => {
+                    unsettling_experience_text = '';
+                  }
+                    " v-model="is_unsettling_experience" />
                 </div>
 
                 <div v-if="is_unsettling_experience" class="col-md-4 col-xs-12">
-                  <q-input
-                    class="app-form-input q-mt-xs"
-                    outlined
-                    placeholder="Please explain"
-                    v-model="unsettling_experience_text"
-                  />
+                  <q-input class="app-form-input q-mt-xs" outlined placeholder="Please explain"
+                    v-model="unsettling_experience_text" />
                 </div>
               </div>
               <hr class="q-mb-md" />
@@ -215,19 +140,13 @@
               <!-- Sixth Row Start -->
               <div class="row q-pb-sm items-center">
                 <div class="col-md-5 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-body-1 text-weight-regular items-center"
-                  >
+                  <label class="text-primary text-body-1 text-weight-regular items-center">
                     What is the primary language spoken in this child's home?
                   </label>
                 </div>
                 <div class="col-md-7 col-xs-12">
-                  <q-input
-                    class="app-form-input q-mt-xs"
-                    outlined
-                    placeholder="Primary language"
-                    v-model="primary_language"
-                  />
+                  <q-input class="app-form-input q-mt-xs" outlined placeholder="Primary language"
+                    v-model="primary_language" />
                 </div>
               </div>
               <hr class="q-mb-md" />
@@ -236,18 +155,8 @@
           </q-card-section>
 
           <q-card-actions align="right" class="bg-white q-mb-mb text-center">
-            <q-btn
-              @click="moveToStepOne()"
-              color="light back-btn app-button q-mr-md"
-              no-caps
-              label="Back"
-            />
-            <q-btn
-              @click="moveToNextStep()"
-              color="secondary save-button app-button"
-              no-caps
-              label="Next"
-            />
+            <q-btn @click="moveToStepOne()" color="light back-btn app-button q-mr-md" no-caps label="Back" />
+            <q-btn @click="moveToNextStep()" color="secondary save-button app-button" no-caps label="Next" />
           </q-card-actions>
         </q-form>
       </q-card>
@@ -340,6 +249,7 @@ export default defineComponent({
 .form-wrapper {
   padding-left: 4.375rem;
   padding-right: 4.375rem;
+
   @media (max-width: '768px') {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -348,12 +258,15 @@ export default defineComponent({
   .form-body {
     border-radius: 8px;
     padding: 1rem;
+
     @media (max-width: '768px') {
       padding: 0;
     }
+
     .card-header {
       font-size: 1.25rem;
     }
+
     .dialog-form-section,
     .dialog-form-section-input {
       padding-left: 0.6rem;
