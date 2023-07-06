@@ -109,7 +109,7 @@
               <div class="row q-pb-sm items-center">
                 <div class="col-md-7 col-xs-12 dialog-form-section-input">
                   <label class="text-primary text-body-1 text-weight-regular items-center">
-                    Participates with others in large group
+                    Participates with others in a large group
                   </label>
                 </div>
                 <div class="col-md-5 col-xs-12 dialog-form-section-input">
@@ -217,7 +217,7 @@
               <div class="row q-pb-sm items-center">
                 <div class="col-md-7 col-xs-12 dialog-form-section-input">
                   <label class="text-primary text-body-1 text-weight-regular items-center">
-                    Attends to task at least 10 minutes
+                    Attends to a task for at least 10 minutes
                   </label>
                 </div>
                 <div class="col-md-5 col-xs-12 dialog-form-section-input">
