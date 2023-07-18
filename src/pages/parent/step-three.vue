@@ -337,7 +337,7 @@
                         <q-item v-bind="scope.itemProps">
                           <q-item-section>
                             <q-item-label>{{ scope.opt.school_name }}</q-item-label>
-                            <q-item-label class="text-white" caption>{{ scope.opt.school_address }}</q-item-label>
+                            <q-item-label class="text-black" caption>{{ scope.opt.school_address }}</q-item-label>
                           </q-item-section>
                         </q-item>
                       </template>
