@@ -20,7 +20,7 @@ import StepOne from './step-one.vue';
           </q-card-section>
           <q-card-section>
             <p class="text-center text-h5 text-weight-medium">
-              Do you want to screen your child ?
+              Do you want to screen your child?
               <br />
               Click Yes to proceed.
             </p>

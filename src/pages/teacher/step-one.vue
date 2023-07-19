@@ -45,7 +45,7 @@
                 </div>
                 <div class="col-md-4 col-xs-12 dialog-form-section-input">
                   <label class="text-primary text-weight-regular text-body-2 q-mb-sm">
-                    Primary Parents Name
+                    Primary Parent's Name
                   </label>
                   <div class="row">
                     <label class="text-primary text-weight-bold text-body-2 q-mb-sm">
@@ -56,7 +56,7 @@
 
                 <div class="col-md-4 col-xs-12 dialog-form-section-input">
                   <label class="text-primary text-weight-regular text-body-2 q-mb-sm">
-                    Parents's Email
+                    Parent's Email
                   </label>
                   <div class="row">
                     <label class="text-primary text-weight-bold text-body-2 q-mb-sm">
@@ -70,7 +70,7 @@
               <div class="row q-pt-sm q-pb-md">
                 <div class="col-md-4 col-xs-12 dialog-form-section-input">
                   <label class="text-primary text-weight-regular text-body-2 q-mb-sm">
-                    Date of birth
+                    Date of Birth
                   </label>
                   <div class="row">
                     <label class="text-primary text-weight-bold text-body-2 q-mb-sm">
