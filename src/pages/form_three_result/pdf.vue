@@ -1,12 +1,12 @@
 <template>
   <div class="row q-pt-sm full-width no-print justify-center">
-    <q-btn @click="printForm" color="primary" label="SAVE RESULT"/>
+    <q-btn @click="printForm" color="primary" label="SAVE RESULT" />
   </div>
   <div style="print-color-adjust: exact; min-width: 1000px; max-width: 1000px; overflow-x scroll;"
     class="only-print row items-center justify-center q-pb-md q-px-lg">
 
     <q-card class="text-center full-width bg-transparent" flat>
-      <div class="row items-center q-my-md full-width">
+      <div class="row items-center q-my-xs full-width">
         <div class="col-2">
           <q-img src="~assets/cblogo.png" width="122px" />
         </div>
@@ -20,15 +20,15 @@
     <div class="col-12 form-wrapper">
       <q-card v-if="formThreeData" flat class="bg-white form-body">
         <!-- USER INFO SECTION START -->
-        <q-card-section class="q-pa-none q-mt-md dialog-form-section">
-          <div style="background: #f1f9ff" class="q-pa-md">
+        <q-card-section class="q-pa-none q-mt-sm dialog-form-section">
+          <div style="background: #f1f9ff" class="q-pa-xs">
             <p class="text-h6 q-ma-none text-accent text-weight-medium">
               EARLY CHILDHOOD DEVELOPMENT PROFILE:
             </p>
           </div>
 
           <!-- Row 1 -->
-          <div class="row q-py-lg">
+          <div class="row q-py-sm">
             <div class="col-12">
               <div class="row q-px-lg">
                 <div class="col-3">
@@ -59,7 +59,7 @@
 
 
           <!-- Row 2 -->
-          <div class="row q-py-lg">
+          <div class="row q-py-sm">
             <div class="col-12">
               <div class="row q-px-lg">
                 <div class="col-3">
@@ -89,8 +89,8 @@
         </q-card-section>
         <!-- USER INFO SECTION END -->
         <!-- SKILL AREA SECTION START -->
-        <q-card-section class="q-pa-none dialog-form-section q-mt-md">
-          <div class="row skill-area-header q-pa-md justify-center items-center">
+        <q-card-section class="q-pa-none dialog-form-section q-mt-xs">
+          <div class="row skill-area-header q-px-md q-py-xs justify-center items-center">
             <div class="col-5">
               <div class="row">
                 <div class="col-5 text-left">Skill Area</div>
@@ -113,16 +113,16 @@
             </div>
           </div>
           <div v-for="(skill, key) in formThreeData.skillArea" :key="key"
-            class="header row skill-area-body q-pa-md justify-center border">
+            class="header row skill-area-body q-px-md q-py-md justify-center border">
             <div class="col-5">
               <div class="row items-center">
                 <div class="col-5 text-left">
                   {{ skillAreaEnum[key] }}
                 </div>
                 <div v-if="!['academic_k', 'academic_one'].includes(`${key}`)" class="col-7 text-center">
-                  {{ skill.ageRangeYear }} Year
+                  {{ skill.ageRangeYear }} {{ skill.ageRangeYear == 1 ? 'Year' : 'Years' }}
                   &emsp;
-                  {{ skill.ageRangeMonth }} Month
+                  {{ skill.ageRangeMonth }} {{ skill.ageRangeMonth == 1 ? 'Month' : 'Months' }}
                 </div>
               </div>
             </div>
@@ -147,7 +147,7 @@
         <!-- SKILL AREA SECTION END -->
         <hr />
         <!-- SOCIAL_EMOTIONAL MATURITY START -->
-        <q-card-section class="q-pt-sm q-pa-none dialog-form-section">
+        <q-card-section class="q-pa-none dialog-form-section">
           <div class="row items-center justify-around q-px-md">
             <div class="col-3 text-weight-medium text-primary">Social-Emotional Maturity:</div>
             <div class="col-2">
@@ -167,16 +167,17 @@
         <!-- SOCIAL_EMOTIONAL MATURITY END -->
         <hr />
         <!-- SUCCESSFUL SCHOOL ENTRANCE START -->
-        <q-card-section class="q-pt-sm q-pa-none dialog-form-section">
+        <q-card-section class="q-pa-none dialog-form-section">
           <div>
-            <p>
-              For successful school entrance
+            <p class="q-mb-none q-px-sm">
+              For successful school entrance for the
               <b class="text-secondary"> {{ formThreeData.schoolEntranceYear }} </b>
-              recommended development in all skill areas be a minimum of
+              school year, recommended development in all skill areas be a minimum of
               <b class="text-secondary"> {{ formThreeData.schoolEntranceAgeYear }} </b>
-              year
+              {{ formThreeData.schoolEntranceAgeYear == 1 ? 'year' : 'years' }}
               <b class="text-secondary"> {{ formThreeData.schoolEntranceAgeMonth }} </b>
-              month of age by this time of the year with age appropriate
+              {{ formThreeData.schoolEntranceAgeMonth == 1 ? 'month' : 'months' }} of age by this time of the year with
+              age appropriate
               social emotional maturity.
             </p>
           </div>
@@ -184,13 +185,13 @@
         <!-- SUCCESSFUL SCHOOL ENTRANCE END -->
 
         <!-- SUMMARY OF PROFILE START -->
-        <q-card-section style="page-break-before: always;" class="q-pt-sm q-mt-lg q-pa-none dialog-form-section">
-          <div style="background: #f1f9ff" class="q-pa-md">
+        <q-card-section class="q-pt-sm q-pa-none dialog-form-section">
+          <div style="background: #f1f9ff" class="q-px-md q-py-xs">
             <p class="text-h6 q-ma-none text-accent text-weight-medium">
               SUMMARY OF PROFILE:
             </p>
           </div>
-          <div class="row q-pt-md">
+          <div class="row q-pt-xs">
             <div class="col-md-12 col-sm-12 col-xs-12">
               <div class="row items-center">
                 <div class="col-12">
@@ -208,7 +209,7 @@
                 <div class="col-12">
                   <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
                     v-model="formThreeData.summaryOfProfile.childSocialEmotionalAgeAppropriate
-                    " label="Child’s social-emotional development is age appropriate for chronological age" />
+                      " label="Child’s social-emotional development is age appropriate for chronological age" />
                 </div>
                 <div v-if="formThreeData.summaryOfProfile.childSocialEmotionalAgeAppropriateText" class="col-12">
                   <p class="comment-section-text q-ma-none">
@@ -270,14 +271,14 @@
         <!-- SUMMARY OF PROFILE END -->
 
         <!-- OBSERVATION START -->
-        <q-card-section class="q-pt-sm q-pa-none dialog-form-section q-mt-md">
-          <div style="background: #f1f9ff" class="q-pa-md">
+        <q-card-section style="page-break-before: always;" class="q-mt-sm q-pa-none dialog-form-section">
+          <div style="background: #f1f9ff" class="q-px-md q-py-xs">
             <p class="text-h6 q-ma-none text-accent text-weight-medium">
               OBSERVATION:
             </p>
           </div>
           <div class="row">
-            <div class="q-py-xs col-3" v-for="(observation, index) in formThreeData.observations" :key="index">
+            <div class="col-3" v-for="(observation, index) in formThreeData.observations" :key="index">
               <q-checkbox disable keep-color color="secondary" size="sm" v-if="observation.type === 'checkbox'"
                 true-value="1" false-value="0" v-model="observation.value" :label="observation.label" />
             </div>
@@ -287,8 +288,8 @@
 
         <hr />
         <!-- SKILL DEVELOPMENT FOR SCHOOL ENTRANCE START -->
-        <q-card-section class="q-py-sm q-pa-none dialog-from-section">
-          <div class="q-pa-sm">
+        <q-card-section class="q-pa-none dialog-from-section">
+          <div class="q-px-sm">
             <p class="text-body q-ma-none text-accent text-weight-medium">
               Skill Development for School Entrance
             </p>
@@ -312,8 +313,8 @@
 
         <hr />
         <!-- ACADEMIC ACHIEVEMENT FOR 1st GRADE READINESS START -->
-        <q-card-section class="q-py-sm q-pa-none dialog-from-section">
-          <div class="q-pa-sm">
+        <q-card-section class="q-pa-none dialog-from-section">
+          <div class="q-px-sm">
             <p class="text-body q-ma-none text-accent text-weight-medium">
               Academic Achievement for 1st Grade Readiness
             </p>
@@ -337,8 +338,8 @@
 
         <hr />
         <!-- SOCIAL-EMOTIONAL DEVELOPMENT FOR SCHOOL ENTRANCE START -->
-        <q-card-section class="q-py-sm q-pa-none dialog-from-section">
-          <div class="q-pa-sm">
+        <q-card-section class="q-pa-none dialog-from-section">
+          <div class="q-px-sm">
             <p class="text-body q-ma-none text-accent text-weight-medium">
               Social-Emotional Development for School Entrance
             </p>
@@ -361,8 +362,8 @@
         <!-- ASOCIAL-EMOTIONAL DEVELOPMENT FOR SCHOOL ENTRANCE END -->
 
         <!-- RECOMMENDATIONS START -->
-        <q-card-section style="page-break-before: always;" class="q-pt-sm q-mt-lg q-pa-none dialog-form-section">
-          <div style="background: #f1f9ff" class="q-pa-md">
+        <q-card-section class="q-pt-sm q-mt-sm q-pa-none dialog-form-section">
+          <div style="background: #f1f9ff" class="q-px-md q-py-xs">
             <p class="text-h6 q-ma-none text-accent text-weight-medium">
               RECOMMENDATIONS :
             </p>
@@ -373,10 +374,8 @@
                 <div class="col-12">
                   <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
                     v-model="formThreeData.recommendations.enterSchoolForUpcomingOrCurrentSchoolYear
-                    " label="Enter school for upcoming or current school year." />
-                </div>
-                <div v-if="formThreeData.recommendations.enterSchoolForUpcomingOrCurrentSchoolYearText" class="col-12">
-                  <p class="comment-section-text q-ma-none">
+                      " label="Enter school for upcoming or current school year" />
+                  <p class="inline-block q-pl-none comment-section-text q-ma-none">
                     {{ formThreeData.recommendations.enterSchoolForUpcomingOrCurrentSchoolYearText }}
                   </p>
                 </div>
@@ -385,7 +384,9 @@
                 <div class="col-12">
                   <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
                     v-model="formThreeData.recommendations.delaySchoolEntranceBasedOnScreeningResult
-                    " label="Delay school entrance based on screening results." />
+                      " label="Delay school entrance based on screening resultsFor successful school entrance for the 2024/2025 school year, recommended development in all skill areas is a minimum of 5 years 0 months of age by this time of
+year with age appropriate social emotional maturity.
+" />
                 </div>
                 <div v-if="formThreeData.recommendations.delaySchoolEntranceBasedOnScreeningResultText" class="col-12">
                   <p class="comment-section-text q-ma-none">
@@ -398,9 +399,7 @@
                   <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
                     v-model="formThreeData.recommendations.frustrationInSchoolMayOccur"
                     label="Frustration in school may occur. Due to" />
-                </div>
-                <div v-if="formThreeData.recommendations.frustrationInSchoolMayOccurText" class="col-12">
-                  <p class="comment-section-text q-ma-none">
+                  <p class="inline-block comment-section-text q-ma-none">
                     {{ formThreeData.recommendations.frustrationInSchoolMayOccurText }}
                   </p>
                 </div>
@@ -420,7 +419,7 @@
                 <div class="col-12">
                   <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
                     v-model="formThreeData.recommendations.monitorSchoolProgramIfYouChooseToEnter
-                    " label="Monitor school program if you choose to enter" />
+                      " label="Monitor school program if you choose to enter" />
                 </div>
                 <div v-if="formThreeData.recommendations.monitorSchoolProgramIfYouChooseToEnterText" class="col-12">
                   <p class="comment-section-text q-ma-none">
@@ -432,7 +431,7 @@
                 <div class="col-12">
                   <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
                     v-model="formThreeData.recommendations.furtherDiagnosticEvaluationNeeded
-                    " label="Further diagnostic evaluation needed." />
+                      " label="Further diagnostic evaluation needed" />
                 </div>
                 <div v-if="formThreeData.recommendations.furtherDiagnosticEvaluationNeededText" class="col-12">
                   <p class="comment-section-text q-ma-none">
@@ -451,7 +450,7 @@
                         {{ formThreeData.studentInfo.name }}
                       </b>
                       &nbsp;would benefit from another year of development
-                      growth before entering school.
+                      growth before entering school
                     </p>
                   </div>
                 </div>
