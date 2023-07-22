@@ -11,6 +11,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
 const { configure } = require('quasar/wrappers');
+require('dotenv').config();
 
 module.exports = configure(function (ctx) {
   return {
@@ -52,7 +53,9 @@ module.exports = configure(function (ctx) {
     // Full list of options: https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js#Property%3A-build
     build: {
       vueRouterMode: 'history', // available values: 'hash', 'history'
-
+      env: {
+        API_URL: process.env.API_URL,
+      },
       // transpile: false,
       // publicPath: '/',
 

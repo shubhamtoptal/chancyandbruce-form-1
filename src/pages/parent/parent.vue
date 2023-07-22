@@ -3,19 +3,21 @@ import StepOne from './step-one.vue';
 <template>
   <q-page class="row items-center justify-center q-pb-md">
     <!-- CONFIRMATION BLOCK -->
-    <div v-if="![-1, 1].includes(hasParentOptedScreening)" class="row items-start justify-center q-pb-md">
+    <div
+      v-if="![-1, 1].includes(hasParentOptedScreening)"
+      class="row items-start justify-center q-pb-md"
+    >
       <div class="col-sm-12 col-md-8 form-wrapper">
         <q-card flat class="bg-white form-body">
           <q-card-section>
             <p class="text-justify">
-              We are grateful that you have chosen us to help in your child's educational journey.
-              Please fill out the following information and provide a payment if prompted.
-              This information will be redirected to your child's teacher and used in the overall assessment of your
-              child.
-              Please complete this form as soon as possible to allow screeners enough time to utilze the information for
-              the
-              assessment.
-              We thank you in advance for your partnership!
+              We are grateful that you have chosen us to help in your child's
+              educational journey. Please fill out the following information and
+              provide a payment if prompted. This information will be redirected
+              to your child's teacher and used in the overall assessment of your
+              child. Please complete this form as soon as possible to allow
+              screeners enough time to utilze the information for the
+              assessment. We thank you in advance for your partnership!
             </p>
           </q-card-section>
           <q-card-section>
@@ -26,19 +28,43 @@ import StepOne from './step-one.vue';
             </p>
           </q-card-section>
           <q-card-actions class="bg-white q-mb-mb text-center justify-center">
-            <q-btn @click="dontProceed" outline color="secondary save-button app-button" no-caps label="No" />
-            <q-btn @click="proceedToNextStep" color="secondary save-button app-button" no-caps label="Yes" />
+            <q-btn
+              @click="dontProceed"
+              outline
+              color="secondary save-button app-button"
+              no-caps
+              label="No"
+            />
+            <q-btn
+              @click="proceedToNextStep"
+              color="secondary save-button app-button"
+              no-caps
+              label="Yes"
+            />
           </q-card-actions>
         </q-card>
       </div>
     </div>
     <!-- CONFIRMATION BLOCK ENDS -->
-    <StepOne v-show="step === 1" :move-to-step-two="moveToStepTwo" :step-one-data="stepOneData"
-      :student-data="studentData" />
-    <StepTwo v-show="step === 2" :move-to-step-one="moveToStepOne" :move-to-step-three="moveToStepThree"
-      :stepTwoData="stepTwoData" />
-    <StepThree v-show="step === 3" :move-to-step-two="moveToStepTwo" :stepThreeData="stepThreeData"
-      :submit-form="submitForm" :school-list="schoolList" />
+    <StepOne
+      v-show="step === 1"
+      :move-to-step-two="moveToStepTwo"
+      :step-one-data="stepOneData"
+      :student-data="studentData"
+    />
+    <StepTwo
+      v-show="step === 2"
+      :move-to-step-one="moveToStepOne"
+      :move-to-step-three="moveToStepThree"
+      :stepTwoData="stepTwoData"
+    />
+    <StepThree
+      v-show="step === 3"
+      :move-to-step-two="moveToStepTwo"
+      :stepThreeData="stepThreeData"
+      :submit-form="submitForm"
+      :school-list="schoolList"
+    />
   </q-page>
 </template>
 
@@ -120,7 +146,7 @@ export default defineComponent({
       }),
       stepOneData: ref({
         is_step_form_1_parent_complete: false,
-      })
+      }),
     };
   },
   mounted() {
@@ -138,7 +164,7 @@ export default defineComponent({
         method: 'PUT',
       })
         .then(() => {
-          window.location.href = 'https://www.chancyandbruce-ra.com/'
+          window.location.href = 'https://www.chancyandbruce-ra.com/';
         })
         .catch((err) => {
           console.error('getFormDetails() --->', err);
@@ -177,20 +203,28 @@ export default defineComponent({
         method: 'GET',
       })
         .then((resp) => {
-          const { stepOne, school, student, isPaymentRequired, paymentUrl, parentOptedScreening } = resp.data.data;
+          const {
+            stepOne,
+            school,
+            student,
+            isPaymentRequired,
+            paymentUrl,
+            parentOptedScreening,
+          } = resp.data.data;
           if (parentOptedScreening != 1) {
             this.hasParentOptedScreening = 0;
             return;
           }
           if (isPaymentRequired) {
-            window.location.href = paymentUrl
+            window.location.href = paymentUrl;
             return;
           }
           this.getSchoolList();
           this.hasParentOptedScreening = 1;
           this.stepOneData = {
-            is_step_form_1_parent_complete: stepOne.is_step_form_1_parent_complete
-          }
+            is_step_form_1_parent_complete:
+              stepOne.is_step_form_1_parent_complete,
+          };
           this.studentData = {
             _id: student._id,
             studentFirstName: student.student_first_name,
@@ -209,7 +243,7 @@ export default defineComponent({
             schoolName: school.school_name,
             schoolContact: student.school_contact,
             schoolId: student.school_id,
-          }
+          };
           this.step = 1;
         })
         .catch((err) => {
@@ -237,7 +271,7 @@ export default defineComponent({
           city: student.city,
           zip: student.zip,
           schoolContact: student.schoolContact,
-        }
+        };
       }
       this.step = 2;
     },
@@ -279,11 +313,11 @@ export default defineComponent({
           address: this.studentData.address,
           city: this.studentData.city,
           zip: this.studentData.zip,
-          school_id: this.studentData.schoolId
+          school_id: this.studentData.schoolId,
         },
         ...this.stepTwoData,
-        ...this.stepThreeData
-      }
+        ...this.stepThreeData,
+      };
       const url = `/api/parent/v1/form/step-one-parent/${this.$route.params.formId}`;
       api({
         url,
@@ -295,12 +329,12 @@ export default defineComponent({
             type: 'positive',
             message: 'Form submitted successfully',
           });
-          window.location.reload()
+          window.location.reload();
         })
         .catch((err) => {
           console.error('submitForm() --->', err);
         });
-    }
+    },
   },
 });
 </script>

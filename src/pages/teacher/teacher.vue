@@ -2,10 +2,18 @@ import StepOne from './step-one.vue';
 
 <template>
   <q-page class="row items-center justify-center q-pb-md">
-    <StepOne v-show="step === 1" :move-to-step-two="moveToStepTwo" :step-one-data="stepOneData"
-      :student-data="studentData" />
-    <StepTwo v-show="step === 2" :move-to-step-one="moveToStepOne" :submit-form="submitForm"
-      :step-two-data="stepTwoData" />
+    <StepOne
+      v-show="step === 1"
+      :move-to-step-two="moveToStepTwo"
+      :step-one-data="stepOneData"
+      :student-data="studentData"
+    />
+    <StepTwo
+      v-show="step === 2"
+      :move-to-step-one="moveToStepOne"
+      :submit-form="submitForm"
+      :step-two-data="stepTwoData"
+    />
   </q-page>
 </template>
 
@@ -21,7 +29,7 @@ export default defineComponent({
   name: 'ParentForm',
   components: {
     StepOne,
-    StepTwo
+    StepTwo,
   },
   setup() {
     return {
@@ -46,7 +54,7 @@ export default defineComponent({
         display_feeling_appropriate: 1,
         speech_understand_others: 1,
         accept_limit_follow_rules: 1,
-        comments: ''
+        comments: '',
       }),
       studentData: ref({
         studentFirstName: '',
@@ -66,7 +74,7 @@ export default defineComponent({
       }),
       stepOneData: ref({
         is_step_form_1_teacher_complete: false,
-      })
+      }),
     };
   },
   mounted() {
@@ -86,8 +94,9 @@ export default defineComponent({
         .then((resp) => {
           const { stepOne, school, student } = resp.data.data;
           this.stepOneData = {
-            is_step_form_1_teacher_complete: stepOne.is_step_form_1_teacher_complete
-          }
+            is_step_form_1_teacher_complete:
+              stepOne.is_step_form_1_teacher_complete,
+          };
           this.studentData = {
             studentFirstName: student.student_first_name,
             studentLastName: student.student_last_name,
@@ -103,7 +112,7 @@ export default defineComponent({
             city: student.city,
             zip: student.zip,
             schoolName: school.school_name,
-          }
+          };
           this.step = 1;
         })
         .catch((err) => {
@@ -118,10 +127,10 @@ export default defineComponent({
     },
     submitForm(data: StepThreeData) {
       console.log('data --->', data);
-      this.stepTwoData = { ...data }
+      this.stepTwoData = { ...data };
       const formData = {
-        ...this.stepTwoData
-      }
+        ...this.stepTwoData,
+      };
       const url = `/api/teacher/v1/form/step-one-teacher/${this.$route.params.formId}`;
       api({
         url,
@@ -133,12 +142,12 @@ export default defineComponent({
             type: 'positive',
             message: 'Form submitted successfully',
           });
-          window.location.reload()
+          window.location.reload();
         })
         .catch((err) => {
           console.error('submitForm() --->', err);
         });
-    }
+    },
   },
 });
 </script>

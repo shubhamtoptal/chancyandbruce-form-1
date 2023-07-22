@@ -30,56 +30,117 @@
             <div>
               <!-- First Row Start -->
               <div class="row q-pb-md">
-                <div class="col-md-4 col-xs-12" :class="$q.screen.lt.md ? 'q-pb-md' : ''">
+                <div
+                  class="col-md-4 col-xs-12"
+                  :class="$q.screen.lt.md ? 'q-pb-md' : ''"
+                >
                   <div class="row">
-                    <div class="col-md-6 col-xs-12 dialog-form-section-input" :class="$q.screen.lt.md ? 'q-pb-md' : ''">
-                      <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
+                    <div
+                      class="col-md-6 col-xs-12 dialog-form-section-input"
+                      :class="$q.screen.lt.md ? 'q-pb-md' : ''"
+                    >
+                      <label
+                        class="text-primary text-weight-medium text-body-2 q-mb-sm"
+                      >
                         Child's First Name
                       </label>
-                      <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
-                        placeholder="Child's First Name" v-model="studentFirstName" />
+                      <q-input
+                        :readonly="is_step_form_1_parent_complete"
+                        class="app-form-input q-mt-xs"
+                        outlined
+                        placeholder="Child's First Name"
+                        v-model="studentFirstName"
+                      />
                     </div>
-                    <div class="col-md-6 col-xs-12 dialog-form-section-input" :class="$q.screen.lt.md ? 'q-pb-md' : ''">
-                      <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
+                    <div
+                      class="col-md-6 col-xs-12 dialog-form-section-input"
+                      :class="$q.screen.lt.md ? 'q-pb-md' : ''"
+                    >
+                      <label
+                        class="text-primary text-weight-medium text-body-2 q-mb-sm"
+                      >
                         Child's Last Name
                       </label>
-                      <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
-                        placeholder="Child's First Name" v-model="studentLastName" />
+                      <q-input
+                        :readonly="is_step_form_1_parent_complete"
+                        class="app-form-input q-mt-xs"
+                        outlined
+                        placeholder="Child's First Name"
+                        v-model="studentLastName"
+                      />
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4 col-xs-12 dialog-form-section-input" :class="$q.screen.lt.md ? 'q-pb-md' : ''">
-                  <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
+                <div
+                  class="col-md-4 col-xs-12 dialog-form-section-input"
+                  :class="$q.screen.lt.md ? 'q-pb-md' : ''"
+                >
+                  <label
+                    class="text-primary text-weight-medium text-body-2 q-mb-sm"
+                  >
                     Primary Parent's Name
                   </label>
-                  <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
-                    placeholder="Primary Parent's Name" v-model="parentName" />
+                  <q-input
+                    :readonly="is_step_form_1_parent_complete"
+                    class="app-form-input q-mt-xs"
+                    outlined
+                    placeholder="Primary Parent's Name"
+                    v-model="parentName"
+                  />
                 </div>
 
                 <div class="col-md-4 col-xs-12 dialog-form-section-input">
-                  <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
+                  <label
+                    class="text-primary text-weight-medium text-body-2 q-mb-sm"
+                  >
                     Primary Parent's Email
                   </label>
-                  <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
-                    placeholder="Primary Parent's Email" v-model="parentEmail" />
+                  <q-input
+                    :readonly="is_step_form_1_parent_complete"
+                    class="app-form-input q-mt-xs"
+                    outlined
+                    placeholder="Primary Parent's Email"
+                    v-model="parentEmail"
+                  />
                 </div>
               </div>
               <!-- First Row End -->
               <!-- Second Row Start -->
               <div class="row q-pt-sm q-pb-md">
-                <div class="col-md-4 col-xs-12 dialog-form-section-input" :class="$q.screen.lt.md ? 'q-pb-md' : ''">
-                  <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
+                <div
+                  class="col-md-4 col-xs-12 dialog-form-section-input"
+                  :class="$q.screen.lt.md ? 'q-pb-md' : ''"
+                >
+                  <label
+                    class="text-primary text-weight-medium text-body-2 q-mb-sm"
+                  >
                     Date of Birth
                   </label>
-                  <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
-                    v-model="studentDob">
+                  <q-input
+                    :readonly="is_step_form_1_parent_complete"
+                    class="app-form-input q-mt-xs"
+                    outlined
+                    v-model="studentDob"
+                  >
                     <template v-slot:append>
-                      <q-icon name="img:/app-icons/datepicker-icon.svg" class="cursor-pointer">
-                        <q-popup-proxy v-if="!is_step_form_1_parent_complete" cover transition-show="scale"
-                          transition-hide="scale">
+                      <q-icon
+                        name="img:/app-icons/datepicker-icon.svg"
+                        class="cursor-pointer"
+                      >
+                        <q-popup-proxy
+                          v-if="!is_step_form_1_parent_complete"
+                          cover
+                          transition-show="scale"
+                          transition-hide="scale"
+                        >
                           <q-date v-model="studentDob">
                             <div class="row items-center justify-end">
-                              <q-btn v-close-popup label="Close" color="primary" flat />
+                              <q-btn
+                                v-close-popup
+                                label="Close"
+                                color="primary"
+                                flat
+                              />
                             </div>
                           </q-date>
                         </q-popup-proxy>
@@ -87,54 +148,108 @@
                     </template>
                   </q-input>
                 </div>
-                <div class="col-md-4 col-xs-12 dialog-form-section-input" :class="$q.screen.lt.md ? 'q-pb-md' : ''">
-                  <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
+                <div
+                  class="col-md-4 col-xs-12 dialog-form-section-input"
+                  :class="$q.screen.lt.md ? 'q-pb-md' : ''"
+                >
+                  <label
+                    class="text-primary text-weight-medium text-body-2 q-mb-sm"
+                  >
                     Height
                   </label>
-                  <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
-                    placeholder="Height eg. 5'4&quot;" v-model="studentHeight" />
+                  <q-input
+                    :readonly="is_step_form_1_parent_complete"
+                    class="app-form-input q-mt-xs"
+                    outlined
+                    placeholder="Height eg. 5'4&quot;"
+                    v-model="studentHeight"
+                  />
                 </div>
                 <div class="col-md-4 col-xs-12 dialog-form-section-input">
-                  <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
+                  <label
+                    class="text-primary text-weight-medium text-body-2 q-mb-sm"
+                  >
                     Gender
                   </label>
-                  <q-option-group :disable="is_step_form_1_parent_complete" inline :options="genderOptions" type="radio"
-                    class="q-mt-xs flex items-center gender-option-group" v-model="studentGender" />
+                  <q-option-group
+                    :disable="is_step_form_1_parent_complete"
+                    inline
+                    :options="genderOptions"
+                    type="radio"
+                    class="q-mt-xs flex items-center gender-option-group"
+                    v-model="studentGender"
+                  />
                 </div>
               </div>
               <!-- Second Row End -->
               <!-- Thid Row Start -->
               <div class="row q-pt-sm q-pb-md">
-                <div class="col-md-4 col-xs-12 dialog-form-section-input" :class="$q.screen.lt.md ? 'q-pb-md' : ''">
-                  <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
+                <div
+                  class="col-md-4 col-xs-12 dialog-form-section-input"
+                  :class="$q.screen.lt.md ? 'q-pb-md' : ''"
+                >
+                  <label
+                    class="text-primary text-weight-medium text-body-2 q-mb-sm"
+                  >
                     Parent's Contact Number
                   </label>
-                  <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
-                    placeholder="Parent's Contact Number" v-model="parentContact" />
+                  <q-input
+                    :readonly="is_step_form_1_parent_complete"
+                    class="app-form-input q-mt-xs"
+                    outlined
+                    placeholder="Parent's Contact Number"
+                    v-model="parentContact"
+                  />
                 </div>
-                <div class="col-md-4 col-xs-12 dialog-form-section-input" :class="$q.screen.lt.md ? 'q-pb-md' : ''">
-                  <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
+                <div
+                  class="col-md-4 col-xs-12 dialog-form-section-input"
+                  :class="$q.screen.lt.md ? 'q-pb-md' : ''"
+                >
+                  <label
+                    class="text-primary text-weight-medium text-body-2 q-mb-sm"
+                  >
                     Address
                   </label>
-                  <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
-                    placeholder="Enter your address" v-model="address" />
+                  <q-input
+                    :readonly="is_step_form_1_parent_complete"
+                    class="app-form-input q-mt-xs"
+                    outlined
+                    placeholder="Enter your address"
+                    v-model="address"
+                  />
                 </div>
                 <div class="col-md-4 col-xs-12 dialog-form-section-input">
                   <div class="row">
-                    <div class="col-md-6 col-xs-12 dialog-form-section-input-sub-left"
-                      :class="$q.screen.lt.md ? 'q-pb-md' : ''">
-                      <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
+                    <div
+                      class="col-md-6 col-xs-12 dialog-form-section-input-sub-left"
+                      :class="$q.screen.lt.md ? 'q-pb-md' : ''"
+                    >
+                      <label
+                        class="text-primary text-weight-medium text-body-2 q-mb-sm"
+                      >
                         City
                       </label>
-                      <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
-                        placeholder="Enter City" v-model="city" />
+                      <q-input
+                        :readonly="is_step_form_1_parent_complete"
+                        class="app-form-input q-mt-xs"
+                        outlined
+                        placeholder="Enter City"
+                        v-model="city"
+                      />
                     </div>
                     <div class="col-md-6 col-xs-12">
-                      <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
+                      <label
+                        class="text-primary text-weight-medium text-body-2 q-mb-sm"
+                      >
                         Zip
                       </label>
-                      <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
-                        placeholder="Enter Zip" v-model="zip" />
+                      <q-input
+                        :readonly="is_step_form_1_parent_complete"
+                        class="app-form-input q-mt-xs"
+                        outlined
+                        placeholder="Enter Zip"
+                        v-model="zip"
+                      />
                     </div>
                   </div>
                 </div>
@@ -142,26 +257,53 @@
               <!-- Third Row End -->
               <!-- Fourth Row Start -->
               <div class="row q-pb-md">
-                <div class="col-md-4 col-xs-12 dialog-form-section-input" :class="$q.screen.lt.md ? 'q-pb-md' : ''">
-                  <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
+                <div
+                  class="col-md-4 col-xs-12 dialog-form-section-input"
+                  :class="$q.screen.lt.md ? 'q-pb-md' : ''"
+                >
+                  <label
+                    class="text-primary text-weight-medium text-body-2 q-mb-sm"
+                  >
                     Teacher's Email
                   </label>
-                  <q-input :readonly="true" class="app-form-input q-mt-xs" outlined placeholder="Teacher's Email"
-                    v-model="teacherEmail" />
+                  <q-input
+                    :readonly="true"
+                    class="app-form-input q-mt-xs"
+                    outlined
+                    placeholder="Teacher's Email"
+                    v-model="teacherEmail"
+                  />
                 </div>
-                <div class="col-md-2 col-xs-12 dialog-form-section-input" :class="$q.screen.lt.md ? 'q-pb-md' : ''">
-                  <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
+                <div
+                  class="col-md-2 col-xs-12 dialog-form-section-input"
+                  :class="$q.screen.lt.md ? 'q-pb-md' : ''"
+                >
+                  <label
+                    class="text-primary text-weight-medium text-body-2 q-mb-sm"
+                  >
                     Grade Entry
                   </label>
-                  <q-input :readonly="true" class="app-form-input q-mt-xs" outlined placeholder="Grade Entry"
-                    v-model="gradeEntry" />
+                  <q-input
+                    :readonly="true"
+                    class="app-form-input q-mt-xs"
+                    outlined
+                    placeholder="Grade Entry"
+                    v-model="gradeEntry"
+                  />
                 </div>
                 <div class="col-md-6 col-xs-12 dialog-form-section-input">
-                  <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
+                  <label
+                    class="text-primary text-weight-medium text-body-2 q-mb-sm"
+                  >
                     School Name
                   </label>
-                  <q-input :readonly="true" class="app-form-input q-mt-xs" outlined placeholder="School Name"
-                    v-model="schoolName" />
+                  <q-input
+                    :readonly="true"
+                    class="app-form-input q-mt-xs"
+                    outlined
+                    placeholder="School Name"
+                    v-model="schoolName"
+                  />
                 </div>
               </div>
               <!-- Fourth Row End -->
@@ -177,8 +319,17 @@
               </q-banner>
             </div>
           </q-card-section>
-          <q-card-actions v-else align="right" class="bg-white q-mb-mb text-center">
-            <q-btn @click="moveToNextStep()" color="secondary save-button app-button" no-caps label="Next" />
+          <q-card-actions
+            v-else
+            align="right"
+            class="bg-white q-mb-mb text-center"
+          >
+            <q-btn
+              @click="moveToNextStep()"
+              color="secondary save-button app-button"
+              no-caps
+              label="Next"
+            />
           </q-card-actions>
         </q-form>
       </q-card>
@@ -195,11 +346,11 @@ export default defineComponent({
   props: {
     stepOneData: {
       type: Object,
-      required: true
+      required: true,
     },
     studentData: {
       type: Object,
-      required: true
+      required: true,
     },
     moveToStepTwo: {
       type: Function as PropType<{
@@ -250,8 +401,8 @@ export default defineComponent({
       this.zip = nv.zip;
     },
     stepOneData(nv) {
-      this.is_step_form_1_parent_complete = nv.is_step_form_1_parent_complete
-    }
+      this.is_step_form_1_parent_complete = nv.is_step_form_1_parent_complete;
+    },
   },
   methods: {
     moveToNextStep() {
@@ -273,10 +424,10 @@ export default defineComponent({
         address: this.address,
         city: this.city,
         zip: this.zip,
-      }
+      };
       this.moveToStepTwo(data);
-    }
-  }
+    },
+  },
 });
 </script>
 
