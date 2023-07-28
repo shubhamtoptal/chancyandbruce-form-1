@@ -18,8 +18,8 @@
             <q-banner class="bg-banner-success">
               <p class="q-mb-none text-positive text-weight-bold">
                 To aid us in determining the child's social-emotional level,
-                please mark in the input column the behaviour listed below that
-                you have observed the child performing.
+                please mark in the input column the behavior listed below
+                that you have observed the child performing.
               </p>
             </q-banner>
           </div>
@@ -27,16 +27,8 @@
       </q-card>
 
       <div class="row q-mb-md">
-        <p
-          class="q-mb-none text-primary text-weight-regular text-caption col-md-8 col-xs-6 q-pl-lg"
-        >
-          Child’s Behaviour
-        </p>
-        <p
-          class="q-mb-none text-primary text-weight-regular text-caption col-md-4 col-xs-4"
-        >
-          Input
-        </p>
+        <p class="q-mb-none text-primary text-weight-regular text-caption col-md-8 col-xs-6 q-pl-lg">Child’s Behavior</p>
+        <p class="q-mb-none text-primary text-weight-regular text-caption col-md-4 col-xs-4">Input</p>
       </div>
 
       <q-card flat class="bg-white form-body">
@@ -46,20 +38,12 @@
               <!-- First Row Start -->
               <div class="row q-pb-sm items-center">
                 <div class="col-md-7 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-body-1 text-weight-regular items-center"
-                  >
+                  <label class="text-primary text-body-1 text-weight-regular items-center">
                     Shows curiosity and interest in his/her surroundings
                   </label>
                 </div>
                 <div class="col-md-5 col-xs-12 dialog-form-section-input">
-                  <q-option-group
-                    inline
-                    :options="options"
-                    type="radio"
-                    class="q-px-xs"
-                    v-model="show_curiosity"
-                  />
+                  <q-option-group inline :options="options" type="radio" class="q-px-xs" v-model="show_curiosity" />
                 </div>
               </div>
               <hr class="q-mb-md" />
@@ -67,20 +51,13 @@
               <!-- Second Row Start -->
               <div class="row q-pb-sm items-center">
                 <div class="col-md-7 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-body-1 text-weight-regular items-center"
-                  >
+                  <label class="text-primary text-body-1 text-weight-regular items-center">
                     Initiates own play activities
                   </label>
                 </div>
                 <div class="col-md-5 col-xs-12 dialog-form-section-input">
-                  <q-option-group
-                    inline
-                    :options="options"
-                    type="radio"
-                    class="q-px-xs"
-                    v-model="initiate_play_activity"
-                  />
+                  <q-option-group inline :options="options" type="radio" class="q-px-xs"
+                    v-model="initiate_play_activity" />
                 </div>
               </div>
               <hr class="q-mb-md" />
@@ -88,20 +65,13 @@
               <!-- Third Row Start -->
               <div class="row q-pb-sm items-center">
                 <div class="col-md-7 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-body-1 text-weight-regular items-center"
-                  >
+                  <label class="text-primary text-body-1 text-weight-regular items-center">
                     Works and plays cooperatively with other children
                   </label>
                 </div>
                 <div class="col-md-5 col-xs-12 dialog-form-section-input">
-                  <q-option-group
-                    inline
-                    :options="options"
-                    type="radio"
-                    class="q-px-xs"
-                    v-model="works_play_cooperatively"
-                  />
+                  <q-option-group inline :options="options" type="radio" class="q-px-xs"
+                    v-model="works_play_cooperatively" />
                 </div>
               </div>
               <hr class="q-mb-md" />
@@ -109,20 +79,13 @@
               <!-- Fourth Row Start -->
               <div class="row q-pb-sm items-center">
                 <div class="col-md-7 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-body-1 text-weight-regular items-center"
-                  >
+                  <label class="text-primary text-body-1 text-weight-regular items-center">
                     Talks comfortably with other children:
                   </label>
                 </div>
                 <div class="col-md-5 col-xs-12 dialog-form-section-input">
-                  <q-option-group
-                    inline
-                    :options="options"
-                    type="radio"
-                    class="q-px-xs"
-                    v-model="talk_comfortably_other_child"
-                  />
+                  <q-option-group inline :options="options" type="radio" class="q-px-xs"
+                    v-model="talk_comfortably_other_child" />
                 </div>
               </div>
               <hr class="q-mb-md" />
@@ -130,20 +93,12 @@
               <!-- Fifth Row Start -->
               <div class="row q-pb-sm items-center">
                 <div class="col-md-7 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-body-1 text-weight-regular items-center"
-                  >
+                  <label class="text-primary text-body-1 text-weight-regular items-center">
                     Takes turns and shares
                   </label>
                 </div>
                 <div class="col-md-5 col-xs-12 dialog-form-section-input">
-                  <q-option-group
-                    inline
-                    :options="options"
-                    type="radio"
-                    class="q-px-xs"
-                    v-model="turns_and_share"
-                  />
+                  <q-option-group inline :options="options" type="radio" class="q-px-xs" v-model="turns_and_share" />
                 </div>
               </div>
               <hr class="q-mb-md" />
@@ -151,20 +106,13 @@
               <!-- Sixth Row Start -->
               <div class="row q-pb-sm items-center">
                 <div class="col-md-7 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-body-1 text-weight-regular items-center"
-                  >
+                  <label class="text-primary text-body-1 text-weight-regular items-center">
                     Participates with others in a large group
                   </label>
                 </div>
                 <div class="col-md-5 col-xs-12 dialog-form-section-input">
-                  <q-option-group
-                    inline
-                    :options="options"
-                    type="radio"
-                    class="q-px-xs"
-                    v-model="participate_large_group"
-                  />
+                  <q-option-group inline :options="options" type="radio" class="q-px-xs"
+                    v-model="participate_large_group" />
                 </div>
               </div>
               <hr class="q-mb-md" />
@@ -172,20 +120,12 @@
               <!-- Seventh Row Start -->
               <div class="row q-pb-sm items-center">
                 <div class="col-md-7 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-body-1 text-weight-regular items-center"
-                  >
+                  <label class="text-primary text-body-1 text-weight-regular items-center">
                     Shows concern for others and their property
                   </label>
                 </div>
                 <div class="col-md-5 col-xs-12 dialog-form-section-input">
-                  <q-option-group
-                    inline
-                    :options="options"
-                    type="radio"
-                    class="q-px-xs"
-                    v-model="show_concern"
-                  />
+                  <q-option-group inline :options="options" type="radio" class="q-px-xs" v-model="show_concern" />
                 </div>
               </div>
               <hr class="q-mb-md" />
@@ -193,20 +133,13 @@
               <!-- Nineth Row Start -->
               <div class="row q-pb-sm items-center">
                 <div class="col-md-7 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-body-1 text-weight-regular items-center"
-                  >
+                  <label class="text-primary text-body-1 text-weight-regular items-center">
                     Accepts responsibility
                   </label>
                 </div>
                 <div class="col-md-5 col-xs-12 dialog-form-section-input">
-                  <q-option-group
-                    inline
-                    :options="options"
-                    type="radio"
-                    class="q-px-xs"
-                    v-model="accepts_responsibility"
-                  />
+                  <q-option-group inline :options="options" type="radio" class="q-px-xs"
+                    v-model="accepts_responsibility" />
                 </div>
               </div>
               <hr class="q-mb-md" />
@@ -214,20 +147,12 @@
               <!-- Tenth Row Start -->
               <div class="row q-pb-sm items-center">
                 <div class="col-md-7 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-body-1 text-weight-regular items-center"
-                  >
+                  <label class="text-primary text-body-1 text-weight-regular items-center">
                     Separates from parents without reluctance
                   </label>
                 </div>
                 <div class="col-md-5 col-xs-12 dialog-form-section-input">
-                  <q-option-group
-                    inline
-                    :options="options"
-                    type="radio"
-                    class="q-px-xs"
-                    v-model="seperate_from_parent"
-                  />
+                  <q-option-group inline :options="options" type="radio" class="q-px-xs" v-model="seperate_from_parent" />
                 </div>
               </div>
               <hr class="q-mb-md" />
@@ -235,20 +160,13 @@
               <!-- Eleventh Row Start -->
               <div class="row q-pb-sm items-center">
                 <div class="col-md-7 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-body-1 text-weight-regular items-center"
-                  >
+                  <label class="text-primary text-body-1 text-weight-regular items-center">
                     Does simple tasks independently
                   </label>
                 </div>
                 <div class="col-md-5 col-xs-12 dialog-form-section-input">
-                  <q-option-group
-                    inline
-                    :options="options"
-                    type="radio"
-                    class="q-px-xs"
-                    v-model="simple_task_independent"
-                  />
+                  <q-option-group inline :options="options" type="radio" class="q-px-xs"
+                    v-model="simple_task_independent" />
                 </div>
               </div>
               <hr class="q-mb-md" />
@@ -256,20 +174,12 @@
               <!-- Twelve Row Start -->
               <div class="row q-pb-sm items-center">
                 <div class="col-md-7 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-body-1 text-weight-regular items-center"
-                  >
+                  <label class="text-primary text-body-1 text-weight-regular items-center">
                     Follows directions
                   </label>
                 </div>
                 <div class="col-md-5 col-xs-12 dialog-form-section-input">
-                  <q-option-group
-                    inline
-                    :options="options"
-                    type="radio"
-                    class="q-px-xs"
-                    v-model="follow_direction"
-                  />
+                  <q-option-group inline :options="options" type="radio" class="q-px-xs" v-model="follow_direction" />
                 </div>
               </div>
               <hr class="q-mb-md" />
@@ -277,20 +187,12 @@
               <!-- Thirteen Row Start -->
               <div class="row q-pb-sm items-center">
                 <div class="col-md-7 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-body-1 text-weight-regular items-center"
-                  >
+                  <label class="text-primary text-body-1 text-weight-regular items-center">
                     Pays attention
                   </label>
                 </div>
                 <div class="col-md-5 col-xs-12 dialog-form-section-input">
-                  <q-option-group
-                    inline
-                    :options="options"
-                    type="radio"
-                    class="q-px-xs"
-                    v-model="pay_attention"
-                  />
+                  <q-option-group inline :options="options" type="radio" class="q-px-xs" v-model="pay_attention" />
                 </div>
               </div>
               <hr class="q-mb-md" />
@@ -298,20 +200,13 @@
               <!-- Fourteen Row Start -->
               <div class="row q-pb-sm items-center">
                 <div class="col-md-7 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-body-1 text-weight-regular items-center"
-                  >
+                  <label class="text-primary text-body-1 text-weight-regular items-center">
                     Consistently completes tasks
                   </label>
                 </div>
                 <div class="col-md-5 col-xs-12 dialog-form-section-input">
-                  <q-option-group
-                    inline
-                    :options="options"
-                    type="radio"
-                    class="q-px-xs"
-                    v-model="consistent_complete_task"
-                  />
+                  <q-option-group inline :options="options" type="radio" class="q-px-xs"
+                    v-model="consistent_complete_task" />
                 </div>
               </div>
               <hr class="q-mb-md" />
@@ -319,20 +214,13 @@
               <!-- Fifteen Row Start -->
               <div class="row q-pb-sm items-center">
                 <div class="col-md-7 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-body-1 text-weight-regular items-center"
-                  >
+                  <label class="text-primary text-body-1 text-weight-regular items-center">
                     Attends to a task for at least 10 minutes
                   </label>
                 </div>
                 <div class="col-md-5 col-xs-12 dialog-form-section-input">
-                  <q-option-group
-                    inline
-                    :options="options"
-                    type="radio"
-                    class="q-px-xs"
-                    v-model="attend_to_task_10_min"
-                  />
+                  <q-option-group inline :options="options" type="radio" class="q-px-xs"
+                    v-model="attend_to_task_10_min" />
                 </div>
               </div>
               <hr class="q-mb-md" />
@@ -340,20 +228,12 @@
               <!-- Sixteen Row Start -->
               <div class="row q-pb-sm items-center">
                 <div class="col-md-7 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-body-1 text-weight-regular items-center"
-                  >
+                  <label class="text-primary text-body-1 text-weight-regular items-center">
                     Is eager to learn new tasks
                   </label>
                 </div>
                 <div class="col-md-5 col-xs-12 dialog-form-section-input">
-                  <q-option-group
-                    inline
-                    :options="options"
-                    type="radio"
-                    class="q-px-xs"
-                    v-model="eager_learn_new_task"
-                  />
+                  <q-option-group inline :options="options" type="radio" class="q-px-xs" v-model="eager_learn_new_task" />
                 </div>
               </div>
               <hr class="q-mb-md" />
@@ -361,20 +241,12 @@
               <!-- Seventeenth Row Start -->
               <div class="row q-pb-sm items-center">
                 <div class="col-md-7 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-body-1 text-weight-regular items-center"
-                  >
+                  <label class="text-primary text-body-1 text-weight-regular items-center">
                     Able to express wants and needs
                   </label>
                 </div>
                 <div class="col-md-5 col-xs-12 dialog-form-section-input">
-                  <q-option-group
-                    inline
-                    :options="options"
-                    type="radio"
-                    class="q-px-xs"
-                    v-model="express_want_need"
-                  />
+                  <q-option-group inline :options="options" type="radio" class="q-px-xs" v-model="express_want_need" />
                 </div>
               </div>
               <hr class="q-mb-md" />
@@ -382,20 +254,13 @@
               <!-- Eigteenth Row Start -->
               <div class="row q-pb-sm items-center">
                 <div class="col-md-7 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-body-1 text-weight-regular items-center"
-                  >
+                  <label class="text-primary text-body-1 text-weight-regular items-center">
                     Accepts limits/Follows rules
                   </label>
                 </div>
                 <div class="col-md-5 col-xs-12 dialog-form-section-input">
-                  <q-option-group
-                    inline
-                    :options="options"
-                    type="radio"
-                    class="q-px-xs"
-                    v-model="accept_limit_follow_rules"
-                  />
+                  <q-option-group inline :options="options" type="radio" class="q-px-xs"
+                    v-model="accept_limit_follow_rules" />
                 </div>
               </div>
               <hr class="q-mb-md" />
@@ -403,20 +268,13 @@
               <!-- Nineteenth Row Start -->
               <div class="row q-pb-sm items-center">
                 <div class="col-md-7 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-body-1 text-weight-regular items-center"
-                  >
+                  <label class="text-primary text-body-1 text-weight-regular items-center">
                     Displays feelings in appropriate ways
                   </label>
                 </div>
                 <div class="col-md-5 col-xs-12 dialog-form-section-input">
-                  <q-option-group
-                    inline
-                    :options="options"
-                    type="radio"
-                    class="q-px-xs"
-                    v-model="display_feeling_appropriate"
-                  />
+                  <q-option-group inline :options="options" type="radio" class="q-px-xs"
+                    v-model="display_feeling_appropriate" />
                 </div>
               </div>
               <hr class="q-mb-md" />
@@ -424,20 +282,13 @@
               <!-- Twenteeth Row Start -->
               <div class="row q-pb-sm items-center">
                 <div class="col-md-7 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-body-1 text-weight-regular items-center"
-                  >
+                  <label class="text-primary text-body-1 text-weight-regular items-center">
                     Speech understood by others
                   </label>
                 </div>
                 <div class="col-md-5 col-xs-12 dialog-form-section-input">
-                  <q-option-group
-                    inline
-                    :options="options"
-                    type="radio"
-                    class="q-px-xs"
-                    v-model="speech_understand_others"
-                  />
+                  <q-option-group inline :options="options" type="radio" class="q-px-xs"
+                    v-model="speech_understand_others" />
                 </div>
               </div>
               <hr class="q-mb-md" />
@@ -448,26 +299,17 @@
                   Additional Information
                 </p>
                 <div class="col-md-12 col-xs-6 dialog-form-section-input">
-                  <label
-                    class="text-primary text-body-1 text-weight-regular items-center"
-                  >
+                  <label class="text-primary text-body-1 text-weight-regular items-center">
                     Additional Comments:
                   </label>
                 </div>
                 <div class="row q-pb-md q-my-md">
                   <div class="col-md-12 col-xs-12 dialog-form-section-input">
-                    <label
-                      class="text-primary text-weight-medium text-body-2 q-mb-sm"
-                    >
+                    <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
                       Comment
                     </label>
-                    <q-input
-                      type="textarea"
-                      class="app-form-input q-mt-xs"
-                      outlined
-                      placeholder="Write comments here"
-                      v-model="comments"
-                    />
+                    <q-input type="textarea" class="app-form-input q-mt-xs" outlined placeholder="Write comments here"
+                      v-model="comments" />
                   </div>
                 </div>
               </div>
@@ -475,18 +317,8 @@
           </q-card-section>
 
           <q-card-actions align="right" class="bg-white q-mb-mb text-center">
-            <q-btn
-              @click="moveToStepOne()"
-              color="light back-btn app-button q-mr-md"
-              no-caps
-              label="Back"
-            />
-            <q-btn
-              @click="submitStepTwo()"
-              color="secondary save-button app-button"
-              no-caps
-              label="Save"
-            />
+            <q-btn @click="moveToStepOne()" color="light back-btn app-button q-mr-md" no-caps label="Back" />
+            <q-btn @click="submitStepTwo()" color="secondary save-button app-button" no-caps label="Save" />
           </q-card-actions>
         </q-form>
       </q-card>
