@@ -18,10 +18,10 @@
             <q-banner class="bg-banner-success">
               <p class="q-mb-none text-positive text-weight-bold">
                 To aid us in determining your child's social-emotional level,
-                please mark in the parent column the Behavior listed below
-                that you have observed your child performing. Your child's
-                teacher will also be marking the Behavior she has observed
-                your child performing in the classroom.
+                please mark in the parent column the behavior listed below that
+                you have observed your child performing. Your child's teacher
+                will also be marking the behavior she has observed your child
+                performing in the classroom.
               </p>
             </q-banner>
           </div>
@@ -29,8 +29,12 @@
       </q-card>
 
       <div class="row q-mb-lg">
-        <p class="q-mb-none text-primary text-weight-regular text-caption col-md-8 col-xs-6 q-pl-lg">Child’s Behavior</p>
-        <p class="q-mb-none text-primary text-weight-regular text-caption col-md-4 col-xs-4">Input</p>
+        <p class="q-mb-none text-primary text-weight-regular text-caption col-md-8 col-xs-6 q-pl-lg">
+          Child’s Behavior
+        </p>
+        <p class="q-mb-none text-primary text-weight-regular text-caption col-md-4 col-xs-4">
+          Input
+        </p>
       </div>
 
       <q-card flat class="bg-white form-body">
@@ -323,7 +327,8 @@
                 <div v-if="sendFormToSchool" class="row q-pb-md q-my-md">
                   <div class="col-md-12 col-xs-6 dialog-form-section-input q-pb-md">
                     <label class="text-primary text-body-1 text-weight-regular items-center">
-                      Please list schools you would like C&B to send assessment results to:
+                      Please list schools you would like C&B to send assessment
+                      results to:
                     </label>
                   </div>
                   <div class="col-md-12 col-xs-12 dialog-form-section-input">
@@ -336,8 +341,12 @@
                       <template v-slot:option="scope">
                         <q-item v-bind="scope.itemProps">
                           <q-item-section>
-                            <q-item-label>{{ scope.opt.school_name }}</q-item-label>
-                            <q-item-label class="text-black" caption>{{ scope.opt.school_address }}</q-item-label>
+                            <q-item-label>{{
+                              scope.opt.school_name
+                            }}</q-item-label>
+                            <q-item-label class="text-black" caption>{{
+                              scope.opt.school_address
+                            }}</q-item-label>
                           </q-item-section>
                         </q-item>
                       </template>
@@ -383,8 +392,8 @@ export default defineComponent({
     },
     schoolList: {
       type: Array<SchoolListInterface>,
-      required: true
-    }
+      required: true,
+    },
   },
   setup() {
     return {
@@ -421,13 +430,14 @@ export default defineComponent({
   watch: {
     schoolList(nv) {
       this.selectSchoolList = nv;
-    }
+    },
   },
   mounted() {
     this.show_curiosity = this.stepThreeData.show_curiosity;
     this.initiate_play_activity = this.stepThreeData.initiate_play_activity;
     this.works_play_cooperatively = this.stepThreeData.works_play_cooperatively;
-    this.talk_comfortably_other_child = this.stepThreeData.talk_comfortably_other_child;
+    this.talk_comfortably_other_child =
+      this.stepThreeData.talk_comfortably_other_child;
     this.turns_and_share = this.stepThreeData.turns_and_share;
     this.participate_large_group = this.stepThreeData.participate_large_group;
     this.accepts_responsibility = this.stepThreeData.accepts_responsibility;
@@ -440,8 +450,10 @@ export default defineComponent({
     this.eager_learn_new_task = this.stepThreeData.eager_learn_new_task;
     this.attend_to_task_10_min = this.stepThreeData.attend_to_task_10_min;
     this.express_want_need = this.stepThreeData.express_want_need;
-    this.accept_limit_follow_rules = this.stepThreeData.accept_limit_follow_rules;
-    this.display_feeling_appropriate = this.stepThreeData.display_feeling_appropriate;
+    this.accept_limit_follow_rules =
+      this.stepThreeData.accept_limit_follow_rules;
+    this.display_feeling_appropriate =
+      this.stepThreeData.display_feeling_appropriate;
     this.speech_understand_others = this.stepThreeData.speech_understand_others;
     this.comments = this.stepThreeData.comments;
     this.school_list = this.stepThreeData.school_list;
@@ -469,24 +481,26 @@ export default defineComponent({
         display_feeling_appropriate: this.display_feeling_appropriate,
         speech_understand_others: this.speech_understand_others,
         comments: this.comments,
-        school_list: this.school_list
-      }
+        school_list: this.school_list,
+      };
       this.submitForm(data);
     },
     filterFn(val: string, update: (callback: () => void) => void) {
       if (val === '') {
         update(() => {
-          this.selectSchoolList = this.schoolList
-        })
-        return
+          this.selectSchoolList = this.schoolList;
+        });
+        return;
       }
 
       update(() => {
-        const needle = val.toLowerCase()
-        this.selectSchoolList = this.schoolList.filter(v => v.school_name.toLowerCase().indexOf(needle) > -1)
-      })
-    }
-  }
+        const needle = val.toLowerCase();
+        this.selectSchoolList = this.schoolList.filter(
+          (v) => v.school_name.toLowerCase().indexOf(needle) > -1
+        );
+      });
+    },
+  },
 });
 </script>
 

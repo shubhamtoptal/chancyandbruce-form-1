@@ -18,7 +18,7 @@
             <q-banner class="bg-banner-success">
               <p class="q-mb-none text-positive text-weight-bold">
                 To aid us in determining the child's social-emotional level,
-                please mark in the input column the behaviour listed below
+                please mark in the input column the behavior listed below
                 that you have observed the child performing.
               </p>
             </q-banner>
@@ -27,7 +27,7 @@
       </q-card>
 
       <div class="row q-mb-md">
-        <p class="q-mb-none text-primary text-weight-regular text-caption col-md-8 col-xs-6 q-pl-lg">Child’s Behaviour</p>
+        <p class="q-mb-none text-primary text-weight-regular text-caption col-md-8 col-xs-6 q-pl-lg">Child’s Behavior</p>
         <p class="q-mb-none text-primary text-weight-regular text-caption col-md-4 col-xs-4">Input</p>
       </div>
 
@@ -376,14 +376,15 @@ export default defineComponent({
       accept_limit_follow_rules: ref(1),
       display_feeling_appropriate: ref(1),
       speech_understand_others: ref(1),
-      comments: ref('')
+      comments: ref(''),
     };
   },
   mounted() {
     this.show_curiosity = this.stepTwoData.show_curiosity;
     this.initiate_play_activity = this.stepTwoData.initiate_play_activity;
     this.works_play_cooperatively = this.stepTwoData.works_play_cooperatively;
-    this.talk_comfortably_other_child = this.stepTwoData.talk_comfortably_other_child;
+    this.talk_comfortably_other_child =
+      this.stepTwoData.talk_comfortably_other_child;
     this.turns_and_share = this.stepTwoData.turns_and_share;
     this.participate_large_group = this.stepTwoData.participate_large_group;
     this.accepts_responsibility = this.stepTwoData.accepts_responsibility;
@@ -397,7 +398,8 @@ export default defineComponent({
     this.attend_to_task_10_min = this.stepTwoData.attend_to_task_10_min;
     this.express_want_need = this.stepTwoData.express_want_need;
     this.accept_limit_follow_rules = this.stepTwoData.accept_limit_follow_rules;
-    this.display_feeling_appropriate = this.stepTwoData.display_feeling_appropriate;
+    this.display_feeling_appropriate =
+      this.stepTwoData.display_feeling_appropriate;
     this.speech_understand_others = this.stepTwoData.speech_understand_others;
     this.comments = this.stepTwoData.comments;
   },
@@ -424,11 +426,11 @@ export default defineComponent({
         display_feeling_appropriate: this.display_feeling_appropriate,
         speech_understand_others: this.speech_understand_others,
         comments: this.comments,
-        school_list: []
-      }
+        school_list: [],
+      };
       this.submitForm(data);
-    }
-  }
+    },
+  },
 });
 </script>
 
