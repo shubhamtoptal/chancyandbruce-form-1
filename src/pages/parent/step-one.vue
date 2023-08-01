@@ -8,7 +8,7 @@
         <hr class="q-mb-md" />
       </div>
       <q-card flat class="bg-white form-body">
-        <q-form @submit="moveToNextStep()">
+        <q-form @submit="() => moveToNextStep()">
           <q-card-section>
             <div class="card-header">
               <div clas="step-info">
@@ -213,7 +213,7 @@
             </div>
           </q-card-section>
           <q-card-actions v-else align="right" class="bg-white q-mb-mb text-center">
-            <q-btn color="secondary save-button app-button" no-caps label="Next" />
+            <q-btn type="submit" color="secondary save-button app-button" no-caps label="Next" />
           </q-card-actions>
         </q-form>
       </q-card>
