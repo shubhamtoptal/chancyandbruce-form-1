@@ -87,7 +87,7 @@
                   &emsp;
                   <div class="text-body2">
                     {{
-                      formThreeData.summaryOfProfile
+                      formThreeData.recommendations
                         .enterSchoolForUpcomingOrCurrentSchoolYearText || '-'
                     }}
                   </div>
