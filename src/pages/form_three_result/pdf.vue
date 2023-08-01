@@ -88,7 +88,7 @@
                   <div class="text-body2">
                     {{
                       formThreeData.summaryOfProfile
-                        .childDevelopmentAgeAppropriateText || '-'
+                        .enterSchoolForUpcomingOrCurrentSchoolYearText || '-'
                     }}
                   </div>
                 </div>
