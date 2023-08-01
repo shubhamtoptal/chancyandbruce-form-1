@@ -537,6 +537,24 @@ year with age appropriate social emotional maturity.
               </div>
             </div>
           </div>
+          <div class="row q-pt-md full-width q-px-sm">
+            <div class="row q-pb-md q-my-md full-width">
+              <div class="col-12 dialog-form-section-input">
+                <div class="col-12 q-pt-sm">
+                  <p style="
+                      font-size: 1rem;
+                      padding-left: 10px;
+                    ">
+                    If your child has been recommended for Kindergarten, we advise that you purchase the Resource Kit on
+                    <br />
+                    <a target="_blank" href="https://www.chancyandbruce-ra.com/">chancyandbruce-ra.com</a> to continue his
+                    or hers
+                    growth.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </q-card-section>
         <!-- RECOMMENDATIONS END -->
       </q-card>
