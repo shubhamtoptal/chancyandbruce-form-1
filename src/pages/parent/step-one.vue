@@ -172,21 +172,16 @@
                   <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
                     Teacher's Email
                   </label>
-                  <q-input :readonly="true" class="app-form-input q-mt-xs" outlined placeholder="Teacher's Email"
-                    v-model="teacherEmail" :rules="[
-                      (val) =>
-                        (val && validateEmail(val)) || errorMsg.valideEmail,
-                    ]" />
+                  <q-input class="app-form-input q-mt-xs" outlined placeholder="Teacher's Email" v-model="teacherEmail" />
                 </div>
                 <div class="col-md-2 col-xs-12 dialog-form-section-input" :class="$q.screen.lt.md ? 'q-pb-md' : ''">
                   <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
                     Grade Entry
                   </label>
-                  <q-input :readonly="true" class="app-form-input q-mt-xs" outlined placeholder="Grade Entry"
-                    v-model="gradeEntry" :rules="[
-                      (val) =>
-                        (val && val.length > 0) || errorMsg.gradeEntryReqd,
-                    ]" />
+                  <q-input class="app-form-input q-mt-xs" outlined placeholder="Grade Entry" v-model="gradeEntry" :rules="[
+                    (val) =>
+                      (val && val.length > 0) || errorMsg.gradeEntryReqd,
+                  ]" />
                 </div>
                 <div class="col-md-6 col-xs-12 dialog-form-section-input">
                   <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
