@@ -87,8 +87,8 @@
                   &emsp;
                   <div class="text-body2">
                     {{
-                      formThreeData.summaryOfProfile
-                        .childDevelopmentAgeAppropriateText || '-'
+                      formThreeData.recommendations
+                        .enterSchoolForUpcomingOrCurrentSchoolYearText || '-'
                     }}
                   </div>
                 </div>
@@ -545,7 +545,8 @@ year with age appropriate social emotional maturity.
                       font-size: 1rem;
                       padding-left: 10px;
                     ">
-                    If your child has been recommended for Kindergarten, we advise that you purchase the Resource Kit on
+                    If your child has not been recommended for Kindergarten, we advise that you purchase the Resource Kit
+                    on
                     <br />
                     <a target="_blank" href="https://www.chancyandbruce-ra.com/">chancyandbruce-ra.com</a> to continue his
                     or hers
