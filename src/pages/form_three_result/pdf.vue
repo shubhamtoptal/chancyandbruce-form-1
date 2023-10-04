@@ -426,9 +426,7 @@
                   <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
                     v-model="formThreeData.recommendations
                       .delaySchoolEntranceBasedOnScreeningResult
-                      " label="Delay school entrance based on screening results. For successful school entrance for the 2024/2025 school year, recommended development in all skill areas is a minimum of 5 years 0 months of age by this time of
-year with age appropriate social emotional maturity.
-" />
+                      " label="Delay school entrance based on screening results." />
                 </div>
                 <div v-if="formThreeData.recommendations
                   .delaySchoolEntranceBasedOnScreeningResultText
