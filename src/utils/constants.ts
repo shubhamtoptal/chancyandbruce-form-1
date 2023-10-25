@@ -14,6 +14,6 @@ export const ERROR_MSGS = {
 export const REGEX = {
   PHONE:
     /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/,
-  EMAIL: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+  EMAIL: /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/,
   NAME: /^[a-zA-Z\s]+$/,
 };
