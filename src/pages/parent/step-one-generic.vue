@@ -8,7 +8,7 @@
         <hr class="q-mb-md" />
       </div>
       <q-card flat class="bg-white form-body">
-        <q-form @submit="() => moveToNextStep()">
+        <q-form @submit="() => submitForm()">
           <q-card-section>
             <div class="card-header">
               <div class="step-info">
@@ -36,8 +36,8 @@
                       <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
                         Child's First Name
                       </label>
-                      <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
-                        placeholder="Child's First Name" v-model="studentFirstName" :rules="[
+                      <q-input class="app-form-input q-mt-xs" outlined placeholder="Child's First Name"
+                        v-model="studentFirstName" :rules="[
                           (val) =>
                             (val && val.length > 0) || errorMsg.studentNameReqd,
                         ]" />
@@ -46,8 +46,8 @@
                       <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
                         Child's Last Name
                       </label>
-                      <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
-                        placeholder="Child's First Name" v-model="studentLastName" :rules="[
+                      <q-input class="app-form-input q-mt-xs" outlined placeholder="Child's First Name"
+                        v-model="studentLastName" :rules="[
                           (val) =>
                             (val && val.length > 0) || errorMsg.studentNameReqd,
                         ]" />
@@ -58,8 +58,8 @@
                   <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
                     Primary Parent's Name
                   </label>
-                  <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
-                    placeholder="Primary Parent's Name" v-model="parentName" :rules="[
+                  <q-input class="app-form-input q-mt-xs" outlined placeholder="Primary Parent's Name"
+                    v-model="parentName" :rules="[
                       (val) =>
                         (val && val.length > 0) || errorMsg.parentsNameReqd,
                     ]" />
@@ -69,10 +69,10 @@
                   <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
                     Primary Parent's Email
                   </label>
-                  <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
-                    placeholder="Primary Parent's Email" v-model="parentEmail" :rules="[
+                  <q-input class="app-form-input q-mt-xs" outlined placeholder="Primary Parent's Email"
+                    v-model="parentEmail" :rules="[
                       (val) =>
-                        (val && validateEmail(val)) || errorMsg.valideEmail,
+                        (val && validateEmail(val)) || errorMsg.validEmail,
                     ]" />
                 </div>
               </div>
@@ -83,8 +83,7 @@
                   <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
                     Date of Birth
                   </label>
-                  <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
-                    v-model="studentDob">
+                  <q-input class="app-form-input q-mt-xs" outlined v-model="studentDob">
                     <template v-slot:append>
                       <q-icon name="img:/app-icons/datepicker-icon.svg" class="cursor-pointer">
                         <q-popup-proxy v-if="!is_step_form_1_parent_complete" cover transition-show="scale"
@@ -103,8 +102,8 @@
                   <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
                     Height
                   </label>
-                  <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
-                    placeholder="Height eg. 5'4&quot;" v-model="studentHeight" :rules="[
+                  <q-input class="app-form-input q-mt-xs" outlined placeholder="Height eg. 5'4&quot;"
+                    v-model="studentHeight" :rules="[
                       (val) =>
                         (val && val.length > 0) || errorMsg.heightReqd,
                     ]" />
@@ -124,8 +123,8 @@
                   <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
                     Parent's Contact Number
                   </label>
-                  <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
-                    placeholder="Parent's Contact Number" v-model="parentContact" :rules="[
+                  <q-input class="app-form-input q-mt-xs" outlined placeholder="Parent's Contact Number"
+                    v-model="parentContact" :rules="[
                       (val) => (val && validatePhoneNumber(val)) || errorMsg.parentsContactReqd,
                     ]" />
                 </div>
@@ -133,8 +132,8 @@
                   <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
                     Address
                   </label>
-                  <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
-                    placeholder="Enter your address" v-model="address" :rules="[
+                  <q-input class="app-form-input q-mt-xs" outlined placeholder="Enter your address" v-model="address"
+                    :rules="[
                       (val) =>
                         (val && val.length > 0) || errorMsg.studentsAddressReqd,
                     ]" />
@@ -146,21 +145,19 @@
                       <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
                         City
                       </label>
-                      <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
-                        placeholder="Enter City" v-model="city" :rules="[
-                          (val) =>
-                            (val && val.length > 0) || errorMsg.cityReqd,
-                        ]" />
+                      <q-input class="app-form-input q-mt-xs" outlined placeholder="Enter City" v-model="city" :rules="[
+                        (val) =>
+                          (val && val.length > 0) || errorMsg.cityReqd,
+                      ]" />
                     </div>
                     <div class="col-md-6 col-xs-12">
                       <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
                         Zip
                       </label>
-                      <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
-                        placeholder="Enter Zip" v-model="zip" :rules="[
-                          (val) =>
-                            (val && val.length > 0) || errorMsg.zipReqd,
-                        ]" />
+                      <q-input class="app-form-input q-mt-xs" outlined placeholder="Enter Zip" v-model="zip" :rules="[
+                        (val) =>
+                          (val && val.length > 0) || errorMsg.zipReqd,
+                      ]" />
                     </div>
                   </div>
                 </div>
@@ -197,17 +194,7 @@
               <!-- Fourth Row End -->
             </div>
           </q-card-section>
-
-          <q-card-section v-if="is_step_form_1_parent_complete">
-            <div class="card-header">
-              <q-banner class="bg-banner-success">
-                <p class="q-mb-none text-positive text-weight-bold">
-                  Note: You have submitted the form successfully.
-                </p>
-              </q-banner>
-            </div>
-          </q-card-section>
-          <q-card-actions v-else align="right" class="bg-white q-mb-mb text-center">
+          <q-card-actions align="right" class="bg-white q-mb-mb text-center">
             <q-btn type="submit" color="secondary save-button app-button" no-caps label="Next" />
           </q-card-actions>
         </q-form>
@@ -217,28 +204,13 @@
 </template>
 
 <script lang="ts">
-import { StudentData } from 'src/quasar';
-import { PropType, defineComponent, ref } from 'vue';
+import { defineComponent, ref } from 'vue';
 import { validateEmail, validatePhoneNumber } from 'src/utils/helper';
+import { api } from 'src/boot/axios';
+import { Notify } from 'quasar';
 
 export default defineComponent({
-  name: 'ParentStepOne',
-  props: {
-    stepOneData: {
-      type: Object,
-      required: true,
-    },
-    studentData: {
-      type: Object,
-      required: true,
-    },
-    moveToStepTwo: {
-      type: Function as PropType<{
-        (data: StudentData): void;
-      }>,
-      required: true,
-    },
-  },
+  name: 'StepOneGeneric',
   setup() {
     return {
       genderOptions: [
@@ -268,7 +240,7 @@ export default defineComponent({
         studentHeightRqd: 'Height must be filled in',
         parentsNameReqd: "Parent's Name must be valid",
         heightReqd: 'Student Height must be filled in',
-        valideEmail: 'Must be a valid email.',
+        validEmail: 'Must be a valid email.',
         genderRequired: 'Student Gender must be filled in',
         studentsAddressReqd: 'Address must be filled in',
         cityReqd: 'City must be filled in',
@@ -280,49 +252,71 @@ export default defineComponent({
       },
     };
   },
-  watch: {
-    studentData(nv) {
-      this.studentFirstName = nv.studentFirstName;
-      this.studentLastName = nv.studentLastName;
-      this.studentGender = nv.studentGender;
-      this.studentHeight = nv.studentHeight;
-      this.studentDob = nv.studentDob;
-      this.parentContact = nv.parentContact;
-      this.parentEmail = nv.parentEmail;
-      this.parentName = nv.parentName;
-      this.teacherEmail = nv.teacherEmail;
-      this.gradeEntry = nv.gradeEntry;
-      this.schoolName = nv.schoolName;
-      this.address = nv.address;
-      this.city = nv.city;
-      this.zip = nv.zip;
-    },
-    stepOneData(nv) {
-      this.is_step_form_1_parent_complete = nv.is_step_form_1_parent_complete;
-    },
+  mounted() {
+    if (this.$route.params.schoolId) {
+      this.getSchoolDetail();
+    } else {
+      this.$router.push('/404');
+    }
   },
   methods: {
-    moveToNextStep() {
-      const data: StudentData = {
-        _id: this.studentData._id,
+    getSchoolDetail() {
+      this.$q.loading.show();
+      const url = `/api/parent/v1/school/detail/${this.$route.params.schoolId}`;
+      api({
+        url,
+        method: 'GET',
+      })
+        .then((res) => {
+          this.schoolName = res.data.data.school.school_name;
+          this.$q.loading.hide();
+        })
+        .catch((err) => {
+          this.$q.loading.hide();
+          this.$router.push('/404');
+          console.error('getSchoolDetail() --->', err);
+        });
+    },
+    submitForm() {
+      const formData = {
         studentFirstName: this.studentFirstName,
         studentLastName: this.studentLastName,
+        studentDob: this.studentDob,
         studentGender: this.studentGender,
         studentHeight: this.studentHeight,
-        studentDob: this.studentDob,
-        parentContact: this.parentContact,
-        parentEmail: this.parentEmail,
         parentName: this.parentName,
+        parentEmail: this.parentEmail,
+        parentContact: this.parentContact,
         teacherEmail: this.teacherEmail,
-        gradeEntry: this.gradeEntry,
-        schoolName: this.schoolName,
         schoolContact: this.schoolContact,
-        schoolId: this.studentData.schoolId,
+        gradeEntry: this.gradeEntry,
         address: this.address,
         city: this.city,
         zip: this.zip,
+        schoolId: this.$route.params.schoolId,
       };
-      this.moveToStepTwo(data);
+      const url = '/api/parent/v1/form/create-parent-form';
+      api({
+        url,
+        method: 'POST',
+        data: formData,
+      })
+        .then((res) => {
+          this.$router.push({
+            name: 'ParentFormPage',
+            params: {
+              formId: res.data.data.data.parentFormUUID
+            },
+          });
+        })
+        .catch((err) => {
+          Notify.create({
+            message: err.response.data.message,
+            color: 'negative',
+            icon: 'report_problem',
+          });
+          console.error('submitForm() --->', err);
+        });
     },
   },
 });
