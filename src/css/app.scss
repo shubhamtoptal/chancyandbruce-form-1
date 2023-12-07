@@ -71,6 +71,11 @@ body {
   border-color: $grey;
 }
 
+.q-field__control.relative-position.row.no-wrap {
+  height: 50px;
+  min-height: 50px;
+}
+
 .q-field--outlined .q-field__control:hover:before {
   border-color: #145e858a;
 }

@@ -178,10 +178,11 @@
                   <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
                     Grade Entry
                   </label>
-                  <q-input class="app-form-input q-mt-xs" outlined placeholder="Grade Entry" v-model="gradeEntry" :rules="[
-                    (val) =>
-                      (val && val.length > 0) || errorMsg.gradeEntryReqd,
-                  ]" />
+                  <q-select class="app-form-input cursor-pointer q-mt-xs" outlined :options="gradeEntryOptions"
+                    v-model="gradeEntry" options-selected-class="text-white bg-secondary" :rules="[
+                      (val) =>
+                        (val && val.length > 0) || errorMsg.gradeEntryReqd,
+                    ]" />
                 </div>
                 <div class="col-md-6 col-xs-12 dialog-form-section-input">
                   <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
@@ -245,6 +246,7 @@ export default defineComponent({
         { label: 'Boy', value: 1 },
         { label: 'Girl', value: 2 },
       ],
+      gradeEntryOptions: ['Pre-K', 'TK', 'K', '1st'],
       studentFirstName: ref(''),
       studentLastName: ref(''),
       studentHeight: ref(''),
