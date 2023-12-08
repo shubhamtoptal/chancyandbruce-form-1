@@ -72,7 +72,7 @@
                   <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
                     placeholder="Primary Parent's Email" v-model="parentEmail" :rules="[
                       (val) =>
-                        (val && validateEmail(val)) || errorMsg.valideEmail,
+                        (val && validateEmail(val)) || errorMsg.validEmail,
                     ]" />
                 </div>
               </div>
@@ -270,7 +270,7 @@ export default defineComponent({
         studentHeightRqd: 'Height must be filled in',
         parentsNameReqd: "Parent's Name must be valid",
         heightReqd: 'Student Height must be filled in',
-        valideEmail: 'Must be a valid email.',
+        validEmail: 'Must be a valid email.',
         genderRequired: 'Student Gender must be filled in',
         studentsAddressReqd: 'Address must be filled in',
         cityReqd: 'City must be filled in',
