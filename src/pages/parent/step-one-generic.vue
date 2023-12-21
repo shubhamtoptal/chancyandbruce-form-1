@@ -218,7 +218,7 @@ export default defineComponent({
         { label: 'Boy', value: 1 },
         { label: 'Girl', value: 2 },
       ],
-      gradeEntryOptions: ['Pre-K', 'TK', 'K', '1st'],
+      gradeEntryOptions: ['Pre-K', 'JK', 'TK', 'K', '1st'],
       studentFirstName: ref(''),
       studentLastName: ref(''),
       studentHeight: ref(''),
