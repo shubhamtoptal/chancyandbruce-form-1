@@ -176,7 +176,7 @@
                 </div>
                 <div class="col-md-2 col-xs-12 dialog-form-section-input" :class="$q.screen.lt.md ? 'q-pb-md' : ''">
                   <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
-                    Grade Entry
+                    Grade Entering
                   </label>
                   <q-select class="app-form-input cursor-pointer q-mt-xs" outlined :options="gradeEntryOptions"
                     v-model="gradeEntry" options-selected-class="text-white bg-secondary" :rules="[
@@ -277,7 +277,7 @@ export default defineComponent({
         zipReqd: 'Zip must be filled in',
         parentsContactReqd: " Parent's Contact must be valid",
         schoolContactReqd: 'School Contact Number must be valid',
-        gradeEntryReqd: 'Grade Entry must be filled in',
+        gradeEntryReqd: 'Grade Entering must be filled in',
         schoolNameReqd: 'School Name must be filled in'
       },
     };

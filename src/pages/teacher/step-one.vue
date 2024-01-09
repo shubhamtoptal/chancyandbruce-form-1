@@ -24,58 +24,42 @@
               <!-- First Row Start -->
               <div class="row q-pb-md">
                 <div class="col-md-4 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-weight-regular text-body-2 q-mb-sm"
-                  >
+                  <label class="text-primary text-weight-regular text-body-2 q-mb-sm">
                     Child's First Name
                   </label>
                   <div class="row">
-                    <label
-                      class="text-primary text-weight-bold text-body-2 q-mb-sm"
-                    >
+                    <label class="text-primary text-weight-bold text-body-2 q-mb-sm">
                       {{ studentFirstName }}
                     </label>
                   </div>
                 </div>
                 <div class="col-md-4 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-weight-regular text-body-2 q-mb-sm"
-                  >
+                  <label class="text-primary text-weight-regular text-body-2 q-mb-sm">
                     Child's Last Name
                   </label>
                   <div class="row">
-                    <label
-                      class="text-primary text-weight-bold text-body-2 q-mb-sm"
-                    >
+                    <label class="text-primary text-weight-bold text-body-2 q-mb-sm">
                       {{ studentLastName }}
                     </label>
                   </div>
                 </div>
                 <div class="col-md-4 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-weight-regular text-body-2 q-mb-sm"
-                  >
+                  <label class="text-primary text-weight-regular text-body-2 q-mb-sm">
                     Primary Parent's Name
                   </label>
                   <div class="row">
-                    <label
-                      class="text-primary text-weight-bold text-body-2 q-mb-sm"
-                    >
+                    <label class="text-primary text-weight-bold text-body-2 q-mb-sm">
                       {{ parentName }}
                     </label>
                   </div>
                 </div>
 
                 <div class="col-md-4 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-weight-regular text-body-2 q-mb-sm"
-                  >
+                  <label class="text-primary text-weight-regular text-body-2 q-mb-sm">
                     Parent's Email
                   </label>
                   <div class="row">
-                    <label
-                      class="text-primary text-weight-bold text-body-2 q-mb-sm"
-                    >
+                    <label class="text-primary text-weight-bold text-body-2 q-mb-sm">
                       {{ parentEmail }}
                     </label>
                   </div>
@@ -85,43 +69,31 @@
               <!-- Second Row Start -->
               <div class="row q-pt-sm q-pb-md">
                 <div class="col-md-4 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-weight-regular text-body-2 q-mb-sm"
-                  >
+                  <label class="text-primary text-weight-regular text-body-2 q-mb-sm">
                     Date of Birth
                   </label>
                   <div class="row">
-                    <label
-                      class="text-primary text-weight-bold text-body-2 q-mb-sm"
-                    >
+                    <label class="text-primary text-weight-bold text-body-2 q-mb-sm">
                       {{ studentDob }}
                     </label>
                   </div>
                 </div>
                 <div class="col-md-4 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-weight-regular text-body-2 q-mb-sm"
-                  >
+                  <label class="text-primary text-weight-regular text-body-2 q-mb-sm">
                     Gender
                   </label>
                   <div class="row">
-                    <label
-                      class="text-primary text-weight-bold text-body-2 q-mb-sm"
-                    >
+                    <label class="text-primary text-weight-bold text-body-2 q-mb-sm">
                       {{ studentGender == '1' ? 'Boy' : 'Girl' }}
                     </label>
                   </div>
                 </div>
                 <div class="col-md-4 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-weight-regular text-body-2 q-mb-sm"
-                  >
-                    Grade Entry
+                  <label class="text-primary text-weight-regular text-body-2 q-mb-sm">
+                    Grade Entering
                   </label>
                   <div class="row">
-                    <label
-                      class="text-primary text-weight-bold text-body-2 q-mb-sm"
-                    >
+                    <label class="text-primary text-weight-bold text-body-2 q-mb-sm">
                       {{ gradeEntry }}
                     </label>
                   </div>
@@ -131,62 +103,44 @@
               <!-- Thid Row Start -->
               <div class="row q-pt-sm q-pb-md">
                 <div class="col-md-4 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-weight-regular text-body-2 q-mb-sm"
-                  >
+                  <label class="text-primary text-weight-regular text-body-2 q-mb-sm">
                     Parent's Contact Number
                   </label>
                   <div class="row">
-                    <label
-                      class="text-primary text-weight-bold text-body-2 q-mb-sm"
-                    >
+                    <label class="text-primary text-weight-bold text-body-2 q-mb-sm">
                       {{ parentContact }}
                     </label>
                   </div>
                 </div>
                 <div class="col-md-4 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-weight-regular text-body-2 q-mb-sm"
-                  >
+                  <label class="text-primary text-weight-regular text-body-2 q-mb-sm">
                     Address
                   </label>
                   <div class="row">
-                    <label
-                      class="text-primary text-weight-bold text-body-2 q-mb-sm"
-                    >
+                    <label class="text-primary text-weight-bold text-body-2 q-mb-sm">
                       {{ address }}
                     </label>
                   </div>
                 </div>
                 <div class="col-md-4 col-xs-12 dialog-form-section-input">
                   <div class="row">
-                    <div
-                      class="col-md-6 col-xs-12 dialog-form-section-input-sub-left"
-                    >
-                      <label
-                        class="text-primary text-weight-regular text-body-2 q-mb-sm"
-                      >
+                    <div class="col-md-6 col-xs-12 dialog-form-section-input-sub-left">
+                      <label class="text-primary text-weight-regular text-body-2 q-mb-sm">
                         City
                       </label>
                       <div class="row">
-                        <label
-                          class="text-primary text-weight-bold text-body-2 q-mb-sm"
-                        >
+                        <label class="text-primary text-weight-bold text-body-2 q-mb-sm">
                           {{ city }}
                         </label>
                       </div>
                     </div>
                     <div class="col-md-6 col-xs-12">
-                      <label
-                        class="text-primary text-weight-regular text-body-2 q-mb-sm"
-                      >
+                      <label class="text-primary text-weight-regular text-body-2 q-mb-sm">
                         Zip
                       </label>
                       <div class="row">
-                        <label
-                          class="text-primary text-weight-bold text-body-2"
-                          :class="{ 'q-mb-sm': !$q.platform.is.mobile }"
-                        >
+                        <label class="text-primary text-weight-bold text-body-2"
+                          :class="{ 'q-mb-sm': !$q.platform.is.mobile }">
                           {{ zip }}
                         </label>
                       </div>
@@ -198,15 +152,11 @@
               <!-- Fourth Row Start -->
               <div class="row q-pt-sm q-pb-md">
                 <div class="col-md-8 col-xs-12 dialog-form-section-input">
-                  <label
-                    class="text-primary text-weight-regular text-body-2 q-mb-sm"
-                  >
+                  <label class="text-primary text-weight-regular text-body-2 q-mb-sm">
                     School Name
                   </label>
                   <div class="row">
-                    <label
-                      class="text-primary text-weight-bold text-body-2 q-mb-sm"
-                    >
+                    <label class="text-primary text-weight-bold text-body-2 q-mb-sm">
                       {{ schoolName }}
                     </label>
                   </div>
@@ -225,17 +175,8 @@
               </q-banner>
             </div>
           </q-card-section>
-          <q-card-actions
-            v-else
-            align="right"
-            class="bg-white q-mb-mb text-center"
-          >
-            <q-btn
-              @click="moveToStepTwo()"
-              color="secondary save-button app-button"
-              no-caps
-              label="Next"
-            />
+          <q-card-actions v-else align="right" class="bg-white q-mb-mb text-center">
+            <q-btn @click="moveToStepTwo()" color="secondary save-button app-button" no-caps label="Next" />
           </q-card-actions>
         </q-form>
       </q-card>
