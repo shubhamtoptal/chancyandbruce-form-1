@@ -83,8 +83,10 @@
                   <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
                     Date of Birth
                   </label>
-                  <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
-                    v-model="studentDob">
+                  <q-input readonly class="app-form-input q-mt-xs" outlined v-model="studentDob" :rules="[
+                    (val) =>
+                      (val && val.length > 0) || errorMsg.studentDobReqd,
+                  ]">
                     <template v-slot:append>
                       <q-icon name="img:/app-icons/datepicker-icon.svg" class="cursor-pointer">
                         <q-popup-proxy v-if="!is_step_form_1_parent_complete" cover transition-show="scale"
@@ -176,15 +178,31 @@
                 </div>
                 <div class="col-md-2 col-xs-12 dialog-form-section-input" :class="$q.screen.lt.md ? 'q-pb-md' : ''">
                   <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
-                    Grade Entering
+                    Current Grade
                   </label>
-                  <q-select class="app-form-input cursor-pointer q-mt-xs" outlined :options="gradeEntryOptions"
-                    v-model="gradeEntry" options-selected-class="text-white bg-secondary" :rules="[
+                  <q-select :readonly="is_step_form_1_parent_complete" class="app-form-input cursor-pointer q-mt-xs"
+                    outlined :options="gradeEntryOptions" v-model="gradeEntry"
+                    options-selected-class="text-white bg-secondary" :rules="[
                       (val) =>
                         (val && val.length > 0) || errorMsg.gradeEntryReqd,
                     ]" />
                 </div>
-                <div class="col-md-6 col-xs-12 dialog-form-section-input">
+                <div class="col-md-2 col-xs-12 dialog-form-section-input" :class="$q.screen.lt.md ? 'q-pb-md' : ''">
+                  <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
+                    Grade Entering
+                  </label>
+                  <q-select :readonly="is_step_form_1_parent_complete" class="app-form-input cursor-pointer q-mt-xs"
+                    outlined :options="gradeEnteringOptions" v-model="gradeEntering"
+                    options-selected-class="text-white bg-secondary" :rules="[
+                      (val) =>
+                        (val && val.length > 0) || errorMsg.gradeEnteringReqd,
+                    ]" />
+                </div>
+              </div>
+              <!-- Fourth Row End -->
+              <!-- Fifth Row Start -->
+              <div class="row q-pb-md">
+                <div class="col-md-12 col-xs-12 dialog-form-section-input">
                   <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
                     School Name
                   </label>
@@ -195,7 +213,7 @@
                     ]" />
                 </div>
               </div>
-              <!-- Fourth Row End -->
+              <!-- Fifth Row End -->
             </div>
           </q-card-section>
 
@@ -220,7 +238,7 @@
 <script lang="ts">
 import { StudentData } from 'src/quasar';
 import { PropType, defineComponent, ref } from 'vue';
-import { validateEmail, validatePhoneNumber } from 'src/utils/helper';
+import { validateEmail, validatePhoneNumber, isNotYYYYMMDD } from 'src/utils/helper';
 
 export default defineComponent({
   name: 'ParentStepOne',
@@ -246,7 +264,8 @@ export default defineComponent({
         { label: 'Boy', value: 1 },
         { label: 'Girl', value: 2 },
       ],
-      gradeEntryOptions: ['Pre-K', 'JK', 'TK', 'K', '1st'],
+      gradeEntryOptions: ['None', 'Pre-K', 'TK', 'JK', 'K', '1st', '2nd', '3rd', '4th', '5th', '6th', '7th'],
+      gradeEnteringOptions: ['Pre-K', 'TK', 'JK', 'K', '1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th'],
       studentFirstName: ref(''),
       studentLastName: ref(''),
       studentHeight: ref(''),
@@ -256,6 +275,7 @@ export default defineComponent({
       parentEmail: ref(''),
       parentContact: ref(''),
       gradeEntry: ref(''),
+      gradeEntering: ref(''),
       schoolContact: ref(''),
       teacherEmail: ref(''),
       address: ref(''),
@@ -271,6 +291,7 @@ export default defineComponent({
         parentsNameReqd: "Parent's Name must be valid",
         heightReqd: 'Student Height must be filled in',
         validEmail: 'Must be a valid email.',
+        studentDobReqd: 'Student DOB must be filled in.',
         genderRequired: 'Student Gender must be filled in',
         studentsAddressReqd: 'Address must be filled in',
         cityReqd: 'City must be filled in',
@@ -278,6 +299,7 @@ export default defineComponent({
         parentsContactReqd: " Parent's Contact must be valid",
         schoolContactReqd: 'School Contact Number must be valid',
         gradeEntryReqd: 'Grade Entering must be filled in',
+        gradeEnteringReqd: 'Grade Entering must be filled in',
         schoolNameReqd: 'School Name must be filled in'
       },
     };
@@ -288,12 +310,13 @@ export default defineComponent({
       this.studentLastName = nv.studentLastName;
       this.studentGender = nv.studentGender;
       this.studentHeight = nv.studentHeight;
-      this.studentDob = nv.studentDob;
+      this.studentDob = isNotYYYYMMDD(nv.studentDob) ? '' : nv.studentDob;
       this.parentContact = nv.parentContact;
       this.parentEmail = nv.parentEmail;
       this.parentName = nv.parentName;
       this.teacherEmail = nv.teacherEmail;
       this.gradeEntry = nv.gradeEntry;
+      this.gradeEntering = nv.gradeEntering || '';
       this.schoolName = nv.schoolName;
       this.address = nv.address;
       this.city = nv.city;
@@ -317,6 +340,7 @@ export default defineComponent({
         parentName: this.parentName,
         teacherEmail: this.teacherEmail,
         gradeEntry: this.gradeEntry,
+        gradeEntering: this.gradeEntering,
         schoolName: this.schoolName,
         schoolContact: this.schoolContact,
         schoolId: this.studentData.schoolId,

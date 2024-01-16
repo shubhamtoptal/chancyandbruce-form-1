@@ -26,6 +26,7 @@ export interface StudentData {
   parentName: string;
   teacherEmail: string;
   gradeEntry: string;
+  gradeEntering: string;
   address: string;
   city: string;
   zip: string;

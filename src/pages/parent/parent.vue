@@ -3,10 +3,7 @@ import StepOne from './step-one.vue';
 <template>
   <q-page class="row items-center justify-center q-pb-md">
     <!-- CONFIRMATION BLOCK -->
-    <div
-      v-if="![-1, 1].includes(hasParentOptedScreening)"
-      class="row items-start justify-center q-pb-md"
-    >
+    <div v-if="![-1, 1].includes(hasParentOptedScreening)" class="row items-start justify-center q-pb-md">
       <div class="col-sm-12 col-md-8 form-wrapper">
         <q-card flat class="bg-white form-body">
           <q-card-section>
@@ -28,43 +25,19 @@ import StepOne from './step-one.vue';
             </p>
           </q-card-section>
           <q-card-actions class="bg-white q-mb-mb text-center justify-center">
-            <q-btn
-              @click="dontProceed"
-              outline
-              color="secondary save-button app-button"
-              no-caps
-              label="No"
-            />
-            <q-btn
-              @click="proceedToNextStep"
-              color="secondary save-button app-button"
-              no-caps
-              label="Yes"
-            />
+            <q-btn @click="dontProceed" outline color="secondary save-button app-button" no-caps label="No" />
+            <q-btn @click="proceedToNextStep" color="secondary save-button app-button" no-caps label="Yes" />
           </q-card-actions>
         </q-card>
       </div>
     </div>
     <!-- CONFIRMATION BLOCK ENDS -->
-    <StepOne
-      v-show="step === 1"
-      :move-to-step-two="moveToStepTwo"
-      :step-one-data="stepOneData"
-      :student-data="studentData"
-    />
-    <StepTwo
-      v-show="step === 2"
-      :move-to-step-one="moveToStepOne"
-      :move-to-step-three="moveToStepThree"
-      :stepTwoData="stepTwoData"
-    />
-    <StepThree
-      v-show="step === 3"
-      :move-to-step-two="moveToStepTwo"
-      :stepThreeData="stepThreeData"
-      :submit-form="submitForm"
-      :school-list="schoolList"
-    />
+    <StepOne v-show="step === 1" :move-to-step-two="moveToStepTwo" :step-one-data="stepOneData"
+      :student-data="studentData" />
+    <StepTwo v-show="step === 2" :move-to-step-one="moveToStepOne" :move-to-step-three="moveToStepThree"
+      :stepTwoData="stepTwoData" />
+    <StepThree v-show="step === 3" :move-to-step-two="moveToStepTwo" :stepThreeData="stepThreeData"
+      :submit-form="submitForm" :school-list="schoolList" />
   </q-page>
 </template>
 
@@ -137,6 +110,7 @@ export default defineComponent({
         parentName: '',
         teacherEmail: '',
         gradeEntry: '',
+        gradeEntering: '',
         address: '',
         city: '',
         zip: '',
@@ -237,6 +211,7 @@ export default defineComponent({
             parentName: student.parent_name,
             teacherEmail: student.teacher_email,
             gradeEntry: student.grade_entry,
+            gradeEntering: student.grade_entering,
             address: student.address,
             city: student.city,
             zip: student.zip,
@@ -267,6 +242,7 @@ export default defineComponent({
           parentName: student.parentName,
           teacherEmail: student.teacherEmail,
           gradeEntry: student.gradeEntry,
+          gradeEntering: student.gradeEntering,
           address: student.address,
           city: student.city,
           zip: student.zip,
@@ -310,6 +286,7 @@ export default defineComponent({
           teacher_email: this.studentData.teacherEmail,
           school_contact: this.studentData.schoolContact,
           grade_entry: this.studentData.gradeEntry,
+          grade_entering: this.studentData.gradeEntering,
           address: this.studentData.address,
           city: this.studentData.city,
           zip: this.studentData.zip,
