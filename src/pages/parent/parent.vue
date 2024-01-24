@@ -3,7 +3,7 @@ import StepOne from './step-one.vue';
 <template>
   <q-page class="row items-center justify-center q-pb-md">
     <!-- CONFIRMATION BLOCK -->
-    <div v-if="![-1, 1].includes(hasParentOptedScreening)" class="row items-start justify-center q-pb-md">
+    <div v-show="step === 0" class="row items-start justify-center q-pb-md">
       <div class="col-sm-12 col-md-8 form-wrapper">
         <q-card flat class="bg-white form-body">
           <q-card-section>
@@ -17,16 +17,24 @@ import StepOne from './step-one.vue';
               assessment. We thank you in advance for your partnership!
             </p>
           </q-card-section>
-          <q-card-section>
+          <!-- <q-card-section>
             <p class="text-center text-h5 text-weight-medium">
               Do you want to screen your child?
               <br />
               Click Yes to proceed.
             </p>
+          </q-card-section> -->
+          <q-card-section v-if="isPaymentRequired">
+            <p class="text-justify">
+              By clicking on the <b>"Proceed to payment"</b> button, you will be redirected to the payment page. Please
+              complete the payment to proceed to the form.
+              The payment amount is <b>{{ isAcademicSectionActive ? '$89' : '$79' }}</b>.
+            </p>
           </q-card-section>
           <q-card-actions class="bg-white q-mb-mb text-center justify-center">
-            <q-btn @click="dontProceed" outline color="secondary save-button app-button" no-caps label="No" />
-            <q-btn @click="proceedToNextStep" color="secondary save-button app-button" no-caps label="Yes" />
+            <q-btn @click="dontProceed" outline color="secondary save-button app-button" no-caps label="Opt Out" />
+            <q-btn @click="proceedToNextStep" color="secondary save-button app-button" no-caps
+              :label="!isPaymentRequired ? 'Proceed to Form' : 'Proceed to Payment'" />
           </q-card-actions>
         </q-card>
       </div>
@@ -61,7 +69,9 @@ export default defineComponent({
     return {
       step: ref(0),
       schoolList: ref([]),
-      hasParentOptedScreening: ref(-1),
+      isAcademicSectionActive: ref(false),
+      isPaymentRequired: ref(false),
+      paymentUrl: ref(''),
       stepTwoData: ref({
         is_pregnancy_complication: false,
         pregnancy_complication_text: '',
@@ -145,13 +155,20 @@ export default defineComponent({
         });
     },
     proceedToNextStep() {
+      if (this.paymentUrl && this.isPaymentRequired) {
+        window.location.href = this.paymentUrl;
+        return;
+      } else {
+        this.step = 1;
+      }
+
       const url = `/api/parent/v1/form/step-one-parent/${this.$route.params.formId}/has-opted`;
       api({
         url,
         method: 'PUT',
       })
         .then(() => {
-          this.getFormDetails();
+          console.log('PARENT OPTED SCREENING');
         })
         .catch((err) => {
           console.error('getFormDetails() --->', err);
@@ -183,43 +200,45 @@ export default defineComponent({
             student,
             isPaymentRequired,
             paymentUrl,
-            parentOptedScreening,
+            isAcademicSectionActive,
           } = resp.data.data;
-          if (parentOptedScreening != 1) {
-            this.hasParentOptedScreening = 0;
-            return;
-          }
+
+          this.isAcademicSectionActive = isAcademicSectionActive;
+          this.isPaymentRequired = isPaymentRequired;
+
           if (isPaymentRequired) {
-            window.location.href = paymentUrl;
-            return;
+            this.paymentUrl = paymentUrl;
           }
-          this.getSchoolList();
-          this.hasParentOptedScreening = 1;
-          this.stepOneData = {
-            is_step_form_1_parent_complete:
-              stepOne.is_step_form_1_parent_complete,
-          };
-          this.studentData = {
-            _id: student._id,
-            studentFirstName: student.student_first_name,
-            studentLastName: student.student_last_name,
-            studentGender: student.student_gender,
-            studentHeight: student.student_height,
-            studentDob: student.student_dob,
-            parentContact: student.parent_contact,
-            parentEmail: student.parent_email,
-            parentName: student.parent_name,
-            teacherEmail: student.teacher_email,
-            gradeEntry: student.grade_entry,
-            gradeEntering: student.grade_entering,
-            address: student.address,
-            city: student.city,
-            zip: student.zip,
-            schoolName: school.school_name,
-            schoolContact: student.school_contact,
-            schoolId: student.school_id,
-          };
-          this.step = 1;
+          if (student && school && stepOne) {
+            this.getSchoolList();
+            this.stepOneData = {
+              is_step_form_1_parent_complete:
+                stepOne.is_step_form_1_parent_complete,
+            };
+            if (stepOne && stepOne.step_1_parent_data) {
+              this.step = 1;
+            }
+            this.studentData = {
+              _id: student._id,
+              studentFirstName: student.student_first_name,
+              studentLastName: student.student_last_name,
+              studentGender: student.student_gender,
+              studentHeight: student.student_height,
+              studentDob: student.student_dob,
+              parentContact: student.parent_contact,
+              parentEmail: student.parent_email,
+              parentName: student.parent_name,
+              teacherEmail: student.teacher_email,
+              gradeEntry: student.grade_entry,
+              gradeEntering: student.grade_entering,
+              address: student.address,
+              city: student.city,
+              zip: student.zip,
+              schoolName: school.school_name,
+              schoolContact: student.school_contact,
+              schoolId: student.school_id,
+            };
+          }
         })
         .catch((err) => {
           console.error('getFormDetails() --->', err);
