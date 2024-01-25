@@ -188,6 +188,7 @@ export default defineComponent({
         });
     },
     getFormDetails() {
+      this.$q.loading.show();
       const url = `/api/parent/v1/form/step-one-parent/${this.$route.params.formId}`;
       api({
         url,
@@ -202,6 +203,7 @@ export default defineComponent({
             paymentUrl,
             isAcademicSectionActive,
           } = resp.data.data;
+          this.$q.loading.hide();
 
           this.isAcademicSectionActive = isAcademicSectionActive;
           this.isPaymentRequired = isPaymentRequired;
@@ -241,6 +243,7 @@ export default defineComponent({
           }
         })
         .catch((err) => {
+          this.$q.loading.hide();
           console.error('getFormDetails() --->', err);
         });
     },
