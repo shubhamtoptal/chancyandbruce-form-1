@@ -23,6 +23,15 @@
                   classroom and take them to a screening area.
                 </p>
               </q-banner>
+              <q-banner v-if="schoolHasPayed === 2" class="bg-banner-success q-mt-sm">
+                <p class="q-mb-none text-positive text-weight-bold">
+                  Note: By Clicking Next you'll be taken to payment page to pay <span class="text-red">{{
+                    schoolOptedForAcademicForm ? '$89' : '$79' }}</span> for
+                  20-40 Minute One-on One
+                  Screening
+                  and In-Depth Results
+                </p>
+              </q-banner>
             </div>
           </q-card-section>
 
@@ -213,7 +222,7 @@
             </div>
           </q-card-section>
           <q-card-actions align="right" class="bg-white q-mb-mb text-center">
-            <q-btn type="submit" color="secondary save-button app-button" no-caps label="Next" />
+            <q-btn type="submit" color="secondary save-button app-button" no-caps :label="Next" />
           </q-card-actions>
         </q-form>
       </q-card>
@@ -235,6 +244,8 @@ export default defineComponent({
         { label: 'Boy', value: 1 },
         { label: 'Girl', value: 2 },
       ],
+      schoolHasPayed: ref(0),
+      schoolOptedForAcademicForm: ref(false),
       gradeEntryOptions: ['None', 'Pre-K', 'TK', 'JK', 'K', '1st', '2nd', '3rd', '4th', '5th', '6th', '7th'],
       gradeEnteringOptions: ['Pre-K', 'TK', 'JK', 'K', '1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th'],
       studentFirstName: ref(''),
@@ -292,6 +303,8 @@ export default defineComponent({
       })
         .then((res) => {
           this.schoolName = res.data.data.school.school_name;
+          this.schoolHasPayed = res.data.data.school.school_has_payed;
+          this.schoolOptedForAcademicForm = res.data.data.school.school_opted_for_academic_form;
           this.$q.loading.hide();
         })
         .catch((err) => {
