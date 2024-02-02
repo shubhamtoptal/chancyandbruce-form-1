@@ -227,7 +227,7 @@
             </div>
           </q-card-section>
           <q-card-actions v-else align="right" class="bg-white q-mb-mb text-center">
-            <q-btn type="submit" color="secondary save-button app-button" no-caps label="Next" />
+            <q-btn type="submit" color="secondary text-white save-button app-button" no-caps label="Next" />
           </q-card-actions>
         </q-form>
       </q-card>
