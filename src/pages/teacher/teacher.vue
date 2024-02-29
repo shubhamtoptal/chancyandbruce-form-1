@@ -2,18 +2,10 @@ import StepOne from './step-one.vue';
 
 <template>
   <q-page class="row items-center justify-center q-pb-md">
-    <StepOne
-      v-show="step === 1"
-      :move-to-step-two="moveToStepTwo"
-      :step-one-data="stepOneData"
-      :student-data="studentData"
-    />
-    <StepTwo
-      v-show="step === 2"
-      :move-to-step-one="moveToStepOne"
-      :submit-form="submitForm"
-      :step-two-data="stepTwoData"
-    />
+    <StepOne v-show="step === 1" :move-to-step-two="moveToStepTwo" :step-one-data="stepOneData"
+      :student-data="studentData" />
+    <StepTwo v-show="step === 2" :move-to-step-one="moveToStepOne" :submit-form="submitForm"
+      :step-two-data="stepTwoData" />
   </q-page>
 </template>
 
@@ -21,7 +13,7 @@ import StepOne from './step-one.vue';
 import { defineComponent, ref } from 'vue';
 import StepOne from './step-one.vue';
 import StepTwo from './step-two.vue';
-import { StepThreeData } from 'src/quasar';
+import { StepThreeDataTeacher } from 'src/quasar';
 import { api } from 'src/boot/axios';
 import { Notify } from 'quasar';
 
@@ -54,6 +46,7 @@ export default defineComponent({
         display_feeling_appropriate: 1,
         speech_understand_others: 1,
         accept_limit_follow_rules: 1,
+        additional_year_development: 1,
         comments: '',
       }),
       studentData: ref({
@@ -125,7 +118,7 @@ export default defineComponent({
     moveToStepTwo() {
       this.step = 2;
     },
-    submitForm(data: StepThreeData) {
+    submitForm(data: StepThreeDataTeacher) {
       console.log('data --->', data);
       this.stepTwoData = { ...data };
       const formData = {

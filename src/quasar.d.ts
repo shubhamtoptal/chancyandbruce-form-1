@@ -72,3 +72,28 @@ export interface StepThreeData {
   comments: string;
   school_list: Array<string>;
 }
+
+export interface StepThreeDataTeacher {
+  show_curiosity: number;
+  initiate_play_activity: number;
+  works_play_cooperatively: number;
+  talk_comfortably_other_child: number;
+  turns_and_share: number;
+  participate_large_group: number;
+  accepts_responsibility: number;
+  seperate_from_parent: number;
+  simple_task_independent: number;
+  follow_direction: number;
+  show_concern: number;
+  consistent_complete_task: number;
+  pay_attention: number;
+  eager_learn_new_task: number;
+  attend_to_task_10_min: number;
+  express_want_need: number;
+  display_feeling_appropriate: number;
+  speech_understand_others: number;
+  accept_limit_follow_rules: number;
+  additional_year_development: number;
+  comments: string;
+  school_list: Array<string>;
+}

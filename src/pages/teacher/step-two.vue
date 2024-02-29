@@ -292,12 +292,24 @@
                 </div>
               </div>
               <hr class="q-mb-md" />
-              <!-- Twenteeth Row End -->
+              <!-- Twentieth Row End -->
 
               <div clas="step-info">
-                <p class="text-primary text-body1 text-weight-bold">
-                  Additional Information
-                </p>
+                <!-- Twenty One Row Start -->
+                <div class="row q-pb-sm items-center">
+                  <div class="col-md-7 col-xs-12 dialog-form-section-input">
+                    <label class="text-primary text-body-1 text-weight-regular items-center">
+                      From my observations, I believe this student would benefit from an additional year to
+                      developmentally grow before transitioning
+                    </label>
+                  </div>
+                  <div class="col-md-5 col-xs-12 dialog-form-section-input">
+                    <q-option-group inline :options="optionsYes" type="radio" class="q-px-xs"
+                      v-model="additional_year_development" />
+                  </div>
+                </div>
+                <hr class="q-mb-md" />
+                <!-- Twenty One Row End -->
                 <div class="col-md-12 col-xs-6 dialog-form-section-input">
                   <label class="text-primary text-body-1 text-weight-regular items-center">
                     Additional Comments:
@@ -357,6 +369,11 @@ export default defineComponent({
         { label: 'Sometimes', value: 2 },
         { label: 'Rarely', value: 3 },
       ],
+      optionsYes: [
+        { label: 'Yes', value: 1 },
+        { label: 'No', value: 2 },
+        { label: 'Not Sure', value: 3 },
+      ],
       show_curiosity: ref(1),
       initiate_play_activity: ref(1),
       works_play_cooperatively: ref(1),
@@ -376,6 +393,7 @@ export default defineComponent({
       accept_limit_follow_rules: ref(1),
       display_feeling_appropriate: ref(1),
       speech_understand_others: ref(1),
+      additional_year_development: ref(1),
       comments: ref(''),
     };
   },
@@ -402,6 +420,7 @@ export default defineComponent({
       this.stepTwoData.display_feeling_appropriate;
     this.speech_understand_others = this.stepTwoData.speech_understand_others;
     this.comments = this.stepTwoData.comments;
+    this.additional_year_development = this.stepTwoData.additional_year_development;
   },
   methods: {
     submitStepTwo() {
@@ -425,6 +444,7 @@ export default defineComponent({
         accept_limit_follow_rules: this.accept_limit_follow_rules,
         display_feeling_appropriate: this.display_feeling_appropriate,
         speech_understand_others: this.speech_understand_others,
+        additional_year_development: this.additional_year_development,
         comments: this.comments,
         school_list: [],
       };
