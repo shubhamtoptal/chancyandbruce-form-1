@@ -544,6 +544,10 @@
               <div class="row q-pb-md q-my-md full-width">
                 <div class="col-12 dialog-form-section-input">
                   <div class="col-12 q-pt-sm">
+                    <strong class="q-pl-sm">
+                      Chancy and Bruce is unable to review each child’s individual scores. Please attend one of our zooms
+                      for questions or clarifications
+                    </strong>
                     <p style="
                       font-size: 1rem;
                       padding-left: 10px;
