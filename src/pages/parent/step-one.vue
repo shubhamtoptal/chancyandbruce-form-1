@@ -38,9 +38,9 @@
                       </label>
                       <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
                         placeholder="Child's First Name" v-model="studentFirstName" :rules="[
-                          (val) =>
-                            (val && val.length > 0) || errorMsg.studentNameReqd,
-                        ]" />
+          (val) =>
+            (val && val.length > 0) || errorMsg.studentNameReqd,
+        ]" />
                     </div>
                     <div class="col-md-6 col-xs-12 dialog-form-section-input" :class="$q.screen.lt.md ? 'q-pb-md' : ''">
                       <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
@@ -48,9 +48,9 @@
                       </label>
                       <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
                         placeholder="Child's First Name" v-model="studentLastName" :rules="[
-                          (val) =>
-                            (val && val.length > 0) || errorMsg.studentNameReqd,
-                        ]" />
+          (val) =>
+            (val && val.length > 0) || errorMsg.studentNameReqd,
+        ]" />
                     </div>
                   </div>
                 </div>
@@ -60,9 +60,9 @@
                   </label>
                   <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
                     placeholder="Primary Parent's Name" v-model="parentName" :rules="[
-                      (val) =>
-                        (val && val.length > 0) || errorMsg.parentsNameReqd,
-                    ]" />
+          (val) =>
+            (val && val.length > 0) || errorMsg.parentsNameReqd,
+        ]" />
                 </div>
 
                 <div class="col-md-4 col-xs-12 dialog-form-section-input">
@@ -71,9 +71,9 @@
                   </label>
                   <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
                     placeholder="Primary Parent's Email" v-model="parentEmail" :rules="[
-                      (val) =>
-                        (val && validateEmail(val)) || errorMsg.validEmail,
-                    ]" />
+          (val) =>
+            (val && validateEmail(val)) || errorMsg.validEmail,
+        ]" />
                 </div>
               </div>
               <!-- First Row End -->
@@ -84,14 +84,14 @@
                     Date of Birth
                   </label>
                   <q-input readonly class="app-form-input q-mt-xs" outlined v-model="studentDob" :rules="[
-                    (val) =>
-                      (val && val.length > 0) || errorMsg.studentDobReqd,
-                  ]">
+          (val) =>
+            (val && val.length > 0) || errorMsg.studentDobReqd,
+        ]">
                     <template v-slot:append>
                       <q-icon name="img:/app-icons/datepicker-icon.svg" class="cursor-pointer">
                         <q-popup-proxy v-if="!is_step_form_1_parent_complete" cover transition-show="scale"
                           transition-hide="scale">
-                          <q-date v-model="studentDob">
+                          <q-date default-view="Years" v-model="studentDob">
                             <div class="row items-center justify-end">
                               <q-btn v-close-popup label="Close" color="primary" flat />
                             </div>
@@ -107,9 +107,9 @@
                   </label>
                   <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
                     placeholder="Height eg. 5'4&quot;" v-model="studentHeight" :rules="[
-                      (val) =>
-                        (val && val.length > 0) || errorMsg.heightReqd,
-                    ]" />
+          (val) =>
+            (val && val.length > 0) || errorMsg.heightReqd,
+        ]" />
                 </div>
                 <div class="col-md-4 col-xs-12 dialog-form-section-input">
                   <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
@@ -128,8 +128,8 @@
                   </label>
                   <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
                     placeholder="Parent's Contact Number" v-model="parentContact" :rules="[
-                      (val) => (val && validatePhoneNumber(val)) || errorMsg.parentsContactReqd,
-                    ]" />
+          (val) => (val && validatePhoneNumber(val)) || errorMsg.parentsContactReqd,
+        ]" />
                 </div>
                 <div class="col-md-4 col-xs-12 dialog-form-section-input" :class="$q.screen.lt.md ? 'q-pb-md' : ''">
                   <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
@@ -137,9 +137,9 @@
                   </label>
                   <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
                     placeholder="Enter your address" v-model="address" :rules="[
-                      (val) =>
-                        (val && val.length > 0) || errorMsg.studentsAddressReqd,
-                    ]" />
+          (val) =>
+            (val && val.length > 0) || errorMsg.studentsAddressReqd,
+        ]" />
                 </div>
                 <div class="col-md-4 col-xs-12 dialog-form-section-input">
                   <div class="row">
@@ -150,9 +150,9 @@
                       </label>
                       <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
                         placeholder="Enter City" v-model="city" :rules="[
-                          (val) =>
-                            (val && val.length > 0) || errorMsg.cityReqd,
-                        ]" />
+          (val) =>
+            (val && val.length > 0) || errorMsg.cityReqd,
+        ]" />
                     </div>
                     <div class="col-md-6 col-xs-12">
                       <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
@@ -160,9 +160,9 @@
                       </label>
                       <q-input :readonly="is_step_form_1_parent_complete" class="app-form-input q-mt-xs" outlined
                         placeholder="Enter Zip" v-model="zip" :rules="[
-                          (val) =>
-                            (val && val.length > 0) || errorMsg.zipReqd,
-                        ]" />
+          (val) =>
+            (val && val.length > 0) || errorMsg.zipReqd,
+        ]" />
                     </div>
                   </div>
                 </div>
@@ -174,7 +174,8 @@
                   <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
                     Teacher's Email
                   </label>
-                  <q-input class="app-form-input q-mt-xs" outlined placeholder="Teacher's Email" v-model="teacherEmail" />
+                  <q-input class="app-form-input q-mt-xs" outlined placeholder="Teacher's Email"
+                    v-model="teacherEmail" />
                 </div>
                 <div class="col-md-2 col-xs-12 dialog-form-section-input" :class="$q.screen.lt.md ? 'q-pb-md' : ''">
                   <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
@@ -183,9 +184,9 @@
                   <q-select :readonly="is_step_form_1_parent_complete" class="app-form-input cursor-pointer q-mt-xs"
                     outlined :options="gradeEntryOptions" v-model="gradeEntry"
                     options-selected-class="text-white bg-secondary" :rules="[
-                      (val) =>
-                        (val && val.length > 0) || errorMsg.gradeEntryReqd,
-                    ]" />
+          (val) =>
+            (val && val.length > 0) || errorMsg.gradeEntryReqd,
+        ]" />
                 </div>
                 <div class="col-md-2 col-xs-12 dialog-form-section-input" :class="$q.screen.lt.md ? 'q-pb-md' : ''">
                   <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
@@ -194,9 +195,9 @@
                   <q-select :readonly="is_step_form_1_parent_complete" class="app-form-input cursor-pointer q-mt-xs"
                     outlined :options="gradeEnteringOptions" v-model="gradeEntering"
                     options-selected-class="text-white bg-secondary" :rules="[
-                      (val) =>
-                        (val && val.length > 0) || errorMsg.gradeEnteringReqd,
-                    ]" />
+          (val) =>
+            (val && val.length > 0) || errorMsg.gradeEnteringReqd,
+        ]" />
                 </div>
               </div>
               <!-- Fourth Row End -->
@@ -208,9 +209,9 @@
                   </label>
                   <q-input :readonly="true" class="app-form-input q-mt-xs" outlined placeholder="School Name"
                     v-model="schoolName" :rules="[
-                      (val) =>
-                        (val && val.length > 0) || errorMsg.schoolNameReqd,
-                    ]" />
+          (val) =>
+            (val && val.length > 0) || errorMsg.schoolNameReqd,
+        ]" />
                 </div>
               </div>
               <!-- Fifth Row End -->
@@ -264,8 +265,8 @@ export default defineComponent({
         { label: 'Boy', value: 1 },
         { label: 'Girl', value: 2 },
       ],
-      gradeEntryOptions: ['None', 'Pre-K', 'TK', 'JK', 'K', '1st', '2nd', '3rd', '4th', '5th', '6th', '7th'],
-      gradeEnteringOptions: ['Pre-K', 'TK', 'JK', 'K', '1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th'],
+      gradeEntryOptions: ['None', 'Pre-K', 'DK', 'TK', 'JK', 'K', '1st', '2nd', '3rd', '4th', '5th', '6th', '7th'],
+      gradeEnteringOptions: ['DK', 'Pre-K', 'TK', 'JK', 'K', '1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th'],
       studentFirstName: ref(''),
       studentLastName: ref(''),
       studentHeight: ref(''),
