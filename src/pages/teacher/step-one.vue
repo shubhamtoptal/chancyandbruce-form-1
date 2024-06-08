@@ -15,6 +15,11 @@
                 <p class="text-primary text-body1 text-weight-bold">
                   Step 1 of 2
                 </p>
+                <q-banner class="bg-banner-success">
+                  <p class="q-mb-none text-positive text-weight-bold">
+                    Teacher Form
+                  </p>
+                </q-banner>
               </div>
             </div>
           </q-card-section>

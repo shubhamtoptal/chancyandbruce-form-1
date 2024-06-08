@@ -27,7 +27,8 @@
       </q-card>
 
       <div class="row q-mb-md">
-        <p class="q-mb-none text-primary text-weight-regular text-caption col-md-8 col-xs-6 q-pl-lg">Child’s Behavior</p>
+        <p class="q-mb-none text-primary text-weight-regular text-caption col-md-8 col-xs-6 q-pl-lg">Child’s Behavior
+        </p>
         <p class="q-mb-none text-primary text-weight-regular text-caption col-md-4 col-xs-4">Input</p>
       </div>
 
@@ -152,7 +153,8 @@
                   </label>
                 </div>
                 <div class="col-md-5 col-xs-12 dialog-form-section-input">
-                  <q-option-group inline :options="options" type="radio" class="q-px-xs" v-model="seperate_from_parent" />
+                  <q-option-group inline :options="options" type="radio" class="q-px-xs"
+                    v-model="seperate_from_parent" />
                 </div>
               </div>
               <hr class="q-mb-md" />
@@ -233,7 +235,8 @@
                   </label>
                 </div>
                 <div class="col-md-5 col-xs-12 dialog-form-section-input">
-                  <q-option-group inline :options="options" type="radio" class="q-px-xs" v-model="eager_learn_new_task" />
+                  <q-option-group inline :options="options" type="radio" class="q-px-xs"
+                    v-model="eager_learn_new_task" />
                 </div>
               </div>
               <hr class="q-mb-md" />
@@ -295,19 +298,6 @@
               <!-- Twentieth Row End -->
 
               <div clas="step-info">
-                <!-- Twenty One Row Start -->
-                <div class="row q-pb-sm items-center">
-                  <div class="col-md-7 col-xs-12 dialog-form-section-input">
-                    <label class="text-primary text-body-1 text-weight-regular items-center">
-                      From my observations, I believe this student would benefit from an additional year to
-                      developmentally grow before transitioning
-                    </label>
-                  </div>
-                  <div class="col-md-5 col-xs-12 dialog-form-section-input">
-                    <q-option-group inline :options="optionsYes" type="radio" class="q-px-xs"
-                      v-model="additional_year_development" />
-                  </div>
-                </div>
                 <hr class="q-mb-md" />
                 <!-- Twenty One Row End -->
                 <div class="col-md-12 col-xs-6 dialog-form-section-input">
@@ -324,7 +314,23 @@
                       v-model="comments" />
                   </div>
                 </div>
+
+                <!-- Twenty One Row Start -->
+                <div class="row q-pb-sm items-center">
+                  <div class="col-md-7 col-xs-12 dialog-form-section-input">
+                    <label class="text-primary text-body-1 text-weight-regular items-center">
+                      From my observations, I believe this student would benefit from an additional year to
+                      developmentally grow before transitioning
+                    </label>
+                  </div>
+                  <div class="col-md-5 col-xs-12 dialog-form-section-input">
+                    <q-option-group inline :options="optionsYes" type="radio" class="q-px-xs"
+                      v-model="additional_year_development" />
+                  </div>
+                </div>
               </div>
+
+
             </div>
           </q-card-section>
 
@@ -393,7 +399,7 @@ export default defineComponent({
       accept_limit_follow_rules: ref(1),
       display_feeling_appropriate: ref(1),
       speech_understand_others: ref(1),
-      additional_year_development: ref(1),
+      additional_year_development: ref(),
       comments: ref(''),
     };
   },

@@ -47,6 +47,9 @@ export interface StepTwoData {
   is_unsettling_experience: boolean;
   unsettling_experience_text: string;
   primary_language: string;
+  has_iep: boolean;
+  change_in_environment: boolean;
+  change_in_environment_text: string;
 }
 
 export interface StepThreeData {

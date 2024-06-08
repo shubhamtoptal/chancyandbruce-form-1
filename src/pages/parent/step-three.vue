@@ -158,7 +158,8 @@
                   </label>
                 </div>
                 <div class="col-md-5 col-xs-12 dialog-form-section-input">
-                  <q-option-group inline :options="options" type="radio" class="q-px-xs" v-model="seperate_from_parent" />
+                  <q-option-group inline :options="options" type="radio" class="q-px-xs"
+                    v-model="seperate_from_parent" />
                 </div>
               </div>
               <hr class="q-mb-md" />
@@ -239,7 +240,8 @@
                   </label>
                 </div>
                 <div class="col-md-5 col-xs-12 dialog-form-section-input">
-                  <q-option-group inline :options="options" type="radio" class="q-px-xs" v-model="eager_learn_new_task" />
+                  <q-option-group inline :options="options" type="radio" class="q-px-xs"
+                    v-model="eager_learn_new_task" />
                 </div>
               </div>
               <hr class="q-mb-md" />
@@ -321,7 +323,8 @@
                 <div class="row q-pb-md q-my-md">
                   <div class="col-md-12 col-xs-12 dialog-form-section-input">
                     <q-checkbox keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
-                      v-model="sendFormToSchool" label="Do you want us to send the test results to a specific school?" />
+                      v-model="sendFormToSchool"
+                      label="Do you want us to send the test results to a specific school?" />
                   </div>
                 </div>
                 <div v-if="sendFormToSchool" class="row q-pb-md q-my-md">
@@ -342,11 +345,11 @@
                         <q-item v-bind="scope.itemProps">
                           <q-item-section>
                             <q-item-label>{{
-                              scope.opt.school_name
-                            }}</q-item-label>
+                    scope.opt.school_name
+                  }}</q-item-label>
                             <q-item-label class="text-black" caption>{{
-                              scope.opt.school_address
-                            }}</q-item-label>
+                      scope.opt.school_address
+                    }}</q-item-label>
                           </q-item-section>
                         </q-item>
                       </template>
@@ -359,7 +362,8 @@
 
           <q-card-actions align="right" class="bg-white q-mb-mb text-center">
             <q-btn @click="moveToStepTwo()" color="light back-btn app-button q-mr-md" no-caps label="Back" />
-            <q-btn @click="submitStepThree()" color="secondary save-button app-button" no-caps label="Save" />
+            <q-btn @click="submitStepThree()" color="secondary save-button app-button" no-caps
+              :label="isPaymentRequired ? `Proceed to Pay $${paymentAmount}` : 'Save'" />
           </q-card-actions>
         </q-form>
       </q-card>
@@ -374,6 +378,14 @@ import { PropType, defineComponent, ref } from 'vue';
 export default defineComponent({
   name: 'StepThree',
   props: {
+    isPaymentRequired: {
+      type: Boolean as PropType<boolean>,
+      required: true,
+    },
+    paymentAmount: {
+      type: Number as PropType<number>,
+      required: true,
+    },
     moveToStepTwo: {
       type: Function as PropType<{
         (): void;

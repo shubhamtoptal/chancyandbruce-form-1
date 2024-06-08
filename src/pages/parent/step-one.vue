@@ -26,6 +26,16 @@
             </div>
           </q-card-section>
 
+          <q-card-section v-if="is_step_form_1_parent_complete">
+            <div class="card-header">
+              <q-banner class="bg-banner-success">
+                <p class="q-mb-none text-positive text-weight-bold">
+                  Note: You have submitted the form successfully.
+                </p>
+              </q-banner>
+            </div>
+          </q-card-section>
+
           <q-card-section class="q-p-none dialog-form-section">
             <div>
               <!-- First Row Start -->
@@ -217,17 +227,7 @@
               <!-- Fifth Row End -->
             </div>
           </q-card-section>
-
-          <q-card-section v-if="is_step_form_1_parent_complete">
-            <div class="card-header">
-              <q-banner class="bg-banner-success">
-                <p class="q-mb-none text-positive text-weight-bold">
-                  Note: You have submitted the form successfully.
-                </p>
-              </q-banner>
-            </div>
-          </q-card-section>
-          <q-card-actions v-else align="right" class="bg-white q-mb-mb text-center">
+          <q-card-actions v-if="!is_step_form_1_parent_complete" align="right" class="bg-white q-mb-mb text-center">
             <q-btn type="submit" color="secondary text-white save-button app-button" no-caps label="Next" />
           </q-card-actions>
         </q-form>
