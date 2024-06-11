@@ -53,7 +53,7 @@
               In the event that a student fails to attend during the designated Chancy Bruce timeframe, there will be a
               nonrefundable fee of <b>${{ paymentAmount }}</b>. Additionally, any rescheduling required will incur a fee
               of
-              <b>$10</b>.
+              <b>$20</b>.
             </q-banner>
           </q-card-section>
           <q-card-section v-if="isPaymentRequired">
