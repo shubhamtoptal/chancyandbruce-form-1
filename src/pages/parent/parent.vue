@@ -295,7 +295,7 @@ export default defineComponent({
             // GET FORM DATA FROM LOCAL STORAGE
             const formData = localStorage.getItem('form_data');
             const payment_redirect = localStorage.getItem('payment_redirect');
-            this.isPaymentProcessing = payment_redirect === 'true';
+            // this.isPaymentProcessing = payment_redirect === 'true';
 
             if (formData && payment_redirect === 'true' && !this.isPaymentRequired) {
               this.submitFormData(JSON.parse(formData));
