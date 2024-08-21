@@ -289,6 +289,8 @@ export default defineComponent({
 
             if (this.$route.query.isStepTwo === 'true') {
               this.step = 2;
+              // REMOVE QUERY PARAMETER
+              this.$router.replace({ query: {} });
             }
 
 
