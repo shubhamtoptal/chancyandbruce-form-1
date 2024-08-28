@@ -15,7 +15,7 @@
               assessment. We thank you in advance for your partnership!
             </p> -->
             <p class="text-justify">
-              Dear <b>Chancy and Bruce Partner</b>,
+              Dear <b>Chancy and Bruce Parent</b>,
               <br />
               Your child's school - <b>{{ studentData.schoolName }}</b> has partnered with <b> Chancy and Bruce </b>for
               the
