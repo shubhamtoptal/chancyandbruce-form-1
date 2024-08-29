@@ -169,7 +169,7 @@
                     <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
                       Height
                     </label>
-                    <q-input class="app-form-input q-mt-xs" outlined placeholder="Height eg. 5'4&quot;"
+                    <q-input class="app-form-input q-mt-xs" outlined placeholder="Height eg. 5'4&quot; or 162cm"
                       v-model="studentHeight" :rules="[
           (val) =>
             (val && val.length > 0) || errorMsg.heightReqd,
