@@ -97,6 +97,7 @@ export interface StepThreeDataTeacher {
   speech_understand_others: number;
   accept_limit_follow_rules: number;
   additional_year_development: number;
+  access_redirection: number;
   comments: string;
   school_list: Array<string>;
 }

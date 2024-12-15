@@ -319,6 +319,19 @@
                 <div class="row q-pb-sm items-center">
                   <div class="col-md-7 col-xs-12 dialog-form-section-input">
                     <label class="text-primary text-body-1 text-weight-regular items-center">
+                      Does the child require frequent redirection ?
+                    </label>
+                  </div>
+                  <div class="col-md-5 col-xs-12 dialog-form-section-input">
+                    <q-option-group inline :options="optionsYes" type="radio" class="q-px-xs"
+                      v-model="access_redirection" />
+                  </div>
+                </div>
+
+                <!-- Twenty One Row Start -->
+                <div class="row q-pb-sm items-center">
+                  <div class="col-md-7 col-xs-12 dialog-form-section-input">
+                    <label class="text-primary text-body-1 text-weight-regular items-center">
                       From my observations, I believe this student would benefit from an additional year to
                       developmentally grow before transitioning
                     </label>
@@ -345,7 +358,7 @@
 </template>
 
 <script lang="ts">
-import { StepThreeData } from 'src/quasar';
+import { StepThreeDataTeacher } from 'src/quasar';
 import { PropType, defineComponent, ref } from 'vue';
 
 export default defineComponent({
@@ -359,7 +372,7 @@ export default defineComponent({
     },
     submitForm: {
       type: Function as PropType<{
-        (data: StepThreeData): void;
+        (data: StepThreeDataTeacher): void;
       }>,
       required: true,
     },
@@ -400,6 +413,7 @@ export default defineComponent({
       display_feeling_appropriate: ref(1),
       speech_understand_others: ref(1),
       additional_year_development: ref(),
+      access_redirection: ref(),
       comments: ref(''),
     };
   },
@@ -427,6 +441,7 @@ export default defineComponent({
     this.speech_understand_others = this.stepTwoData.speech_understand_others;
     this.comments = this.stepTwoData.comments;
     this.additional_year_development = this.stepTwoData.additional_year_development;
+    this.access_redirection = this.stepTwoData.access_redirection;
   },
   methods: {
     submitStepTwo() {
@@ -452,6 +467,7 @@ export default defineComponent({
         speech_understand_others: this.speech_understand_others,
         additional_year_development: this.additional_year_development,
         comments: this.comments,
+        access_redirection: this.access_redirection,
         school_list: [],
       };
       this.submitForm(data);

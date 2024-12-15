@@ -47,6 +47,7 @@ export default defineComponent({
         speech_understand_others: 1,
         accept_limit_follow_rules: 1,
         additional_year_development: 1,
+        access_redirection: 1,
         comments: '',
       }),
       studentData: ref({
@@ -119,7 +120,6 @@ export default defineComponent({
       this.step = 2;
     },
     submitForm(data: StepThreeDataTeacher) {
-      console.log('data --->', data);
       this.stepTwoData = { ...data };
       const formData = {
         ...this.stepTwoData,
