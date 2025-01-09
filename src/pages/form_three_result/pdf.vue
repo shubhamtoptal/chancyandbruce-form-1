@@ -3,7 +3,7 @@
     <div style="min-width: 1000px; max-width: 1000px;" class="row q-pt-sm full-width no-print justify-center">
       <q-btn @click="printForm" color="primary" label="SAVE RESULT" />
     </div>
-    <div style="print-color-adjust: exact; min-width: 1000px; max-width: 1000px; overflow-x scroll;"
+    <div style="print-color-adjust: exact; min-width: 1000px; max-width: 1000px; overflow-x: scroll;"
       class="only-print row items-center justify-center q-pb-md q-px-lg">
       <q-card class="text-center full-width bg-transparent" flat>
         <div class="row items-center q-my-xs full-width">
