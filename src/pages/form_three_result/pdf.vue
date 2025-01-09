@@ -1,5 +1,5 @@
 <template>
-  <div v-if="formThreeData">
+  <div v-if="formThreeData" class="column items-center">
     <div style="min-width: 1000px; max-width: 1000px;" class="row q-pt-sm full-width no-print justify-center">
       <q-btn @click="printForm" color="primary" label="SAVE RESULT" />
     </div>
@@ -88,9 +88,9 @@
                     &emsp;
                     <div class="text-body2">
                       {{
-    formThreeData.recommendations
-      .enterSchoolForUpcomingOrCurrentSchoolYearText || '-'
-  }}
+                        formThreeData.recommendations
+                          .enterSchoolForUpcomingOrCurrentSchoolYearText || '-'
+                      }}
                     </div>
                   </div>
                 </div>
@@ -192,8 +192,8 @@
                   {{ formThreeData.schoolEntranceAgeMonth }}
                 </b>
                 {{
-    formThreeData.schoolEntranceAgeMonth == 1 ? 'month' : 'months'
-  }}
+                  formThreeData.schoolEntranceAgeMonth == 1 ? 'month' : 'months'
+                }}
                 of age by this time of the year (or trending by the end of the year) with age appropriate social
                 emotional maturity.
               </p>
@@ -214,17 +214,17 @@
                   <div class="col-12">
                     <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
                       v-model="formThreeData.summaryOfProfile
-    .childDevelopmentAgeAppropriate
-    " label="Child’s skill development is age appropriate for chronological age" />
+                        .childDevelopmentAgeAppropriate
+                        " label="Child’s skill development is age appropriate for chronological age" />
                   </div>
                   <div v-if="formThreeData.summaryOfProfile
-    .childDevelopmentAgeAppropriateText
-    " class="col-12">
+                    .childDevelopmentAgeAppropriateText
+                  " class="col-12">
                     <p class="comment-section-text q-ma-none">
                       {{
-    formThreeData.summaryOfProfile
-      .childDevelopmentAgeAppropriateText
-  }}
+                        formThreeData.summaryOfProfile
+                          .childDevelopmentAgeAppropriateText
+                      }}
                     </p>
                   </div>
                 </div>
@@ -232,17 +232,17 @@
                   <div class="col-12">
                     <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
                       v-model="formThreeData.summaryOfProfile
-    .childSocialEmotionalAgeAppropriate
-    " label="Child’s social-emotional development is age appropriate for chronological age" />
+                        .childSocialEmotionalAgeAppropriate
+                        " label="Child’s social-emotional development is age appropriate for chronological age" />
                   </div>
                   <div v-if="formThreeData.summaryOfProfile
-    .childSocialEmotionalAgeAppropriateText
-    " class="col-12">
+                    .childSocialEmotionalAgeAppropriateText
+                  " class="col-12">
                     <p class="comment-section-text q-ma-none">
                       {{
-    formThreeData.summaryOfProfile
-      .childSocialEmotionalAgeAppropriateText
-  }}
+                        formThreeData.summaryOfProfile
+                          .childSocialEmotionalAgeAppropriateText
+                      }}
                     </p>
                   </div>
                 </div>
@@ -261,16 +261,16 @@
                   <div class="col-12">
                     <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
                       v-model="formThreeData.summaryOfProfile.furtherDiagnosticEvaluation
-    " label="Further diagnostic evaluation recommended" />
+                        " label="Further diagnostic evaluation recommended" />
                   </div>
                   <div v-if="formThreeData.summaryOfProfile
-    .furtherDiagnosticEvaluationText
-    " class="col-12">
+                    .furtherDiagnosticEvaluationText
+                  " class="col-12">
                     <p class="comment-section-text q-ma-none">
                       {{
-    formThreeData.summaryOfProfile
-      .furtherDiagnosticEvaluationText
-  }}
+                        formThreeData.summaryOfProfile
+                          .furtherDiagnosticEvaluationText
+                      }}
                     </p>
                   </div>
                 </div>
@@ -278,14 +278,14 @@
                   <div class="col-12">
                     <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
                       v-model="formThreeData.summaryOfProfile.speechProblemObserved
-    " label="Speech problem observed" />
+                        " label="Speech problem observed" />
                   </div>
                   <div v-if="formThreeData.summaryOfProfile.speechProblemObservedText
-    " class="col-12">
+                  " class="col-12">
                     <p class="comment-section-text q-ma-none">
                       {{
-    formThreeData.summaryOfProfile.speechProblemObservedText
-  }}
+                        formThreeData.summaryOfProfile.speechProblemObservedText
+                      }}
                     </p>
                   </div>
                 </div>
@@ -418,13 +418,13 @@
                   <div class="col-12">
                     <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
                       v-model="formThreeData.recommendations
-    .enterSchoolForUpcomingOrCurrentSchoolYear
-    " label="Enter school for upcoming or current school year" />
+                        .enterSchoolForUpcomingOrCurrentSchoolYear
+                        " label="Enter school for upcoming or current school year" />
                     <p class="inline-block q-pl-none comment-section-text q-ma-none">
                       {{
-    formThreeData.recommendations
-      .enterSchoolForUpcomingOrCurrentSchoolYearText
-  }}
+                        formThreeData.recommendations
+                          .enterSchoolForUpcomingOrCurrentSchoolYearText
+                      }}
                     </p>
                   </div>
                 </div>
@@ -432,17 +432,17 @@
                   <div class="col-12">
                     <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
                       v-model="formThreeData.recommendations
-    .delaySchoolEntranceBasedOnScreeningResult
-    " label="Delay school entrance based on screening results." />
+                        .delaySchoolEntranceBasedOnScreeningResult
+                        " label="Delay school entrance based on screening results." />
                   </div>
                   <div v-if="formThreeData.recommendations
-    .delaySchoolEntranceBasedOnScreeningResultText
-    " class="col-12">
+                    .delaySchoolEntranceBasedOnScreeningResultText
+                  " class="col-12">
                     <p class="comment-section-text q-ma-none">
                       {{
-    formThreeData.recommendations
-      .delaySchoolEntranceBasedOnScreeningResultText
-  }}
+                        formThreeData.recommendations
+                          .delaySchoolEntranceBasedOnScreeningResultText
+                      }}
                     </p>
                   </div>
                 </div>
@@ -450,15 +450,15 @@
                   <div class="col-12">
                     <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
                       v-model="formThreeData.recommendations.frustrationInSchoolMayOccur
-    " label="Frustration in school may occur due to" />
+                        " label="Frustration in school may occur due to" />
                     <div v-if="formThreeData.recommendations
-    .frustrationInSchoolMayOccurText
-    " class="col-12">
+                      .frustrationInSchoolMayOccurText
+                    " class="col-12">
                       <p class="comment-section-text q-ma-none">
                         {{
-    formThreeData.recommendations
-      .frustrationInSchoolMayOccurText
-  }}
+                          formThreeData.recommendations
+                            .frustrationInSchoolMayOccurText
+                        }}
                       </p>
                     </div>
                   </div>
@@ -478,16 +478,16 @@
                   <div class="col-12">
                     <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
                       v-model="formThreeData.recommendations
-    .monitorSchoolProgramIfYouChooseToEnter
-    " label="Monitor school program if you choose to enter" />
+                        .monitorSchoolProgramIfYouChooseToEnter
+                        " label="Monitor school program if you choose to enter" />
                   </div>
                   <div v-if="formThreeData.recommendations
-    .monitorSchoolProgramIfYouChooseToEnterText
-    " class="col-12">
+                    .monitorSchoolProgramIfYouChooseToEnterText
+                  " class="col-12">
                     <p class="comment-section-text q-ma-none">
                       {{
-                      formThreeData.recommendations
-                      .monitorSchoolProgramIfYouChooseToEnterText
+                        formThreeData.recommendations
+                          .monitorSchoolProgramIfYouChooseToEnterText
                       }}
                     </p>
                   </div>
@@ -578,6 +578,14 @@
       </div>
       <!-- STEP ONE END -->
     </div>
+    <q-card-section style="width: 100%; padding: 0 94px;" class="no-print">
+      <div style="padding:56.25% 0 0 0;position:relative;">
+        <iframe src="https://player.vimeo.com/video/1045241793?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+          frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+          style="position:absolute;top:0;left:0;width:100%;height:100%;" title="C&amp;B Welcome Video">
+        </iframe>
+      </div>
+    </q-card-section>
   </div>
   <div style="height: 100vh;" v-else>
     <div class="row justify-center items-center full-width full-height">
@@ -587,12 +595,19 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { defineComponent, onMounted, ref } from 'vue';
 import { api } from 'src/boot/axios';
 
 export default defineComponent({
   name: 'FinalFormPage',
   setup() {
+    onMounted(() => {
+      // Load Vimeo Player script dynamically
+      const script = document.createElement('script');
+      script.src = 'https://player.vimeo.com/api/player.js';
+      script.async = true;
+      document.body.appendChild(script);
+    });
     return {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       formThreeData: ref<any | null>(null),
