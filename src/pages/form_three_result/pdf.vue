@@ -578,7 +578,7 @@
       </div>
       <!-- STEP ONE END -->
     </div>
-    <q-card-section style="width: 100%; padding: 0 94px;" class="no-print">
+    <q-card-section style="width: 1000px" class="no-print">
       <div style="padding:56.25% 0 0 0;position:relative;">
         <iframe src="https://player.vimeo.com/video/1045241793?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
           frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
