@@ -420,7 +420,13 @@
                       v-model="formThreeData.recommendations
                         .enterSchoolForUpcomingOrCurrentSchoolYear
                         " label="Enter school for upcoming or current school year" />
-                    <p class="inline-block q-pl-none comment-section-text q-ma-none">
+                    <p v-if="
+                      formThreeData.recommendations
+                        .enterSchoolForUpcomingOrCurrentSchoolYearText == ' '
+                    " class="inline-block q-pl-none comment-section-text q-ma-none">
+                      &emsp;&emsp;&emsp;&emsp;
+                    </p>
+                    <p v-else class="inline-block q-pl-none comment-section-text q-ma-none">
                       {{
                         formThreeData.recommendations
                           .enterSchoolForUpcomingOrCurrentSchoolYearText
