@@ -16,37 +16,48 @@
             <p class="text-justify">
               Dear <b>Chancy and Bruce Parent</b>,
               <br />
-              Your child's school - <b>{{ schoolName }}</b> has partnered with <b> Chancy and Bruce </b>for
-              the
+              Your child's school - <b>{{ schoolName }}</b> has partnered with
+              <b> Chancy and Bruce </b>for the
               <i><b>School Readiness Development Profile.</b></i>
-              This assessment evaluates your child's readiness for school learning in various skill areas.
-              It takes about 20-30 minutes and provides a detailed profile of your child's readiness, along with
+              This assessment evaluates your child's readiness for school
+              learning in various skill areas. It takes about 20-30 minutes and
+              provides a detailed profile of your child's readiness, along with
               recommendations for school entrance.
             </p>
 
             <p class="text-justify">
               <b>Live Q and A Sessions:</b>
               <br />
-              Following the assessment, Dr. Nicky Magnuson will host live Q&A sessions via
-              Zoom.
-              Please reserve all score-specific questions for the Zoom.
-              These sessions will be posted on our <a target="_blank"
-                href="https://www.chancyandbruce-ra.com/zoom-meetings">website</a>. One-on-one consulting is available
-              at an additional cost but
+              Following the assessment, Dr. Nicky Magnuson will host live Q&A
+              sessions via Zoom. Please reserve all score-specific questions for
+              the Zoom. These sessions will be posted on our
+              <a
+                target="_blank"
+                href="https://www.chancyandbruce-ra.com/zoom-meetings"
+                >website</a
+              >. One-on-one consulting is available at an additional cost but
               must be scheduled through our website.
             </p>
 
             <q-card-section>
               <iframe
                 src="https://www.veed.io/embed/57936041-a2de-4dd6-ae2c-80f63b167a16?watermark=1&color=&sharing=1&title=1"
-                width="100%" height="500" frameborder="0" title="Chancy And Bruce " webkitallowfullscreen
-                mozallowfullscreen allowfullscreen></iframe>
+                width="100%"
+                height="500"
+                frameborder="0"
+                title="Chancy And Bruce "
+                webkitallowfullscreen
+                mozallowfullscreen
+                allowfullscreen
+              ></iframe>
             </q-card-section>
 
             <p>
-              For more information, visit <a target="_blank"
-                href="https://www.chancyandbruce-ra.com">chancyandbruce-ra.com</a> or contact your School
-              Director/Principal.
+              For more information, visit
+              <a target="_blank" href="https://www.chancyandbruce-ra.com"
+                >chancyandbruce-ra.com</a
+              >
+              or contact your School Director/Principal.
               <br />
               <!-- <a target="_blank"
                 href="https://drive.google.com/file/d/1v-OIDy9mnS0W1lPYsTA8c02f8f3DmABR/view?usp=sharing">
@@ -55,17 +66,28 @@
             </p>
 
             <q-banner v-if="isPaymentRequired" class="bg-banner-error">
-              Kindly be aware that cancellations need to be made within 24 hours prior to the scheduled screening time.
-              In the event that a student fails to attend during the designated Chancy Bruce timeframe, there will be a
-              nonrefundable fee of <b>${{ paymentAmount }}</b>. Additionally, any rescheduling required will incur a fee
-              of
+              Kindly be aware that cancellations need to be made within 24 hours
+              prior to the scheduled screening time. In the event that a student
+              fails to attend during the designated Chancy Bruce timeframe,
+              there will be a nonrefundable fee of <b>${{ paymentAmount }}</b
+              >. Additionally, any rescheduling required will incur a fee of
               <b>$20</b>.
             </q-banner>
           </q-card-section>
           <q-card-actions class="bg-white q-mb-mb text-center justify-center">
-            <q-btn @click="dontProceed" outline color="secondary save-button app-button" no-caps label="Opt Out" />
-            <q-btn @click="() => showInformationSection = false" color="secondary save-button app-button" no-caps
-              :label="'Proceed to Form'" />
+            <q-btn
+              @click="dontProceed"
+              outline
+              color="secondary save-button app-button"
+              no-caps
+              label="Opt Out"
+            />
+            <q-btn
+              @click="() => (showInformationSection = false)"
+              color="secondary save-button app-button"
+              no-caps
+              :label="'Proceed to Form'"
+            />
           </q-card-actions>
         </q-card>
       </div>
@@ -87,9 +109,9 @@
                 </div>
                 <q-banner class="bg-banner-success">
                   <p class="q-mb-none text-positive text-weight-bold">
-                    Note: Chancy and Bruce, LLC has my permission to administer a
-                    developmental profile with my child and remove them from the
-                    classroom and take them to a screening area.
+                    Note: Chancy and Bruce, LLC has my permission to administer
+                    a developmental profile with my child and remove them from
+                    the classroom and take them to a screening area.
                   </p>
                 </q-banner>
               </div>
@@ -99,72 +121,135 @@
               <div>
                 <!-- First Row Start -->
                 <div class="row q-pb-md">
-                  <div class="col-md-4 col-xs-12" :class="$q.screen.lt.md ? 'q-pb-md' : ''">
+                  <div
+                    class="col-md-4 col-xs-12"
+                    :class="$q.screen.lt.md ? 'q-pb-md' : ''"
+                  >
                     <div class="row">
-                      <div class="col-md-6 col-xs-12 dialog-form-section-input"
-                        :class="$q.screen.lt.md ? 'q-pb-md' : ''">
-                        <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
+                      <div
+                        class="col-md-6 col-xs-12 dialog-form-section-input"
+                        :class="$q.screen.lt.md ? 'q-pb-md' : ''"
+                      >
+                        <label
+                          class="text-primary text-weight-medium text-body-2 q-mb-sm"
+                        >
                           Child's First Name
                         </label>
-                        <q-input class="app-form-input q-mt-xs" outlined placeholder="Child's First Name"
-                          v-model="studentFirstName" :rules="[
-          (val) =>
-            (val && val.length > 0) || errorMsg.studentNameReqd,
-        ]" />
+                        <q-input
+                          class="app-form-input q-mt-xs"
+                          outlined
+                          placeholder="Child's First Name"
+                          v-model="studentFirstName"
+                          :rules="[
+                            (val) =>
+                              (val && val.length > 0) ||
+                              errorMsg.studentNameReqd,
+                          ]"
+                        />
                       </div>
-                      <div class="col-md-6 col-xs-12 dialog-form-section-input"
-                        :class="$q.screen.lt.md ? 'q-pb-md' : ''">
-                        <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
+                      <div
+                        class="col-md-6 col-xs-12 dialog-form-section-input"
+                        :class="$q.screen.lt.md ? 'q-pb-md' : ''"
+                      >
+                        <label
+                          class="text-primary text-weight-medium text-body-2 q-mb-sm"
+                        >
                           Child's Last Name
                         </label>
-                        <q-input class="app-form-input q-mt-xs" outlined placeholder="Child's First Name"
-                          v-model="studentLastName" :rules="[
-          (val) =>
-            (val && val.length > 0) || errorMsg.studentNameReqd,
-        ]" />
+                        <q-input
+                          class="app-form-input q-mt-xs"
+                          outlined
+                          placeholder="Child's First Name"
+                          v-model="studentLastName"
+                          :rules="[
+                            (val) =>
+                              (val && val.length > 0) ||
+                              errorMsg.studentNameReqd,
+                          ]"
+                        />
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-4 col-xs-12 dialog-form-section-input" :class="$q.screen.lt.md ? 'q-pb-md' : ''">
-                    <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
+                  <div
+                    class="col-md-4 col-xs-12 dialog-form-section-input"
+                    :class="$q.screen.lt.md ? 'q-pb-md' : ''"
+                  >
+                    <label
+                      class="text-primary text-weight-medium text-body-2 q-mb-sm"
+                    >
                       Primary Parent's Name
                     </label>
-                    <q-input class="app-form-input q-mt-xs" outlined placeholder="Primary Parent's Name"
-                      v-model="parentName" :rules="[
-          (val) =>
-            (val && val.length > 0) || errorMsg.parentsNameReqd,
-        ]" />
+                    <q-input
+                      class="app-form-input q-mt-xs"
+                      outlined
+                      placeholder="Primary Parent's Name"
+                      v-model="parentName"
+                      :rules="[
+                        (val) =>
+                          (val && val.length > 0) || errorMsg.parentsNameReqd,
+                      ]"
+                    />
                   </div>
 
                   <div class="col-md-4 col-xs-12 dialog-form-section-input">
-                    <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
+                    <label
+                      class="text-primary text-weight-medium text-body-2 q-mb-sm"
+                    >
                       Primary Parent's Email
                     </label>
-                    <q-input class="app-form-input q-mt-xs" outlined placeholder="Primary Parent's Email"
-                      v-model="parentEmail" :rules="[
-          (val) =>
-            (val && validateEmail(val)) || errorMsg.validEmail,
-        ]" />
+                    <q-input
+                      class="app-form-input q-mt-xs"
+                      outlined
+                      placeholder="Primary Parent's Email"
+                      v-model="parentEmail"
+                      :rules="[
+                        (val) =>
+                          (val && validateEmail(val)) || errorMsg.validEmail,
+                      ]"
+                    />
                   </div>
                 </div>
                 <!-- First Row End -->
                 <!-- Second Row Start -->
                 <div class="row q-pt-sm q-pb-md">
-                  <div class="col-md-4 col-xs-12 dialog-form-section-input" :class="$q.screen.lt.md ? 'q-pb-md' : ''">
-                    <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
+                  <div
+                    class="col-md-4 col-xs-12 dialog-form-section-input"
+                    :class="$q.screen.lt.md ? 'q-pb-md' : ''"
+                  >
+                    <label
+                      class="text-primary text-weight-medium text-body-2 q-mb-sm"
+                    >
                       Date of Birth
                     </label>
-                    <q-input readonly class="app-form-input q-mt-xs" outlined v-model="studentDob" :rules="[
-          (val) =>
-            (val && val.length > 0) || errorMsg.studentDobReqd,
-        ]">
+                    <q-input
+                      readonly
+                      class="app-form-input q-mt-xs"
+                      outlined
+                      v-model="studentDob"
+                      :rules="[
+                        (val) =>
+                          (val && val.length > 0) || errorMsg.studentDobReqd,
+                      ]"
+                    >
                       <template v-slot:append>
-                        <q-icon name="img:/app-icons/datepicker-icon.svg" class="cursor-pointer">
-                          <q-popup-proxy v-if="!is_step_form_1_parent_complete" cover transition-show="scale"
-                            transition-hide="scale">
+                        <q-icon
+                          name="img:/app-icons/datepicker-icon.svg"
+                          class="cursor-pointer"
+                        >
+                          <q-popup-proxy
+                            v-if="!is_step_form_1_parent_complete"
+                            cover
+                            transition-show="scale"
+                            transition-hide="scale"
+                          >
                             <q-date default-view="Years" v-model="studentDob">
                               <div class="row items-center justify-end">
-                                <q-btn v-close-popup label="Close" color="primary" flat />
+                                <q-btn
+                                  v-close-popup
+                                  label="Close"
+                                  color="primary"
+                                  flat
+                                />
                               </div>
                             </q-date>
                           </q-popup-proxy>
@@ -172,66 +257,124 @@
                       </template>
                     </q-input>
                   </div>
-                  <div class="col-md-4 col-xs-12 dialog-form-section-input" :class="$q.screen.lt.md ? 'q-pb-md' : ''">
-                    <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
+                  <div
+                    class="col-md-4 col-xs-12 dialog-form-section-input"
+                    :class="$q.screen.lt.md ? 'q-pb-md' : ''"
+                  >
+                    <label
+                      class="text-primary text-weight-medium text-body-2 q-mb-sm"
+                    >
                       Height
                     </label>
-                    <q-input class="app-form-input q-mt-xs" outlined placeholder="Height eg. 5'4&quot; or 162cm"
-                      v-model="studentHeight" :rules="[
-          (val) =>
-            (val && val.length > 0) || errorMsg.heightReqd,
-        ]" />
+                    <q-input
+                      class="app-form-input q-mt-xs"
+                      outlined
+                      placeholder="Height eg. 5'4&quot; or 162cm"
+                      v-model="studentHeight"
+                      :rules="[
+                        (val) => (val && val.length > 0) || errorMsg.heightReqd,
+                      ]"
+                    />
                   </div>
                   <div class="col-md-4 col-xs-12 dialog-form-section-input">
-                    <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
+                    <label
+                      class="text-primary text-weight-medium text-body-2 q-mb-sm"
+                    >
                       Gender
                     </label>
-                    <q-option-group :disable="is_step_form_1_parent_complete" inline :options="genderOptions"
-                      type="radio" class="q-mt-xs flex items-center gender-option-group" v-model="studentGender" />
+                    <q-option-group
+                      :disable="is_step_form_1_parent_complete"
+                      inline
+                      :options="genderOptions"
+                      type="radio"
+                      class="q-mt-xs flex items-center gender-option-group"
+                      v-model="studentGender"
+                    />
                   </div>
                 </div>
                 <!-- Second Row End -->
                 <!-- Thid Row Start -->
                 <div class="row q-pt-sm q-pb-md">
-                  <div class="col-md-4 col-xs-12 dialog-form-section-input" :class="$q.screen.lt.md ? 'q-pb-md' : ''">
-                    <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
+                  <div
+                    class="col-md-4 col-xs-12 dialog-form-section-input"
+                    :class="$q.screen.lt.md ? 'q-pb-md' : ''"
+                  >
+                    <label
+                      class="text-primary text-weight-medium text-body-2 q-mb-sm"
+                    >
                       Parent's Contact Number
                     </label>
-                    <q-input class="app-form-input q-mt-xs" outlined placeholder="Parent's Contact Number"
-                      v-model="parentContact" :rules="[
-          (val) => (val && validatePhoneNumber(val)) || errorMsg.parentsContactReqd,
-        ]" />
+                    <q-input
+                      class="app-form-input q-mt-xs"
+                      outlined
+                      placeholder="Parent's Contact Number"
+                      v-model="parentContact"
+                      :rules="[
+                        (val) =>
+                          (val && validatePhoneNumber(val)) ||
+                          errorMsg.parentsContactReqd,
+                      ]"
+                    />
                   </div>
-                  <div class="col-md-4 col-xs-12 dialog-form-section-input" :class="$q.screen.lt.md ? 'q-pb-md' : ''">
-                    <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
+                  <div
+                    class="col-md-4 col-xs-12 dialog-form-section-input"
+                    :class="$q.screen.lt.md ? 'q-pb-md' : ''"
+                  >
+                    <label
+                      class="text-primary text-weight-medium text-body-2 q-mb-sm"
+                    >
                       Address
                     </label>
-                    <q-input class="app-form-input q-mt-xs" outlined placeholder="Enter your address" v-model="address"
+                    <q-input
+                      class="app-form-input q-mt-xs"
+                      outlined
+                      placeholder="Enter your address"
+                      v-model="address"
                       :rules="[
-          (val) =>
-            (val && val.length > 0) || errorMsg.studentsAddressReqd,
-        ]" />
+                        (val) =>
+                          (val && val.length > 0) ||
+                          errorMsg.studentsAddressReqd,
+                      ]"
+                    />
                   </div>
                   <div class="col-md-4 col-xs-12 dialog-form-section-input">
                     <div class="row">
-                      <div class="col-md-6 col-xs-12 dialog-form-section-input-sub-left"
-                        :class="$q.screen.lt.md ? 'q-pb-md' : ''">
-                        <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
+                      <div
+                        class="col-md-6 col-xs-12 dialog-form-section-input-sub-left"
+                        :class="$q.screen.lt.md ? 'q-pb-md' : ''"
+                      >
+                        <label
+                          class="text-primary text-weight-medium text-body-2 q-mb-sm"
+                        >
                           City
                         </label>
-                        <q-input class="app-form-input q-mt-xs" outlined placeholder="Enter City" v-model="city" :rules="[
-          (val) =>
-            (val && val.length > 0) || errorMsg.cityReqd,
-        ]" />
+                        <q-input
+                          class="app-form-input q-mt-xs"
+                          outlined
+                          placeholder="Enter City"
+                          v-model="city"
+                          :rules="[
+                            (val) =>
+                              (val && val.length > 0) || errorMsg.cityReqd,
+                          ]"
+                        />
                       </div>
                       <div class="col-md-6 col-xs-12">
-                        <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
+                        <label
+                          class="text-primary text-weight-medium text-body-2 q-mb-sm"
+                        >
                           Zip
                         </label>
-                        <q-input class="app-form-input q-mt-xs" outlined placeholder="Enter Zip" v-model="zip" :rules="[
-          (val) =>
-            (val && val.length > 0) || errorMsg.zipReqd,
-        ]" />
+                        <q-input
+                          class="app-form-input q-mt-xs"
+                          outlined
+                          placeholder="Enter Zip"
+                          v-model="zip"
+                          :rules="[
+                            (val) =>
+                              (val && val.length > 0) || errorMsg.zipReqd,
+                          ]"
+                        />
                       </div>
                     </div>
                   </div>
@@ -239,53 +382,102 @@
                 <!-- Third Row End -->
                 <!-- Fourth Row Start -->
                 <div class="row q-pb-md">
-                  <div class="col-md-4 col-xs-12 dialog-form-section-input" :class="$q.screen.lt.md ? 'q-pb-md' : ''">
-                    <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
+                  <div
+                    class="col-md-4 col-xs-12 dialog-form-section-input"
+                    :class="$q.screen.lt.md ? 'q-pb-md' : ''"
+                  >
+                    <label
+                      class="text-primary text-weight-medium text-body-2 q-mb-sm"
+                    >
                       Teacher's Email
                     </label>
-                    <q-input class="app-form-input q-mt-xs" outlined placeholder="Teacher's Email"
-                      v-model="teacherEmail" />
+                    <q-input
+                      class="app-form-input q-mt-xs"
+                      outlined
+                      placeholder="Teacher's Email"
+                      v-model="teacherEmail"
+                    />
                   </div>
-                  <div class="col-md-2 col-xs-12 dialog-form-section-input" :class="$q.screen.lt.md ? 'q-pb-md' : ''">
-                    <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
+                  <div
+                    class="col-md-2 col-xs-12 dialog-form-section-input"
+                    :class="$q.screen.lt.md ? 'q-pb-md' : ''"
+                  >
+                    <label
+                      class="text-primary text-weight-medium text-body-2 q-mb-sm"
+                    >
                       Current Grade
                     </label>
-                    <q-select class="app-form-input cursor-pointer q-mt-xs" outlined :options="gradeEntryOptions"
-                      v-model="gradeEntry" options-selected-class="text-white bg-secondary" :rules="[
-          (val) =>
-            (val && val.length > 0) || errorMsg.gradeEntryReqd,
-        ]" />
+                    <q-select
+                      class="app-form-input cursor-pointer q-mt-xs"
+                      outlined
+                      :options="gradeEntryOptions"
+                      v-model="gradeEntry"
+                      options-selected-class="text-white bg-secondary"
+                      :rules="[
+                        (val) =>
+                          (val && val.length > 0) || errorMsg.gradeEntryReqd,
+                      ]"
+                    />
                   </div>
-                  <div class="col-md-2 col-xs-12 dialog-form-section-input" :class="$q.screen.lt.md ? 'q-pb-md' : ''">
-                    <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
+                  <div
+                    class="col-md-2 col-xs-12 dialog-form-section-input"
+                    :class="$q.screen.lt.md ? 'q-pb-md' : ''"
+                  >
+                    <label
+                      class="text-primary text-weight-medium text-body-2 q-mb-sm"
+                    >
                       Grade Entering
                     </label>
-                    <q-select class="app-form-input cursor-pointer q-mt-xs" outlined :options="gradeEnteringOptions"
-                      v-model="gradeEntering" options-selected-class="text-white bg-secondary" :rules="[
-          (val) =>
-            (val && val.length > 0) || errorMsg.gradeEnteringReqd,
-        ]" />
+                    <q-select
+                      class="app-form-input cursor-pointer q-mt-xs"
+                      outlined
+                      :options="gradeEnteringOptions"
+                      :hint="
+                        gradeEntering === 'K'
+                          ? 'Must be 5 years of age by September 1'
+                          : ''
+                      "
+                      v-model="gradeEntering"
+                      options-selected-class="text-white bg-secondary"
+                      :rules="[
+                        (val) =>
+                          (val && val.length > 0) || errorMsg.gradeEnteringReqd,
+                      ]"
+                    />
                   </div>
                 </div>
                 <!-- Fourth Row End -->
                 <!-- Fifth Row Start -->
                 <div class="row q-pb-md">
                   <div class="col-md-12 col-xs-12 dialog-form-section-input">
-                    <label class="text-primary text-weight-medium text-body-2 q-mb-sm">
+                    <label
+                      class="text-primary text-weight-medium text-body-2 q-mb-sm"
+                    >
                       School Name
                     </label>
-                    <q-input :readonly="true" class="app-form-input q-mt-xs" outlined placeholder="School Name"
-                      v-model="schoolName" :rules="[
-          (val) =>
-            (val && val.length > 0) || errorMsg.schoolNameReqd,
-        ]" />
+                    <q-input
+                      :readonly="true"
+                      class="app-form-input q-mt-xs"
+                      outlined
+                      placeholder="School Name"
+                      v-model="schoolName"
+                      :rules="[
+                        (val) =>
+                          (val && val.length > 0) || errorMsg.schoolNameReqd,
+                      ]"
+                    />
                   </div>
                 </div>
                 <!-- Fifth Row End -->
               </div>
             </q-card-section>
             <q-card-actions align="right" class="bg-white q-mb-mb text-center">
-              <q-btn type="submit" color="secondary text-white save-button app-button" no-caps label="Next" />
+              <q-btn
+                type="submit"
+                color="secondary text-white save-button app-button"
+                no-caps
+                label="Next"
+              />
             </q-card-actions>
           </q-form>
         </q-card>
@@ -313,8 +505,36 @@ export default defineComponent({
       paymentAmount: ref(0),
       schoolHasPayed: ref(0),
       schoolOptedForAcademicForm: ref(false),
-      gradeEntryOptions: ['None', 'Pre-K', 'DK', 'TK', 'JK', 'K', '1st', '2nd', '3rd', '4th', '5th', '6th', '7th'],
-      gradeEnteringOptions: ['DK', 'Pre-K', 'TK', 'JK', 'K', '1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th'],
+      gradeEntryOptions: [
+        'None',
+        'Pre-K',
+        'DK',
+        'TK',
+        'JK',
+        'K',
+        '1st',
+        '2nd',
+        '3rd',
+        '4th',
+        '5th',
+        '6th',
+        '7th',
+      ],
+      gradeEnteringOptions: [
+        'DK',
+        'Pre-K',
+        'TK',
+        'JK',
+        'K',
+        '1st',
+        '2nd',
+        '3rd',
+        '4th',
+        '5th',
+        '6th',
+        '7th',
+        '8th',
+      ],
       studentFirstName: ref(''),
       studentLastName: ref(''),
       studentHeight: ref(''),
@@ -349,7 +569,7 @@ export default defineComponent({
         schoolContactReqd: 'School Contact Number must be valid',
         gradeEntryReqd: 'Current Grade must be filled in',
         gradeEnteringReqd: 'Grade Entering must be filled in',
-        schoolNameReqd: 'School Name must be filled in'
+        schoolNameReqd: 'School Name must be filled in',
       },
     };
   },
@@ -384,7 +604,8 @@ export default defineComponent({
         .then((res) => {
           this.schoolName = res.data.data.school.school_name;
           this.schoolHasPayed = res.data.data.school.school_has_payed;
-          this.schoolOptedForAcademicForm = res.data.data.school.school_opted_for_academic_form;
+          this.schoolOptedForAcademicForm =
+            res.data.data.school.school_opted_for_academic_form;
           this.isPaymentRequired = !res.data.data.isPaymentDone;
           this.paymentAmount = res.data.data.paymentAmount;
           this.$q.loading.hide();
@@ -427,8 +648,8 @@ export default defineComponent({
               formId: res.data.data.data.parentFormUUID,
             },
             query: {
-              isStepTwo: 'true'
-            }
+              isStepTwo: 'true',
+            },
           });
         })
         .catch((err) => {
