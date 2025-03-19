@@ -98,6 +98,39 @@
             </div>
           </q-card-section>
           <!-- USER INFO SECTION END -->
+
+          <hr />
+
+          <!-- SUCCESSFUL SCHOOL ENTRANCE START -->
+          <q-card-section class="q-pa-none dialog-form-section">
+            <div>
+              <p class="q-mb-none q-px-sm">
+                For successful school entrance for the
+                <b class="text-secondary">
+                  {{ formThreeData.schoolEntranceYear }}
+                </b>
+                school year, recommended development in all skill areas be a
+                minimum of
+                <b class="text-secondary">
+                  {{ formThreeData.schoolEntranceAgeYear }}
+                </b>
+                {{ formThreeData.schoolEntranceAgeYear == 1 ? 'year' : 'years' }}
+                <b class="text-secondary">
+                  {{ formThreeData.schoolEntranceAgeMonth }}
+                </b>
+                {{
+                  formThreeData.schoolEntranceAgeMonth == 1 ? 'month' : 'months'
+                }}
+                of age by this time of the year (or trending by the end of the year) with age appropriate social
+                emotional maturity.
+              </p>
+            </div>
+          </q-card-section>
+          <!-- SUCCESSFUL SCHOOL ENTRANCE END -->
+
+          <hr />
+
+
           <!-- SKILL AREA SECTION START -->
           <q-card-section class="q-pa-none dialog-form-section q-mt-xs">
             <div class="row skill-area-header q-px-md q-py-xs justify-center items-center">
@@ -171,35 +204,26 @@
                   v-model="formThreeData.socialEmotionalMaturity" label="Non-Age Appropriate" />
               </div>
             </div>
+            <div v-if="
+              formThreeData?.socialEmotionalParentConcern ||
+              formThreeData?.socialEmotionalTeacherConcern
+            ">
+              <q-banner class="bg-red text-white q-mb-sm">
+                <p class="text-white text-weight-bold q-mb-none">
+                  {{
+                    formThreeData?.socialEmotionalParentConcern &&
+                      formThreeData?.socialEmotionalTeacherConcern
+                      ? 'Parent and Teacher have some concerns'
+                      : formThreeData?.socialEmotionalParentConcern
+                        ? 'Parent has some concerns'
+                        : 'Teacher has some concerns'
+                  }}
+                </p>
+              </q-banner>
+            </div>
           </q-card-section>
           <!-- SOCIAL_EMOTIONAL MATURITY END -->
           <hr />
-          <!-- SUCCESSFUL SCHOOL ENTRANCE START -->
-          <q-card-section class="q-pa-none dialog-form-section">
-            <div>
-              <p class="q-mb-none q-px-sm">
-                For successful school entrance for the
-                <b class="text-secondary">
-                  {{ formThreeData.schoolEntranceYear }}
-                </b>
-                school year, recommended development in all skill areas be a
-                minimum of
-                <b class="text-secondary">
-                  {{ formThreeData.schoolEntranceAgeYear }}
-                </b>
-                {{ formThreeData.schoolEntranceAgeYear == 1 ? 'year' : 'years' }}
-                <b class="text-secondary">
-                  {{ formThreeData.schoolEntranceAgeMonth }}
-                </b>
-                {{
-                  formThreeData.schoolEntranceAgeMonth == 1 ? 'month' : 'months'
-                }}
-                of age by this time of the year (or trending by the end of the year) with age appropriate social
-                emotional maturity.
-              </p>
-            </div>
-          </q-card-section>
-          <!-- SUCCESSFUL SCHOOL ENTRANCE END -->
 
           <!-- SUMMARY OF PROFILE START -->
           <q-card-section class="q-pt-sm q-pa-none dialog-form-section">
@@ -257,7 +281,7 @@
                     </p>
                   </div>
                 </div>
-                <div class="row items-center">
+                <!-- <div class="row items-center">
                   <div class="col-12">
                     <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
                       v-model="formThreeData.summaryOfProfile.furtherDiagnosticEvaluation
@@ -273,7 +297,7 @@
                       }}
                     </p>
                   </div>
-                </div>
+                </div> -->
                 <div class="row items-center">
                   <div class="col-12">
                     <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
@@ -324,6 +348,74 @@
             </div>
           </q-card-section>
           <!-- OBSERVATION END -->
+          <hr />
+
+          <!-- CHILD APPEARANCE START -->
+          <q-card-section class="q-pt-sm q-pa-none dialog-form-section q-mt-md" v-if="
+            formThreeData.childAppearScreenings ||
+            formThreeData.childAttendingSkills ||
+            formThreeData.childAppearOverall ||
+            formThreeData.childTestingEnvironment
+          ">
+            <div style="background: #f1f9ff" class="q-pa-sm">
+              <p class="text-h6 q-ma-none text-accent text-weight-medium">
+                CHILD APPEARANCE:
+              </p>
+            </div>
+            <div class="row q-px-sm q-pb-md">
+              <div class="col-12 q-pt-md" v-if="formThreeData.childAppearScreenings">
+                <div class="text-primary text-weight-medium text-body-2 q-pb-sm q-pl-sm text-uppercase">
+                  How did this child appear during the screening?
+                </div>
+                <div class="row q-pl-lg">
+                  <p class="q-mb-none text-body">
+                    -
+                    {{ formThreeData.childAppearScreenings }}
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-12 q-pt-md" v-if="formThreeData.childAttendingSkills">
+                <div class="text-primary text-weight-medium text-body-2 q-pb-sm q-pl-sm text-uppercase">
+                  How was the child’s attending skills for their chronological
+                  age?
+                </div>
+                <div class="row q-pl-lg">
+                  <p class="q-mb-none text-body">
+                    -
+                    {{ formThreeData.childAttendingSkills }}
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-12 q-pt-md" v-if="formThreeData.childAppearOverall">
+                <div class="text-primary text-weight-medium text-body-2 q-pb-sm q-pl-sm text-uppercase">
+                  How did the child appear overall for their chronological age?
+                  (Social-Emotional)
+                </div>
+                <div class="row q-pl-lg">
+                  <p class="q-mb-none text-body">
+                    -
+                    {{ formThreeData.childAppearOverall }}
+                  </p>
+                </div>
+              </div>
+
+              <div class="col-12 q-pt-md" v-if="formThreeData.childTestingEnvironment">
+                <div class="text-primary text-weight-medium text-body-2 q-pb-sm q-pl-sm text-uppercase">
+                  How would you describe the testing environment?
+                </div>
+                <div class="row q-pl-lg">
+                  <p class="q-mb-none text-body">
+                    -
+                    {{ formThreeData.childTestingEnvironment }}
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </q-card-section>
+          <!-- CHILD APPEARANCE END -->
 
           <hr />
           <!-- SKILL DEVELOPMENT FOR SCHOOL ENTRANCE START -->
@@ -516,7 +608,7 @@
                     </p>
                   </div>
                 </div> -->
-                <div class="row items-center">
+                <!-- <div class="row items-center">
                   <div class="col-12 flex">
                     <div class="row items-center">
                       <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
@@ -531,7 +623,7 @@
                       </p>
                     </div>
                   </div>
-                </div>
+                </div> -->
               </div>
             </div>
             <div class="row q-pt-md full-width q-px-sm">
@@ -619,6 +711,7 @@ export default defineComponent({
       formThreeData: ref<any | null>(null),
       skillAreaEnum: ref<{ [key: string]: string }>({
         fine_motor: 'Fine Motor',
+        gross_motor: 'Gross Motor',
         visual_discrimination: 'Visual Discrimination',
         visual_memory: 'Visual Memory',
         auditory_discrimination: 'Auditory Discrimination',
@@ -626,7 +719,6 @@ export default defineComponent({
         receptive_language: 'Receptive Language',
         expressive_language: 'Expressive Language',
         comprehension: 'Comprehension',
-        gross_motor: 'Gross Motor',
         academic_k: 'Academic K',
         academic_one: 'Academic One',
       }),
