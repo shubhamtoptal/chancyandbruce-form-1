@@ -440,10 +440,10 @@
               </div>
             </div>
             <!-- SKILL DEVELOPMENT COMMENT SECTION -->
-            <div v-if="[1, 2, 3].includes(formThreeData.skillDevelopmentForSchoolEnterance)">
+            <!-- <div v-if="[1, 2, 3].includes(formThreeData.skillDevelopmentForSchoolEnterance)">
               <q-input type="textarea" class="app-form-input q-mt-sm" outlined placeholder="Write comments here"
                 v-model="formThreeData.skillDevelopmentForSchoolEnteranceText" />
-            </div>
+            </div> -->
           </q-card-section>
           <!-- SKILL DEVELOPMENT FOR SCHOOL ENTRANCE END -->
 
