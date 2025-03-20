@@ -208,8 +208,8 @@
               formThreeData?.socialEmotionalParentConcern ||
               formThreeData?.socialEmotionalTeacherConcern
             ">
-              <q-banner class="bg-red text-white q-mb-sm">
-                <p class="text-white text-weight-bold q-mb-none">
+              <q-banner class="text-black q-mb-sm">
+                <p class="text-black text-weight-bold q-mb-none">
                   {{
                     formThreeData?.socialEmotionalParentConcern &&
                       formThreeData?.socialEmotionalTeacherConcern
