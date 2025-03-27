@@ -94,6 +94,31 @@
                     </div>
                   </div>
                 </div>
+                <div class="row q-px-md q-pt-sm" style="gap: 20px" v-if="screenerData">
+                  <div class="text-left">
+                    <label class="text-primary text-primary text-body2 q-mb-sm q-pl-sm">
+                      Hand
+                    </label>
+                    <div class="row items-start q-px-sm" style="justify-content: space-between">
+                      <div>
+                        <q-option-group v-model="screenerData.hand" disable inline dense size="xs"
+                          :options="handOptions" type="radio" class="flex school-has-payed-option-group" />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="text-left">
+                    <label class="text-primary text-body-2 q-mb-sm q-pl-sm">
+                      Pencil
+                    </label>
+                    <div class="row items-center q-px-sm" style="justify-content: space-between">
+                      <div>
+                        <q-option-group v-model="screenerData.pencil" disable inline dense size="xs"
+                          :options="pencilOptions" type="radio" class="flex school-has-payed-option-group" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </q-card-section>
@@ -703,6 +728,7 @@ export default defineComponent({
     return {
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       formThreeData: ref<any | null>(null),
+      screenerData: ref<{ hand: number, pencil: number } | null>(null),
       skillAreaEnum: ref<{ [key: string]: string }>({
         fine_motor: 'Fine Motor',
         gross_motor: 'Gross Motor',
@@ -716,6 +742,14 @@ export default defineComponent({
         academic_k: 'Academic K',
         academic_one: 'Academic One',
       }),
+      handOptions: ref([
+        { label: 'Left', value: 1 },
+        { label: 'Right', value: 2 },
+      ]),
+      pencilOptions: ref([
+        { label: '-', value: 1 },
+        { label: '+', value: 2 },
+      ]),
     };
   },
   mounted() {
@@ -726,7 +760,6 @@ export default defineComponent({
   },
   methods: {
     getChildAge(ageInMonth: number) {
-      console.log('ageInMontj --->', ageInMonth);
       return `${Math.floor(ageInMonth / 12)} Year ${ageInMonth % 12} Month`;
     },
     async getPdfData() {
@@ -737,6 +770,7 @@ export default defineComponent({
       })
         .then((resp) => {
           this.formThreeData = resp.data.data.step_3_result_data;
+          this.screenerData = resp.data.data.step_2_screener_data;
         })
         .catch((err) => {
           console.error('getPdfData() --->', err);
