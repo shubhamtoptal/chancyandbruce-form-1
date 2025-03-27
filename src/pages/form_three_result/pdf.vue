@@ -204,22 +204,15 @@
                   v-model="formThreeData.socialEmotionalMaturity" label="Non-Age Appropriate" />
               </div>
             </div>
-            <div v-if="
-              formThreeData?.socialEmotionalParentConcern ||
-              formThreeData?.socialEmotionalTeacherConcern
-            ">
-              <q-banner class="text-black q-mb-sm">
-                <p class="text-black text-weight-bold q-mb-none">
-                  {{
-                    formThreeData?.socialEmotionalParentConcern &&
-                      formThreeData?.socialEmotionalTeacherConcern
-                      ? 'Parent and Teacher have some concerns'
-                      : formThreeData?.socialEmotionalParentConcern
-                        ? 'Parent has some concerns'
-                        : 'Teacher has some concerns'
-                  }}
-                </p>
-              </q-banner>
+            <div class="row q-pt-md">
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <q-checkbox keep-color disable color="secondary" size="sm" :true-value="true" :false-value="false"
+                  v-model="formThreeData.socialEmotionalParentConcern" label="Parent has some concerns" />
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <q-checkbox keep-color disable color="secondary" size="sm" :true-value="true" :false-value="false"
+                  v-model="formThreeData.socialEmotionalTeacherConcern" label="Teacher has some concerns" />
+              </div>
             </div>
           </q-card-section>
           <!-- SOCIAL_EMOTIONAL MATURITY END -->
@@ -336,7 +329,7 @@
           <q-card-section style="page-break-before: always" class="q-mt-sm q-pa-none dialog-form-section">
             <div style="background: #f1f9ff" class="q-px-md q-py-xs">
               <p class="text-h6 q-ma-none text-accent text-weight-medium">
-                OBSERVATION:
+                OBSERVATIONS DURING SCREENING:
               </p>
             </div>
             <div class="row">
@@ -359,7 +352,7 @@
           ">
             <div style="background: #f1f9ff" class="q-pa-sm">
               <p class="text-h6 q-ma-none text-accent text-weight-medium">
-                CHILD APPEARANCE:
+                CHILD APPEARANCE DURING SCREENING:
               </p>
             </div>
             <div class="row q-px-sm q-pb-md">
@@ -577,7 +570,8 @@
                     <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
                       v-model="formThreeData.recommendations
                         .monitorSchoolProgramIfYouChooseToEnter
-                        " label="Monitor school program if you choose to enter" />
+                        "
+                      label="Ensure your current or incoming school can provide extra support in the following areas" />
                   </div>
                   <div v-if="formThreeData.recommendations
                     .monitorSchoolProgramIfYouChooseToEnterText
