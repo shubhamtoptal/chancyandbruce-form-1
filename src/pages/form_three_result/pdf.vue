@@ -127,7 +127,7 @@
           <hr />
 
           <!-- SUCCESSFUL SCHOOL ENTRANCE START -->
-          <q-card-section class="q-pa-none dialog-form-section">
+          <q-card-section v-if="!isPublicSchool" class="q-pa-none dialog-form-section">
             <div>
               <p class="q-mb-none q-px-sm">
                 For successful school entrance for the
@@ -516,7 +516,7 @@
           <!-- ASOCIAL-EMOTIONAL DEVELOPMENT FOR SCHOOL ENTRANCE END -->
 
           <!-- RECOMMENDATIONS START -->
-          <q-card-section class="q-pt-sm q-mt-sm q-pa-none dialog-form-section">
+          <q-card-section v-if="!isPublicSchool" class="q-pt-sm q-mt-sm q-pa-none dialog-form-section">
             <div style="background: #f1f9ff" class="q-px-md q-py-xs">
               <p class="text-h6 q-ma-none text-accent text-weight-medium">
                 RECOMMENDATIONS :
@@ -750,6 +750,7 @@ export default defineComponent({
         { label: '-', value: 1 },
         { label: '+', value: 2 },
       ]),
+      isPublicSchool: ref(false)
     };
   },
   mounted() {
@@ -771,6 +772,7 @@ export default defineComponent({
         .then((resp) => {
           this.formThreeData = resp.data.data.step_3_result_data;
           this.screenerData = resp.data.data.step_2_screener_data;
+          this.isPublicSchool = resp.data.data.is_public_school;
         })
         .catch((err) => {
           console.error('getPdfData() --->', err);
