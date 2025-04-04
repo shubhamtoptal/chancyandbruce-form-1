@@ -516,13 +516,13 @@
           <!-- ASOCIAL-EMOTIONAL DEVELOPMENT FOR SCHOOL ENTRANCE END -->
 
           <!-- RECOMMENDATIONS START -->
-          <q-card-section v-if="!isPublicSchool" class="q-pt-sm q-mt-sm q-pa-none dialog-form-section">
-            <div style="background: #f1f9ff" class="q-px-md q-py-xs">
+          <q-card-section class="q-pt-sm q-mt-sm q-pa-none dialog-form-section">
+            <div v-if="!isPublicSchool" style="background: #f1f9ff" class="q-px-md q-py-xs">
               <p class="text-h6 q-ma-none text-accent text-weight-medium">
                 RECOMMENDATIONS :
               </p>
             </div>
-            <div class="row q-pt-md">
+            <div v-if="!isPublicSchool" class="row q-pt-md">
               <div class="col-12">
                 <div class="row items-center">
                   <div class="col-12">
