@@ -663,6 +663,86 @@
                 </div>
               </div>
             </div>
+          </q-card-section>
+          <!-- RECOMMENDATIONS END -->
+
+          <!-- PRESCRIPTION START -->
+          <q-card-section v-if="formThreeData && formThreeData.prescriptions"
+            class="q-pt-sm q-mt-sm q-px-sm dialog-form-section" style="page-break-before: always">
+            <div class="q-mt-md">
+              <h2 class="text-h6 text-weight-semibold text-[#333333] q-mb-sm q-px-sm">
+                Prescription
+              </h2>
+              <q-card flat>
+                <div v-for="([key, prescription], index) in Object.entries(
+                  formThreeData.prescriptions
+                )" :key="key">
+                  <q-card-section class="q-pa-none q-px-sm">
+                    <!-- Header -->
+                    <div class="row items-center justify-between">
+                      <div>
+                        <h3 class="text-body1 text-weight-bold text-primary q-mb-xs">
+                          {{
+                            // @ts-ignore
+                            getPrescriptionDisplayData(key, prescription).title
+                          }}
+                        </h3>
+                      </div>
+                      <div class="row items-center q-gutter-x-lg" style="background-color: #ebebeb; padding: 4px 16px">
+                        <p class="text-sm text-[#333333] text-weight-semibold q-ma-none">
+                          Your Child's Profile
+                        </p>
+                        <div class="row items-center q-gutter-x-sm">
+                          <div style="
+                              width: 8px;
+                              height: 8px;
+                              border-radius: 50%;
+                              print-color-adjust: exact;
+                            " :style="getProfileIndicator(
+                              // @ts-ignore
+                              getPrescriptionDisplayData(key, prescription)
+                                .profileLevel
+                            )
+                              "></div>
+                          <span class="text-sm text-weight-semibold text-[#333333]">
+                            {{
+                              // @ts-ignore
+                              getPrescriptionDisplayData(key, prescription)
+                                .profileLevel
+                            }}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Recommendations -->
+                    <div class="q-mt-sm">
+                      <p class="text-sm text-weight-bold text-[#333333] q-mb-sm">
+                        Recommendations for Home & School
+                      </p>
+                      <div class="column q-gutter-y-xs">
+                        <div v-for="(
+recommendation, recIndex
+                          ) in getPrescriptionDisplayData(key, prescription)
+    .recommendations" :key="recIndex" class="row items-start q-gutter-x-sm">
+                          <p class="text-sm text-[#333333] q-ma-none">
+                            {{ recIndex + 1 }}.&nbsp;
+                          </p>
+                          <p class="text-sm text-[#333333] q-ma-none" style="line-height: 1.5">
+                            {{ recommendation }}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </q-card-section>
+
+                  <q-separator v-if="
+                    index !==
+                    Object.keys(formThreeData.prescriptions).length - 1
+                  " class="q-my-sm" />
+                </div>
+              </q-card>
+            </div>
             <div class="row q-pt-md full-width q-px-sm">
               <div class="row q-pb-md q-my-md full-width">
                 <div class="col-12 dialog-form-section-input">
@@ -690,7 +770,7 @@
               </div>
             </div>
           </q-card-section>
-          <!-- RECOMMENDATIONS END -->
+          <!-- PRESCRIPTION END -->
         </q-card>
       </div>
       <!-- STEP ONE END -->
@@ -760,6 +840,57 @@ export default defineComponent({
     this.getPdfData();
   },
   methods: {
+    getProfileLevel(skill: number) {
+      switch (skill) {
+        case 1:
+          return 'Extending';
+        case 2:
+          return 'Proficient';
+        case 3:
+          return 'Developing';
+        case 4:
+          return 'Emerging';
+        default:
+          return 'Developing';
+      }
+    },
+
+    getProfileIndicator(level: string) {
+      switch (level) {
+        case 'Proficient':
+          return 'background-color: #79B058';
+        case 'Extending':
+          return 'background-color: #54ACEE';
+        case 'Developing':
+          return 'background-color: #FDCB59';
+        case 'Emerging':
+          return 'background-color: #DD2D44';
+        default:
+          return 'background-color: #E0E0E0';
+      }
+    },
+
+    getPrescriptionDisplayData(
+      key: string,
+      prescription: { skill: number; recommendations: string[] }
+    ) {
+      const profileLevel = this.getProfileLevel(prescription.skill);
+      const title = key
+        .split('_')
+        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(' ');
+      const abbrev = key
+        .split('_')
+        .map((word) => word.charAt(0).toUpperCase())
+        .join('');
+      return {
+        title: `${title} (${abbrev})`,
+        profileLevel,
+        recommendations: prescription.recommendations.map((recommendation) =>
+          recommendation.replace(/\.$/, '')
+        ),
+      };
+    },
     getChildAge(ageInMonth: number) {
       return `${Math.floor(ageInMonth / 12)} Year ${ageInMonth % 12} Month`;
     },

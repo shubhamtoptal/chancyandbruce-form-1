@@ -52,7 +52,15 @@ export interface StepTwoData {
   change_in_environment_text: string;
 }
 
+export interface FinalAssessmentPrescriptionType {
+  skill: number;
+  recommendations: string[];
+}
+
 export interface StepThreeData {
+  prescriptions?: {
+    [key: string]: FinalAssessmentPrescriptionType;
+  };
   show_curiosity: number;
   initiate_play_activity: number;
   works_play_cooperatively: number;
