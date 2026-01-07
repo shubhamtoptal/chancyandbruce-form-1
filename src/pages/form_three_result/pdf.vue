@@ -12,9 +12,10 @@
           </div>
           <div class="cnb-address-container text-center text-weight-medium col-10 q-pa-sm">
             <p class="q-ma-none">
-              1020 Calle Recodo, San Clemente, CA, 92673 / 949-326-4917
+              638 Camino de los Mares, Ste H130-477 San Clemente, CA, 92673 /
+              949-326-4917
             </p>
-            <p class="q-ma-none">www.chancyandbruce-ra.com</p>
+            <p class="q-ma-none">www.chancyandbruce.com</p>
           </div>
         </div>
       </q-card>
@@ -760,7 +761,7 @@ recommendation, recIndex
                       Kit
                       on
                       <br />
-                      <a target="_blank" href="https://www.chancyandbruce-ra.com/">chancyandbruce-ra.com</a> to continue
+                      <a target="_blank" href="https://www.chancyandbruce.com/">chancyandbruce.com</a> to continue
                       his
                       or hers
                       growth.
