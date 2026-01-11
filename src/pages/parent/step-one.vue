@@ -321,7 +321,7 @@ export default defineComponent({
       validateEmail,
       dateOptions: (date: string) => {
         const selectedDate = new Date(date);
-        const minDate = new Date('2019-01-01');
+        const minDate = new Date('2013-01-01');
         return selectedDate >= minDate;
       },
       errorMsg: {
