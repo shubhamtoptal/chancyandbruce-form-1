@@ -848,11 +848,11 @@ export default defineComponent({
         case 2:
           return 'Age Appropriate';
         case 3:
-          return 'Developing';
+          return 'Emerging';
         case 4:
           return 'Non-Age Appropriate';
         default:
-          return 'Developing';
+          return 'Emerging';
       }
     },
 
@@ -862,9 +862,9 @@ export default defineComponent({
           return 'background-color: #79B058';
         case 'Strong':
           return 'background-color: #54ACEE';
-        case 'Non-Age Appropriate':
-          return 'background-color: #FDCB59';
         case 'Emerging':
+          return 'background-color: #FDCB59';
+        case 'Non-Age Appropriate':
           return 'background-color: #DD2D44';
         default:
           return 'background-color: #E0E0E0';
