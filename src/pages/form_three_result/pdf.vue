@@ -844,13 +844,13 @@ export default defineComponent({
     getProfileLevel(skill: number) {
       switch (skill) {
         case 1:
-          return 'Extending';
+          return 'Strong';
         case 2:
-          return 'Proficient';
+          return 'Age Appropriate';
         case 3:
           return 'Developing';
         case 4:
-          return 'Emerging';
+          return 'Non-Age Appropriate';
         default:
           return 'Developing';
       }
@@ -858,11 +858,11 @@ export default defineComponent({
 
     getProfileIndicator(level: string) {
       switch (level) {
-        case 'Proficient':
+        case 'Age Appropriate':
           return 'background-color: #79B058';
-        case 'Extending':
+        case 'Strong':
           return 'background-color: #54ACEE';
-        case 'Developing':
+        case 'Non-Age Appropriate':
           return 'background-color: #FDCB59';
         case 'Emerging':
           return 'background-color: #DD2D44';
