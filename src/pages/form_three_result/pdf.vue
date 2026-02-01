@@ -757,8 +757,8 @@ recommendation, recIndex
                       font-size: 1rem;
                       padding-left: 10px;
                     ">
-                      If your child has not been recommended for Kindergarten, we advise that you purchase the Resource
-                      Kit
+                      If your child has not been recommended for Kindergarten, we advise that you purchase the gift of
+                      time book
                       on
                       <br />
                       <a target="_blank" href="https://www.chancyandbruce.com/">chancyandbruce.com</a> to continue
