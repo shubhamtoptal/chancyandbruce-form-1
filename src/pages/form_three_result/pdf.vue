@@ -131,24 +131,10 @@
           <q-card-section v-if="!isPublicSchool" class="q-pa-none dialog-form-section">
             <div>
               <p class="q-mb-none q-px-sm">
-                For successful school entrance for the
-                <b class="text-secondary">
-                  {{ formThreeData.schoolEntranceYear }}
-                </b>
-                school year, recommended development in all skill areas be a
-                minimum of
-                <b class="text-secondary">
-                  {{ formThreeData.schoolEntranceAgeYear }}
-                </b>
-                {{ formThreeData.schoolEntranceAgeYear == 1 ? 'year' : 'years' }}
-                <b class="text-secondary">
-                  {{ formThreeData.schoolEntranceAgeMonth }}
-                </b>
-                {{
-                  formThreeData.schoolEntranceAgeMonth == 1 ? 'month' : 'months'
-                }}
-                of age by this time of the year (or trending by the end of the year) with age appropriate social
-                emotional maturity.
+                For successful school entrance we recommend the development in
+                all skill levels be a minimum of <b>5 years</b> for Kindergarten
+                and <b>4 years</b> for TK/Pre-K (or trending towards that age by
+                the end of the year)
               </p>
             </div>
           </q-card-section>
@@ -211,37 +197,37 @@
           </q-card-section>
           <!-- SKILL AREA SECTION END -->
           <hr />
-          <!-- SOCIAL_EMOTIONAL MATURITY START -->
-          <q-card-section class="q-pa-none dialog-form-section">
-            <div class="row items-center justify-around q-px-md">
-              <div class="col-3 text-weight-medium text-primary">
-                Social-Emotional Maturity:
-              </div>
-              <div class="col-2">
-                <q-radio disable keep-color color="secondary" size="sm" :val="1"
-                  v-model="formThreeData.socialEmotionalMaturity" label="Age Appropriate" />
+
+          <!-- SKILL DEVELOPMENT FOR SCHOOL ENTRANCE START -->
+          <q-card-section class="q-pa-none dialog-from-section">
+            <div class="q-px-sm">
+              <p class="text-body q-ma-none text-accent text-weight-medium">
+                Skill Development for School Entrance
+              </p>
+            </div>
+            <div class="row q-px-sm">
+              <div class="col-3">
+                <q-radio disable v-model="formThreeData.skillDevelopmentForSchoolEnterance" :val="1" color="secondary"
+                  dense size="sm" keep-color label="Ready" />
               </div>
               <div class="col-3">
-                <q-radio disable keep-color color="secondary" size="sm" :val="2"
-                  v-model="formThreeData.socialEmotionalMaturity" label="Young for Chronological Age" />
+                <q-radio disable v-model="formThreeData.skillDevelopmentForSchoolEnterance" :val="2" color="secondary"
+                  dense size="sm" keep-color label="Borderline" />
               </div>
               <div class="col-3">
-                <q-radio disable keep-color color="secondary" size="sm" :val="3"
-                  v-model="formThreeData.socialEmotionalMaturity" label="Non-Age Appropriate" />
+                <q-radio disable v-model="formThreeData.skillDevelopmentForSchoolEnterance" :val="3" color="secondary"
+                  dense size="sm" keep-color label="Not Ready" />
               </div>
             </div>
-            <div class="row q-pt-md">
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <q-checkbox keep-color disable color="secondary" size="sm" :true-value="true" :false-value="false"
-                  v-model="formThreeData.socialEmotionalParentConcern" label="Parent has some concerns" />
-              </div>
-              <div class="col-md-6 col-sm-6 col-xs-12">
-                <q-checkbox keep-color disable color="secondary" size="sm" :true-value="true" :false-value="false"
-                  v-model="formThreeData.socialEmotionalTeacherConcern" label="Teacher has some concerns" />
-              </div>
-            </div>
+            <!-- SKILL DEVELOPMENT COMMENT SECTION -->
+            <!-- <div v-if="[1, 2, 3].includes(formThreeData.skillDevelopmentForSchoolEnterance)">
+                        <q-input type="textarea" class="app-form-input q-mt-sm" outlined placeholder="Write comments here"
+                          v-model="formThreeData.skillDevelopmentForSchoolEnteranceText" />
+                      </div> -->
           </q-card-section>
-          <!-- SOCIAL_EMOTIONAL MATURITY END -->
+          <!-- SKILL DEVELOPMENT FOR SCHOOL ENTRANCE END -->
+
+
           <hr />
 
           <!-- SUMMARY OF PROFILE START -->
@@ -437,34 +423,38 @@
           <!-- CHILD APPEARANCE END -->
 
           <hr />
-          <!-- SKILL DEVELOPMENT FOR SCHOOL ENTRANCE START -->
-          <q-card-section class="q-pa-none dialog-from-section">
-            <div class="q-px-sm">
-              <p class="text-body q-ma-none text-accent text-weight-medium">
-                Skill Development for School Entrance
-              </p>
+
+          <!-- SOCIAL_EMOTIONAL MATURITY START -->
+          <q-card-section class="q-pa-none dialog-form-section">
+            <div class="row items-center justify-around q-px-md">
+              <div class="col-3 text-weight-medium text-primary">
+                Social-Emotional Maturity:
+              </div>
+              <div class="col-2">
+                <q-radio disable keep-color color="secondary" size="sm" :val="1"
+                  v-model="formThreeData.socialEmotionalMaturity" label="Age Appropriate" />
+              </div>
+              <div class="col-3">
+                <q-radio disable keep-color color="secondary" size="sm" :val="2"
+                  v-model="formThreeData.socialEmotionalMaturity" label="Young for Chronological Age" />
+              </div>
+              <div class="col-3">
+                <q-radio disable keep-color color="secondary" size="sm" :val="3"
+                  v-model="formThreeData.socialEmotionalMaturity" label="Non-Age Appropriate" />
+              </div>
             </div>
-            <div class="row q-px-sm">
-              <div class="col-3">
-                <q-radio disable v-model="formThreeData.skillDevelopmentForSchoolEnterance" :val="1" color="secondary"
-                  dense size="sm" keep-color label="Ready" />
+            <div class="row q-pt-md">
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <q-checkbox keep-color disable color="secondary" size="sm" :true-value="true" :false-value="false"
+                  v-model="formThreeData.socialEmotionalParentConcern" label="Parent has some concerns" />
               </div>
-              <div class="col-3">
-                <q-radio disable v-model="formThreeData.skillDevelopmentForSchoolEnterance" :val="2" color="secondary"
-                  dense size="sm" keep-color label="Borderline" />
-              </div>
-              <div class="col-3">
-                <q-radio disable v-model="formThreeData.skillDevelopmentForSchoolEnterance" :val="3" color="secondary"
-                  dense size="sm" keep-color label="Not Ready" />
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                <q-checkbox keep-color disable color="secondary" size="sm" :true-value="true" :false-value="false"
+                  v-model="formThreeData.socialEmotionalTeacherConcern" label="Teacher has some concerns" />
               </div>
             </div>
-            <!-- SKILL DEVELOPMENT COMMENT SECTION -->
-            <!-- <div v-if="[1, 2, 3].includes(formThreeData.skillDevelopmentForSchoolEnterance)">
-              <q-input type="textarea" class="app-form-input q-mt-sm" outlined placeholder="Write comments here"
-                v-model="formThreeData.skillDevelopmentForSchoolEnteranceText" />
-            </div> -->
           </q-card-section>
-          <!-- SKILL DEVELOPMENT FOR SCHOOL ENTRANCE END -->
+          <!-- SOCIAL_EMOTIONAL MATURITY END -->
 
           <hr />
           <!-- ACADEMIC ACHIEVEMENT FOR 1st GRADE READINESS START -->
@@ -545,7 +535,7 @@
                     </p>
                   </div>
                 </div>
-                <div class="row items-center">
+                <!-- <div class="row items-center">
                   <div class="col-12">
                     <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
                       v-model="formThreeData.recommendations
@@ -562,7 +552,7 @@
                       }}
                     </p>
                   </div>
-                </div>
+                </div> -->
                 <div class="row items-center">
                   <div class="col-12">
                     <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
@@ -580,7 +570,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="row items-center">
+                <!-- <div class="row items-center">
                   <div class="col-12">
                     <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
                       v-model="formThreeData.recommendations.highRiskIndicator" label="High risk indicators" />
@@ -590,7 +580,7 @@
                       {{ formThreeData.recommendations.highRiskIndicatorText }}
                     </p>
                   </div>
-                </div>
+                </div> -->
                 <div class="row items-center">
                   <div class="col-12">
                     <q-checkbox disable keep-color color="secondary" size="sm" :true-value="true" :false-value="false"
