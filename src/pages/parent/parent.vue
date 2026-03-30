@@ -25,6 +25,11 @@
               recommendations for school entrance.
             </p>
 
+
+            <q-banner class="bg-banner-warning q-mb-md">
+              <b>Please note that Schools are responsible to release results to the parents or guardian</b>
+            </q-banner>
+
             <p class="text-justify">
               <b>Live Q and A Sessions:</b>
               <br />
@@ -37,12 +42,12 @@
               must be scheduled through our website.
             </p>
 
-            <q-card-section>
+            <!-- <q-card-section>
               <iframe
                 src="https://www.veed.io/embed/57936041-a2de-4dd6-ae2c-80f63b167a16?watermark=1&color=&sharing=1&title=1"
                 width="100%" height="500" frameborder="0" title="Chancy And Bruce " webkitallowfullscreen
                 mozallowfullscreen allowfullscreen></iframe>
-            </q-card-section>
+            </q-card-section> -->
 
             <p>
               For more information, visit <a target="_blank"
